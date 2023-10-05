@@ -1,0 +1,1 @@
+web: gunicorn earth_hammam.wsgi:application
