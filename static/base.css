@@ -34,7 +34,7 @@ body {
 }
 
 .btn-black {
-    background: black;
+    background: #d67525;
     color: white;
 }
 
@@ -63,6 +63,10 @@ body {
   .container {
     max-width: 80%;
   }
+}
+
+.bg-black {
+    background: #000 !important;
 }
 
 /* fixed top navbar only on medium and up */
