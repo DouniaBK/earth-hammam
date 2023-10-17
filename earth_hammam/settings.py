@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.account',  # handles login logout passwordreset
     'allauth.socialaccount',  # allows login with social media account, also allows to track users activities through socialmedia good 4 marketing
     'home',
+    'products',
 ]
 
 MIDDLEWARE = [
