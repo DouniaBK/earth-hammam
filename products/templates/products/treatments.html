@@ -22,28 +22,28 @@
             <div class="product-container col-12 offset-1">
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
-                    {% for item in items %}
+                    {% for treatment in treatments %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
-                                {% if item.image %}
-                                <a href="{% url 'item_detail' item.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
+                                {% if treatment.image %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ treatment.image.url }}" alt="{{ treatment.name }}">
                                 </a>
                                 {% else %}
-                                <a href="{% url 'item_detail' item.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ treatment.name }}">
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ item.name }}</p>
-                                    <p class="mt-3">{{ item.description }}</p>
+                                    <p class="mb-0">{{ treatment.name }}</p>
+                                    <p class="mt-3">{{ treatment.description }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ item.price }}</p>
-                                            {% if item.discount_price %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ item.discount_price }} / 5</small>
+                                            <p class="lead mb-0 text-left font-weight-bold">${{ treatment.price }}</p>
+                                            {% if treatment.discount_price %}
+                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ treatment.discount_price }} / 5</small>
                                             {% endif %}
                                         </div>
                                     </div>
