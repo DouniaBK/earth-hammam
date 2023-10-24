@@ -24,17 +24,3 @@ def all_tickets(request):
     tickets = Item.objects.filter(category_id='2')
     return render(request, 'products/tickets.html', {'tickets': tickets})
 
-def tickets(request):
-    return render(request, 'tickets.html', {})
-
-
-def item_detail(request, product_id):
-    """ A view to show individual product details """
-
-    item = get_object_or_404(Item, pk=product_id)
-
-    context = {
-        'item': item,
-    }
-
-    return render(request, 'products/item_detail.html', context)
