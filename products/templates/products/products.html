@@ -26,11 +26,11 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 {% if item.image %}
-                                <a href="">
+                                <a href="{% url 'item_detail' item.id %}">
                                     <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
                                 </a>
                                 {% else %}
-                                <a href="">
+                                <a href="{% url 'item_detail' item.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
                                 </a>
                                 {% endif %}
@@ -45,9 +45,32 @@
                                             {% if item.discount_price %}
                                                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ item.discount_price }} / 5</small>
                                             {% endif %}
+                                            <form class="form" action="{% url 'add_to_bag' item.id %}" method="POST">
+                                                {% csrf_token %}
+                                                <div class="form-row">
+                                                    <div class="col-12">
+                                                        <p class="mt-3"><strong>Quantity:</strong></p>
+                                                        <div class="form-group w-50">
+                                                            <div class="input-group">
+                                                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-bs-item_id="{{ item.id }}" id="id_qty_{{ item.id }}">
+                                                            </div>
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                        
+                                                    <div class="col-12">
+                                                        <a href="{% url 'items' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                                        <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Add to Bag"></a>
+                                                    </div>
+                                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                                </div>
+                                            </form>
+
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                         {% if forloop.counter|divisibleby:1 %}
@@ -67,7 +90,7 @@
                         {% endif %}
                         {% if forloop.counter|divisibleby:4 %}
                             <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
+                                
                             </div>
                         {% endif %}
                     {% endfor %}
