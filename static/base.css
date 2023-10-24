@@ -60,7 +60,9 @@ body {
     margin-top: 11rem;
 }
 
-
+.pt-6 {
+    padding-top: 26rem;
+}
 .bg-black {
     background: #000 !important;
 }
