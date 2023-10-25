@@ -15,7 +15,6 @@
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Products</h2>
-                <hr class="w-50 mb-1">
             </div>
         </div>
         <div class="row">
@@ -35,15 +34,15 @@
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ item.name }}</p>
+                                    <p class="mb-0"><strong>{{ item.name }}</strong></p>
                                     <p class="mt-3">{{ item.description }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ item.price }}</p>
+                                            <p class="lead mb-0 text-left font-weight-bold"><strong>${{ item.price }}</strong></p>
                                             {% if item.discount_price %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ item.discount_price }} / 5</small>
+                                                <small class="text-muted"><i class="fas fa-star mr-1"></i><strong>{{ item.discount_price }} / 5</strong></small>
                                             {% endif %}
                                             <form class="form" action="{% url 'add_to_bag' item.id %}" method="POST">
                                                 {% csrf_token %}
@@ -52,17 +51,33 @@
                                                         <p class="mt-3"><strong>Quantity:</strong></p>
                                                         <div class="form-group w-50">
                                                             <div class="input-group">
-                                                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ item.id }}" id="id_qty_{{ item.id }}">
+                                                                <div class="input-group-prepend">
+                                                                    <button class="decrement-qty btn btn-black rounded-0" 
+                                                                        data-item_id="{{ item.id }}" id="decrement-qty_{{ item.id }}">
+                                                                        <span class="icon">
+                                                                            <i class="fas fa-minus"></i>
+                                                                        </span>
+                                                                    </button>
+                                                                </div>
+                                                                <input class="form-control qty_input" type="number"
+                                                                    name="quantity" value="1" min="1" max="99"
+                                                                    data-item_id="{{ item.id }}" id="id_qty_{{ item.id }}">
+                                                                <div class="input-group-append">
+                                                                    <button class="increment-qty btn btn-black rounded-0"
+                                                                        data-item_id="{{ item.id }}" id="increment-qty_{{ item.id }}">
+                                                                        <span class="icon">
+                                                                            <i class="fas fa-plus"></i>
+                                                                        </span>
+                                                                    </button>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                        
-                                                    <div class="col-12">
+                                                        <div class="col-12">
                                                         <a href="{% url 'items' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                                        <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Add to Bag"></a>
-                                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                                    </div>
-                                                    
+                                                            <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Add to Bag"></a>
+                                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                                        </div>
+                                                        </div>
                                                 </div>
                                             </form>
                                         </div>
@@ -112,4 +127,5 @@
             window.scrollTo(0,0)
         })
 	</script>
+    {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}

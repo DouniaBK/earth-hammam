@@ -15,7 +15,6 @@
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Tickets</h2>
-                <hr class="w-50 mb-1">
             </div>
         </div>
         <div class="row">
@@ -35,15 +34,15 @@
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ ticket.name }}</p>
+                                    <p class="mb-0"><strong>{{ ticket.name }}</strong></p>
                                     <p class="mt-3">{{ ticket.description }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ ticket.price }}</p>
+                                            <p class="lead mb-0 text-left font-weight-bold"><strong>${{ ticket.price }}</strong></p>
                                             {% if ticket.discount_price %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ ticket.discount_price }} / 5</small>
+                                                <small class="text-muted"><i class="fas fa-star mr-1"></i><strong>{{ ticket.discount_price }} / 5</strong></small>
                                             {% endif %}
                                             <form class="form" action="{% url 'add_to_bag' ticket.id %}" method="POST">
                                                 {% csrf_token %}
@@ -52,7 +51,25 @@
                                                         <p class="mt-3"><strong>Quantity:</strong></p>
                                                         <div class="form-group w-50">
                                                             <div class="input-group">
-                                                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-ticket_id="{{ ticket.id }}" id="id_qty_{{ ticket.id }}">
+                                                                <div class="input-group-prepend">
+                                                                    <button class="decrement-qty btn btn-black rounded-0" 
+                                                                        data-item_id="{{ item.id }}" id="decrement-qty_{{ item.id }}">
+                                                                        <span class="icon">
+                                                                            <i class="fas fa-minus"></i>
+                                                                        </span>
+                                                                    </button>
+                                                                </div>
+                                                                <input class="form-control qty_input" type="number"
+                                                                    name="quantity" value="1" min="1" max="99"
+                                                                    data-ticket_id="{{ ticket.id }}" id="id_qty_{{ ticket.id }}">
+                                                                <div class="input-group-append">
+                                                                    <button class="increment-qty btn btn-black rounded-0"
+                                                                        data-item_id="{{ item.id }}" id="increment-qty_{{ item.id }}">
+                                                                        <span class="icon">
+                                                                            <i class="fas fa-plus"></i>
+                                                                        </span>
+                                                                    </button>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -94,4 +111,9 @@
             </div>
         </div>
     </div></div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
