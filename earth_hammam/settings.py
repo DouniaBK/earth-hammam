@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'products',
     'bag',
     'checkout',
+    # Other
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +67,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'earth_hammam.urls'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -74,13 +77,20 @@ TEMPLATES = [
             ],
         'APP_DIRS': True,
         'OPTIONS': {
+            
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',  # required for allauth to access the  http response /aullauth template
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
             ],
+
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
