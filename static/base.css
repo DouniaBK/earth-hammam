@@ -67,6 +67,13 @@ body {
     background: #000 !important;
 }
 
+.bg-earth {
+    background-color: #ffc181!important;
+}
+
+.bg-offwhite {
+    background-color: #fff4eb!important;
+}
 .overlay {
     height: 100%;
     width: 100%;
