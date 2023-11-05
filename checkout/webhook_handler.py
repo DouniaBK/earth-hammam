@@ -1,16 +1,11 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
-from django.views.decorators.http import require_POST
-from django.contrib import messages
-from django.conf import settings
+from django.http import HttpResponse
 
-from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Item
-from bag.contexts import bag_contents
 
-import stripe
 import json
-
+import time
+import stripe
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -35,20 +30,28 @@ class StripeWH_Handler:
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
 
+        print("1")
+
         # Get the Charge object
         stripe_charge = stripe.Charge.retrieve(
             intent.latest_charge
         )
+        print("stripe_charge")
+        print(stripe_charge)
 
-        billing_details = stripe_charge.billing_details  # updated
+        print("2")
+
+        billing_details = stripe_charge.billing_details # updated
         shipping_details = intent.shipping
-        grand_total = round(stripe_charge.amount / 100, 2)  # updated
-
+        grand_total = round(stripe_charge.amount / 100, 2) # updated
 
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
+
+        
+        print("3")
 
         order_exists = False
         attempt = 1
@@ -73,6 +76,10 @@ class StripeWH_Handler:
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)
+
+        print("order_exists")
+        print(order_exists)
+
         if order_exists:
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
@@ -93,6 +100,9 @@ class StripeWH_Handler:
                     original_bag=bag,
                     stripe_pid=pid,
                 )
+                print("created order")
+                print(order)
+
                 for item_id, item_data in json.loads(bag).items():
                     item = Item.objects.get(id=item_id)
                     if isinstance(item_data, int):
@@ -112,11 +122,14 @@ class StripeWH_Handler:
                             )
                             order_line_item.save()
             except Exception as e:
+                print("Exception", e)
                 if order:
                     order.delete()
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
+                    
+        print("done")
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)

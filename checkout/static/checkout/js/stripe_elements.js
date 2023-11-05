@@ -94,6 +94,8 @@ form.addEventListener('submit', function(ev) {
                 }
             },
         }).then(function(result) {
+            console.log("STRIPE SUBMIT RESULT:")
+            console.log(result)
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');
                 var html = `
@@ -108,7 +110,10 @@ form.addEventListener('submit', function(ev) {
                 $('#submit-button').attr('disabled', false);
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
+                    $('#loading-overlay').fadeToggle(0);
                     form.submit();
+                } else {
+
                 }
             }
         });
