@@ -85,7 +85,7 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: white;
+    background: #fff4eb;
     z-index: -1;
 }
 /* Product - Ticket - Treatment pages  */
