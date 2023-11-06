@@ -67,6 +67,11 @@ body {
     background: #000 !important;
 }
 
+.bg-wetsand {
+    background: #dc8b35 !important;
+}
+
+
 .bg-earth {
     background-color: #ffc181!important;
 }
@@ -83,6 +88,34 @@ body {
     background: white;
     z-index: -1;
 }
+/* Product - Ticket - Treatment pages  */
+
+.form-col-center {
+    display: flex!important;
+    flex-wrap: nowrap!important;
+    flex-direction: column!important;
+    align-items: center!important;
+}
+
+
+.btn-wetsand {
+    background: #dc8b35 ;
+    color: white;
+}
+
+.healing-button:hover,
+.healing-button:active,
+.healing-button:focus,
+.btn-wetsand:hover,
+.btn-wetsand:active,
+.btn-wetsand:focus {
+    background: #d67525;
+    color: white;
+}
+
+
+
+
 
 /* the scroll to the top button*/
 .btt-button {
