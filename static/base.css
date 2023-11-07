@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/homepage_massage.png') no-repeat center center fixed;
+    background: url('/static/images/homepage_massage.png') no-repeat center center fixed;
     background-size: cover;
     color: #555;
     font-family: 'Montserrat';
