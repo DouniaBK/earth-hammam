@@ -71,13 +71,17 @@ body {
     background: #dc8b35 !important;
 }
 
+.bg-olive {
+    background-color: #52452e !important;
+}
+
 
 .bg-earth {
-    background-color: #ffc181!important;
+    background-color: #ebccac!important;
 }
 
 .bg-offwhite {
-    background-color: #fff4eb!important;
+    background-color: #f3e9e0!important;
 }
 .overlay {
     height: 100%;
