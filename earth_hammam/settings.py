@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import dj_database_url
 if os.path.isfile('env.py'):
      import env
@@ -27,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-douniabk-earthhammam-3093yc859bs.ws-eu105.gitpod.io', 'earth-hammam.herokuapp.com', 'localhost', 'earth-hammam-e2008fb66bd6.herokuapp.com', 'earth-hammam-e2008fb66bd6.herokuapp.com']
 
@@ -188,9 +191,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
-# STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 
 MEDIA_URL = '/media/'
