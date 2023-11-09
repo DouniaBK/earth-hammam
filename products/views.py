@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Item, Category
+from .forms import ItemForm
 
 # Create your views here.
 
@@ -24,3 +25,12 @@ def all_tickets(request):
     tickets = Item.objects.filter(category_id='2')
     return render(request, 'products/tickets.html', {'tickets': tickets})
 
+def add_item(request):
+    """ Add a product to the store """
+    form = ItemForm()
+    template = 'products/add_item.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
