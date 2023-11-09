@@ -30,9 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-douniabk-earthhammam-3093yc859bs.ws-eu105.gitpod.io', 'earth-hammam.herokuapp.com', 'localhost', 'earth-hammam-e2008fb66bd6.herokuapp.com', 'earth-hammam-e2008fb66bd6.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -190,7 +190,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'
