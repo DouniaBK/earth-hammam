@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Item, Category
 from .forms import ItemForm
 
@@ -27,8 +28,13 @@ def all_tickets(request):
     return render(request, 'products/tickets.html', {'tickets': tickets})
 
 
+@login_required
 def add_item(request):
     """ Add a product to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store admin can do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ItemForm(request.POST, request.FILES)
         if form.is_valid():
@@ -49,8 +55,13 @@ def add_item(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_item(request, item_id):
     """ Edit a product in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store admin can do that.')
+        return redirect(reverse('home'))
+
     item = get_object_or_404(Item, pk=item_id)
     if request.method == 'POST':
         form = ItemForm(request.POST, request.FILES, instance=item)
@@ -75,8 +86,13 @@ def edit_item(request, item_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_item(request, item_id):
     """ Delete a product from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store admin can do that.')
+        return redirect(reverse('home'))
+
     item = get_object_or_404(Item, pk=item_id)
     item.delete()
     messages.success(request, 'Item deleted from the Online Store!')
