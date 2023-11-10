@@ -6,4 +6,5 @@ urlpatterns = [
     path('treatments', views.all_treatments, name='treatments'),
     path('tickets', views.all_tickets, name='tickets'),
     path('add/', views.add_item, name='add_item'),
+    path('edit/<int:item_id>/', views.edit_item, name='edit_item'),
 ]
