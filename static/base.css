@@ -101,6 +101,14 @@ body {
     align-items: center!important;
 }
 
+.admin-edit-delete {
+    display: flex!important;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+
 
 .btn-wetsand {
     background: #dc8b35 ;

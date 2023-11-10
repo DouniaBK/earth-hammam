@@ -58,6 +58,16 @@
                                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                                 </div>
                                             </form>
+                                            {% if request.user.is_superuser %}
+                                            <div class="pt-5">
+                                            <h6 class="d-flex justify-content-center p-1" style="color: ghostwhite;
+                                            background-color: #737373; font-size: larger;"> Update Store Merchandise</h6>
+                                            <small class="admin-edit-delete ml-3  btn rounded-0 text-uppercase font-weight-bold ">
+                                                <a class="text-secondary" href="{% url 'edit_item' treatment.id %}">Edit</a> 
+                                                <a class="text-secondary" href="{% url 'delete_item' treatment.id %}">Delete</a>
+                                            </small>
+                                            </div>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
