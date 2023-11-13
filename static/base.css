@@ -92,6 +92,7 @@ body {
     position: fixed;
     background: #fff4eb;
     z-index: -1;
+    overflow: scroll;
 }
 /* Product - Ticket - Treatment pages  */
 
@@ -299,6 +300,13 @@ a.category-badge > span.badge:hover {
     background-color: #dc3545;
     border-color: #dc3545;
     border-radius: 0;
+}
+
+
+/* Footer */
+
+.bg-footer {
+    background-color: #79492f!important;
 }
 
 /* -------------------------------- Media Queries */

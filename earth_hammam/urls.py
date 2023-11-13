@@ -22,7 +22,8 @@ from .views import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),  # gives all the urls for login logout passwordreset
+    # gives all the urls for login logout passwordreset
+    path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
     path('products/', include('products.urls')),
     path('bag/', include('bag.urls')),
@@ -32,7 +33,7 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # if settings.DEBUG:
-#   urlpatterns += static(settings.MEDIA_URL, 
+#   urlpatterns += static(settings.MEDIA_URL,
 # document_root=settings.MEDIA_ROOT)
 
-handler404 = 'earth-hammam.views.handler404'
+handler404 = 'earth_hammam.views.handler404'
