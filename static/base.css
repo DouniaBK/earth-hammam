@@ -7,6 +7,7 @@ body {
     background-size: cover;
     color: #555;
     font-family: 'Montserrat';
+    overflow: scroll;
 }
 
 /* from Bulma to keep all icons centered with correct size */
@@ -334,6 +335,7 @@ a.category-badge > span.badge:hover {
 
     body {
         height: calc(100vh - 116px);
+        overflow: scroll;
     }
 }
 
@@ -346,6 +348,7 @@ a.category-badge > span.badge:hover {
 
     body {
         height: calc(100vh - 116px);
+        overflow: scroll;
     }
 
     .display-4.logo-font.text-black {

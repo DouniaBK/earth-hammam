@@ -46,11 +46,11 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-     # The following apps are required for auth:
+    # The following apps are required for auth:
     'django.contrib.sites',
     'allauth',
-    'allauth.account',  # handles login logout passwordreset
-    'allauth.socialaccount',  # allows login with social media account, also allows to track users activities through socialmedia good 4 marketing
+    'allauth.account',
+    'allauth.socialaccount',
     'home',
     'products',
     'bag',
@@ -78,14 +78,15 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates'),
-                os.path.join(BASE_DIR, 'templates', 'allauth'),
-            ],
+                 os.path.join(BASE_DIR, 'templates', 'allauth'),
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
-            
+
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',  # required for allauth to access the  http response /aullauth template
+                # required for allauth
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
@@ -131,7 +132,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True  # users need an email to login
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory' 
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True  # they need to reenter their email
 ACCOUNT_USERNAME_MIN_LENGTH = 4  # minimum lenth username setup
 LOGIN_URL = '/accounts/login/'
@@ -151,7 +152,7 @@ WSGI_APPLICATION = 'earth_hammam.wsgi.application'
 # }
 
 DATABASES = {
-     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 # Password validation
@@ -222,7 +223,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ['https://*.example.com', 'https://8000-douniabk-adoboutique-qy4a999ii5u.ws-eu104.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://*.example.com',
+                        'https://8000-douniabk-adoboutique-qy4a999ii5u.ws-eu104.gitpod.io']
 
 USE_I18N = True
 

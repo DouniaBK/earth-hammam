@@ -43,7 +43,7 @@ def add_item(request):
             return redirect(reverse('add_item'))
         else:
             messages.error(
-                request, 'Failed to add product. Please ensure the form is valid.')
+                request, 'Failed to add product. Check if the form is valid.')
     else:
         form = ItemForm()
 
@@ -72,7 +72,7 @@ def edit_item(request, item_id):
             return redirect(reverse('edit_item', args=[item.id]))
         else:
             messages.error(
-                request, 'Failed to update this Item. Please, ensure the form is valid.')
+                request, 'Failed to update this Item. Check if the form is valid.')
     else:
         form = ItemForm(instance=item)
         messages.info(request, f'You are editing {item.name}')
