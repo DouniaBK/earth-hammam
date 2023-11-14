@@ -7,7 +7,6 @@ body {
     background-size: cover;
     color: #555;
     font-family: 'Montserrat';
-    overflow: scroll;
 }
 
 /* from Bulma to keep all icons centered with correct size */
