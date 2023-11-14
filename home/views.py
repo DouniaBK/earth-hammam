@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Testimonial
 
 # Create your views here.
 
@@ -10,4 +11,5 @@ def index(request):
 
 
 def hammam(request):
-    return render(request, 'home/hammam.html', {})
+    all_testimonials = Testimonial.objects.filter(status='1')
+    return render(request, 'home/hammam.html', {'all_testimonials': all_testimonials})  # noqa

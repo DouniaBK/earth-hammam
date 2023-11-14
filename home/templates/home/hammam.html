@@ -53,7 +53,7 @@
                         </button>
                       </div>
                 </div>
-                <div class="row">
+                <div class="col text-center py-5">
                     <p>
                         Dedicated to personal wellness, Earth Hammam facilities are serene and timeless, 
                         designed to calm, soothe and rejuvenate while expert therapists work on restoring 
@@ -112,7 +112,7 @@
                                     <div class="row g-0">
                                       <div class="col-md-4">
                                         <img
-                                          src="{% static 'images/pamper-img.png' %}"
+                                          src="{% static 'images/earth-dinning2.jpg' %}"
                                           alt=" Wellness room for massages"
                                           class="img-fluid rounded-start"
                                         />
@@ -174,6 +174,40 @@
                     </div>
                 </div>
             </div>
+    </div>
+          <!--Testimonials go here-->
+    <div class="row">
+    <div class="container col-10">
+    <div class="row mt-1 pt-5">
+              <div class="row" id="testimonials">
+                <div class="row d-flex justify-content-center">
+
+                  <div class=" text-uppercase  mb-2 col-10 pb-3 pt-5 text-center">
+                    <h3>What our clients say</h3>
+                  </div>
+                </div>
+
+                <div class="col-10 row text-center d-flex align-items-stretch">
+
+                  {% for testimonial in all_testimonials %}
+                  <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+                    <div class="card testimonial-card">
+                      <div class="card-body">
+                        <p class="testimonial-card-body dark-grey-text mt-4">" {{testimonial.body}} "</p>
+                        <hr/>
+                        <small class="mb-5">{{testimonial.name}}</small>
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+
+                </div>
+              </div>
+      </div>
+    </div>
+    </div>
     </div>
     
     <div class="row mt-1 pt-5">
