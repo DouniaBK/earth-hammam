@@ -76,6 +76,10 @@ body {
     background-color: #52452e !important;
 }
 
+.bg-pickledolive {
+    background-color:#b38600 !important;
+}
+
 
 .bg-earth {
     background-color: #ebccac!important;
@@ -83,6 +87,10 @@ body {
 
 .bg-offwhite {
     background-color: #f3e9e0!important;
+}
+
+.bg-wetsand {
+    background: #d39e00;
 }
 .overlay {
     height: 100%;
@@ -141,7 +149,8 @@ body {
     justify-content: center;
 }
 
-  /*Testimonials*/
+/*Testimonials*/
+
 #testimonials {
     display: flex;
     justify-content: center !important;
@@ -150,31 +159,31 @@ body {
     flex-direction: row;
   }
   
-  .testimonial-card-body {
+.testimonial-card-body {
   }
   
-  .testimonial-card .card-up {
+.testimonial-card .card-up {
     height: 22px;
     overflow: hidden;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
-  }
-  .testimonial-card .avatar {
+}
+.testimonial-card .avatar {
     width: 110px;
     margin-top: -60px;
     overflow: hidden;
     border: 3px solid #fff;
     border-radius: 50%;
-  }
+}
   
-  .card-up {
+.card-up {
     background-color: #dc8b35;
   
-  }
+}
   
-  .card{
+.card{
     width: 100%;
-  }
+}
 
 /*divider image*/
 #divider-img {
@@ -363,9 +372,8 @@ a.category-badge > span.badge:hover {
 /* Footer */
 
 .bg-footer {
-    background-color: #79492f!important;
+    background-color: #52452e!important;
 }
-
 
 /* Booking */
 
@@ -378,11 +386,11 @@ a.category-badge > span.badge:hover {
 }
   
 .table td:hover {
-    background: rgb(237 217 230);
+    background: #d39e00;
 }
 
 .table td:visited {
-    background: rgb(172 218 225);
+    background: #495057;
 }
 
 .table .thead-light th {
@@ -470,7 +478,7 @@ a.category-badge > span.badge:hover {
 .thank_you_header {
     font-size: 1.7rem;
     font-weight: 600;
-    color: #d58dae;
+    color: #495057;
     border-bottom: 1px solid grey;
     min-width: 60%;
     text-align: center;
