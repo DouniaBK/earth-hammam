@@ -67,7 +67,8 @@ body {
     background: #000 !important;
 }
 
-.bg-wetsand {
+
+.bg-reddirt {
     background: #dc8b35 !important;
 }
 
@@ -112,10 +113,14 @@ body {
 
 
 .btn-wetsand {
-    background: #dc8b35 ;
+    background: #d39e00;
     color: white;
 }
 
+.btn-reddirt {
+    background: #d67525;
+    color: white;
+} 
 .healing-button:hover,
 .healing-button:active,
 .healing-button:focus,
@@ -127,18 +132,14 @@ body {
 }
 
 
-/* Testimonials */
-
-
-.showcase-container {
-    max-width: 1200px;
-    margin: 9rem;
-    margin-right: auto;
-    margin-left: auto;
-    border: 1px solid #e1e1e1;
-    border-radius: 5px;
-    box-shadow: 10px 10px 22px -7px rgb(0 0 0 / 8%);
-  }
+.row-items {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: nowrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;
+}
 
   /*Testimonials*/
 #testimonials {
@@ -365,16 +366,132 @@ a.category-badge > span.badge:hover {
     background-color: #79492f!important;
 }
 
-/* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
+/* Booking */
+
+.table {
+    font-size: large;
+}
+.table td {
+    border: 1px solid #d39e00;
+    padding: 0.5rem;
+}
+  
+.table td:hover {
+    background: rgb(237 217 230);
+}
+
+.table td:visited {
+    background: rgb(172 218 225);
+}
+
+.table .thead-light th {
+    color: #495057;
+    background-color: #fff4eb;
+    border-color: #d39e00;
+}
+
+.table-session-overview {
+    width: 100%;
+}
+
+.table-session-overview td {
+    padding: 4px;
 }
 
 
+.disableME {
+    background-color: #6c757d61 !important;
+    cursor: auto !important;
+}
+
+.isMine {
+    background: rgb(172 218 225) !important;
+}
+
+.cancel_session_container {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#no-account-p{
+    color: #000000;
+}
+
+#scheduler-container{
+    background: #fff4eb!important;
+    box-sizing: border-box;
+    border-radius: 10px;
+    min-height: 87vh;
+    padding: 2rem;
+    border: 2px solid #d39e00;
+}
+
+.scheduler-next{
+    display: flex;
+    justify-content: space-between;
+    background: #b38600;
+}
+
+.btn-scheduler {
+    background: #b38600;
+}
+#datetimepicker {
+    background-color: #ffffff08;
+    border: none;
+}
+
+.appointment_type_form > p {
+    visibility: hidden;
+    height: 0;
+}
+
+.appointment_type_form > label {
+    margin-right: 1rem;
+}
+
+.scheduler-next{
+    display: flex;
+    justify-content: space-between;
+    }
+
+.register_complete_main{
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.thank_you_header {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #d58dae;
+    border-bottom: 1px solid grey;
+    min-width: 60%;
+    text-align: center;
+}
+
+.thank_you_subheader {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #0e464f;
+    text-align: center;
+}
+
+
+
+/* -------------------------------- Media Queries */
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {

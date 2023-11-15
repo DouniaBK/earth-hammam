@@ -13,7 +13,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-
+    
     def get_friendly_name(self):
         return self.friendly_name
 
