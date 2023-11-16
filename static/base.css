@@ -149,6 +149,21 @@ body {
     justify-content: center;
 }
 
+
+
+
+
+.divider-img-wrapper {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 /*Testimonials*/
 
 #testimonials {
@@ -158,10 +173,7 @@ body {
     padding-bottom: 4rem;
     flex-direction: row;
   }
-  
-.testimonial-card-body {
-  }
-  
+
 .testimonial-card .card-up {
     height: 22px;
     overflow: hidden;
@@ -373,6 +385,11 @@ a.category-badge > span.badge:hover {
 
 .bg-footer {
     background-color: #52452e!important;
+}
+
+.col-footer {
+    position: relative;
+    width: 100%;
 }
 
 /* Booking */

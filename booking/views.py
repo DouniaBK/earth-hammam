@@ -6,6 +6,7 @@ from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 from .forms import AppointmentInputFormFrontEnd
 from django.contrib import messages
 from profiles.models import UserProfile
+from products.models import Item
 from .models import Appointment
 import json
 
@@ -115,7 +116,7 @@ def booking(request):
         for us in all_user_sessions:
             info = {}
             info["id"] = us.id
-            info["service"] = 'none'
+            info["service"] = us.item
             info["time"] = us.time.strftime("%m/%d/%Y at %H:%M")
 
             all_user_sessions_templ.append(info)
@@ -130,10 +131,17 @@ def booking(request):
             # create a form instance and populate it with
             #  data from the request:
             form = AppointmentInputFormFrontEnd(request.POST)
+
+            # Chosen service
+            service = form['service']
+            id = int(service.data)
+            item = Item.objects.get(id=id)
+
             # check whether the form is valid:
             if form.is_valid():
                 session_object = form.save(commit=False)
                 session_object.user = user
+                session_object.item = item
                 session_object.save()
                 # process the data in form.cleaned_data as required
                 service = form.cleaned_data['service']

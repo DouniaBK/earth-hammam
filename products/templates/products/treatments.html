@@ -13,122 +13,120 @@
 <div class="overlay">
     <div class="container-fluid mt-6">
         <div class="row">
-            <div class="col text-center mt-3">
-                <h2 class="logo-font">Wellness and Treatments</h2>
+            <div class="col text-center mt-5">
+                <h2 class="text-uppercase">Earth Hammam Treatment Gift Card</h2>
                 <div class="container col-6">
-                    <p>Invest in your personal wellbeing with a personalised half- or full-day retreat including a healthy lunch overlooking the Earth Hammam pool.
-                        While the full day begins with a relaxing aromatherapy session or energising yoga session, both options include a body scrub and wrap,
-                        a full body massage and a rejuvenating facial.</p>
-                    <h5 class="text-uppercase pt-4"> <strong> Earth Hammam Treatment Gift Card</strong></h5>
+                    <p>
+                        Share the gift of selfcare. The Earth Hammam Gift Card presents all
+                        those who receive it with the opportunity to indulge, treat their bodies and heal their souls.
+                        Share it directy with the recipient via email and let this gift be cherished for years to come
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
-        <div class="row">
-            <div class="product-container col-12 offset-1">
-                <div class="row mt-1 mb-2"></div>
-                <div class="row">
-                    {% for treatment in treatments %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                {% if treatment.image %}
-                                <a href="">
-                                    <img class="card-img-top img-fluid" src="{{ treatment.image.url }}" alt="{{ treatment.name }}">
-                                </a>
-                                {% else %}
-                                <a href="">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ treatment.name }}">
-                                </a>
-                                {% endif %}
-                                <div class="card-body bg-offwhite pb-0">
-                                    <p class="mb-0"><strong>{{ treatment.name }}</strong></p>
-                                    <p class="mt-3">{{ treatment.description }}</p>
-                                </div>
-                                <div class="card-footer bg-offwhite pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead mb-0 text-center font-weight-bold"><strong>${{ treatment.price }}</strong></p>
-                                            {% if treatment.discount_price %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i><strong>{{ treatment.discount_price }} / 5</strong></small>
-                                            {% endif %}
-                                            <form class="form" action="{% url 'add_to_bag' treatment.id %}" method="POST">
-                                                {% csrf_token %}
-                                                <div class="form-row">
-                                                    <div class="col-12 form-col-center">
-                                                    </div>
-
-                                                    <div class="col-12 form-col-center">
-                                                        <a href="{% url 'items' %}" class="btn btn-outline-black rounded-0 mt-2">
-                                                        <input type="submit" class="btn btn-wetsand rounded-0 text-uppercase" value="Add Gif Card to Bag"></a>
-                                                    </div>
-                                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+    
+    <div class="row">
+        <div class="product-container col-12 offset-1">
+            <div class="row mt-1 mb-2"></div>
+            <div class="row">
+                {% for treatment in treatments %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card h-100 border-0">
+                            {% if treatment.image %}
+                            <a href="">
+                                <img class="card-img-top img-fluid" src="{{ treatment.image.url }}" alt="{{ treatment.name }}">
+                            </a>
+                            {% else %}
+                            <a href="">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ treatment.name }}">
+                            </a>
+                            {% endif %}
+                            <div class="card-body bg-offwhite pb-0">
+                                <p class="mb-0"><strong>{{ treatment.name }}</strong></p>
+                                <p class="mt-3">{{ treatment.description }}</p>
+                            </div>
+                            <div class="card-footer bg-offwhite pt-0 border-0 text-left">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="lead mb-0 text-center font-weight-bold"><strong>${{ treatment.price }}</strong></p>
+                                        {% if treatment.discount_price %}
+                                            <small class="text-muted"><i class="fas fa-star mr-1"></i><strong>{{ treatment.discount_price }} / 5</strong></small>
+                                        {% endif %}
+                                        <form class="form" action="{% url 'add_to_bag' treatment.id %}" method="POST">
+                                            {% csrf_token %}
+                                            <div class="form-row">
+                                                <div class="col-12 form-col-center">
                                                 </div>
-                                            </form>
-                                            {% if request.user.is_superuser %}
-                                            <div class="pt-5">
-                                            <h6 class="d-flex justify-content-center p-1" style="color: ghostwhite;
-                                            background-color: #737373; font-size: larger;"> Update Store Merchandise</h6>
-                                            <small class="admin-edit-delete ml-3  btn rounded-0 text-uppercase font-weight-bold ">
-                                                <a class="text-secondary" href="{% url 'edit_item' treatment.id %}">Edit</a> 
-                                                <a class="text-secondary" href="{% url 'delete_item' treatment.id %}">Delete</a>
-                                            </small>
+
+                                                <div class="col-12 form-col-center">
+                                                    <a href="{% url 'items' %}" class="btn btn-outline-black rounded-0 mt-2">
+                                                    <input type="submit" class="btn btn-wetsand rounded-0 text-uppercase" value="Add Gif Card to Bag"></a>
+                                                </div>
+                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                             </div>
-                                            {% endif %}
+                                        </form>
+                                        {% if request.user.is_superuser %}
+                                        <div class="pt-5">
+                                        <h6 class="d-flex justify-content-center p-1" style="color: ghostwhite;
+                                        background-color: #737373; font-size: larger;"> Update Store Merchandise</h6>
+                                        <small class="admin-edit-delete ml-3  btn rounded-0 text-uppercase font-weight-bold ">
+                                            <a class="text-secondary" href="{% url 'edit_item' treatment.id %}">Edit</a> 
+                                            <a class="text-secondary" href="{% url 'delete_item' treatment.id %}">Delete</a>
+                                        </small>
                                         </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-
-                
-                </div>
-            </div>
-            {% if user.is_authenticated %}
-            <div class="container-fluid mt-2 ">
-                <div class="row">
-                    <div class="col text-center mt-3">
-                        <div class="container col-6">
-                            <h5 class="text-center pt-4"><strong>Book an Appointment for you Treatment</strong></h5>
-                            <div class="d-flex justify-content-center">
-                                <a href="{% url 'booking' %}" id="booking">
-                                  <button class="btn btn-reddirt me-md-2"> Booking </button>
-                                </a>
-                              </div>
-                        </div>
                     </div>
-                </div>
+                    {% if forloop.counter|divisibleby:1 %}
+                        <div class="col-12 d-sm-none mb-5">
+                            <hr>
+                        </div>
+                    {% endif %}                        
+                    {% if forloop.counter|divisibleby:2 %}
+                        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                            <hr>
+                        </div>
+                    {% endif %}
+                    {% if forloop.counter|divisibleby:3 %}
+                        <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                            <hr>
+                        </div>
+                    {% endif %}
+                    {% if forloop.counter|divisibleby:4 %}
+                        <div class="col-12 d-none d-xl-block mb-5">
+                            <hr>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+            
             </div>
-            {% endif %}
-            <!-- Footer goes here-->
-            <div class="container-fluid">
-                <div class="row mt-1 pt-5">
-                    <div class="col-12">
-                        {% include 'includes/footer.html' %}
+        </div>
+        {% if user.is_authenticated %}
+        <div class="container-fluid mt-2 ">
+            <div class="row">
+                <div class="col text-center mt-3">
+                    <div class="container col-6">
+                        <h5 class="text-center pt-4"><strong>Book an Appointment for you Treatment</strong></h5>
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'booking' %}" id="booking">
+                                <button class="btn btn-reddirt me-md-2"> Booking </button>
+                            </a>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
+        {% endif %}
+    
+    
+                                    <!-- Footer goes here-->
+            {% include 'includes/footer.html' %}
     </div>
+
+</div>
 </div>
 {% endblock %}

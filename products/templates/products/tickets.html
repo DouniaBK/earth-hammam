@@ -11,12 +11,20 @@
 
 {% block content %}
     <div class="overlay">
-    <div class="container-fluid mt-6">
+    <div class=" col container-fluid mt-6">
         <div class="row">
-            <div class="col text-center mt-3">
-                <h2 class="logo-font">Tickets</h2>
+            <div class="col text-center mt-5">
+                <h2 class="text-uppercase">Earth Hammam Entrance Tickets</h2>
+                <div class="container col-6">
+                    <p>
+                        Serene Hammam, swimming pool, wellness and hydrotherapy areas are spread over two entire floors of the four-floor facility.
+                        Offering a wide range of therapeutic and pampering treatments, it is the ideal space in which to
+                        prepare, or recover from, an active life. 
+                    </p>
+                </div>
             </div>
         </div>
+
         <div class="row">
             <div class="product-container col-12 offset-1">
                 <div class="row mt-1 mb-2"></div>
@@ -95,16 +103,14 @@
                     {% endfor %}
                 </div>
             </div>
-            <!-- Footer goes here-->
-            <div class="container-fluid">
-                <div class="row mt-1 pt-5">
-                    <div class="col-12">
-                        {% include 'includes/footer.html' %}
-                    </div>
-                </div>
-            </div>
+ 
         </div>
-    </div></div>
+    </div>           
+<!-- Footer goes here-->           
+
+ {% include 'includes/footer.html' %}
+ 
+</div>
 {% endblock %}
 
 {% block postloadjs %}
