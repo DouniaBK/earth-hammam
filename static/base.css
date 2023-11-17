@@ -401,10 +401,7 @@ a.category-badge > span.badge:hover {
     border: 1px solid #d39e00;
     padding: 0.5rem;
 }
-  
-.table td:hover {
-    background: #d39e00;
-}
+
 
 .table td:visited {
     background: #495057;
