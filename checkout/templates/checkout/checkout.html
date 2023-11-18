@@ -16,18 +16,16 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container">
+    <div class="container ">
         <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Checkout</h2>
-                <hr>
+            <div class="container col-8 text-center mt-2 pb-4 pt-4">
+                <h2 class="text-uppercase">Checkout</h2>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12 col-lg-6 order-lg-last mb-5">
-                <p class="text-muted">Order Summary ({{ item_count }})</p>
+        <div class="row bg-offwhite pb-3" style="border:solid; border-color: #d39e00; border-radius: 10px;">
+            <div class="col-12 col-lg-6 order-lg-last mb-5 text-center pt-4">
+                <p class="text-uppercase lead bg-olive text-white">Order Summary </p>
                 <div class="row">
                     <div class="col-7 offset-2">
                         <p class="mb-1 mt-0 small text-muted">Item</p>
@@ -37,15 +35,15 @@
                     </div>
                 </div>
                 {% for product in bag_items %}
-                    <div class="row">
+                    <div class="row pb-3">
                         <div class="col-2 mb-1">
                             <a href="">
-                                <img class="w-100" src="{{ product.item.image.url }}" alt="{{ product.name }}">
+                                <img class="w-100 rounded" src="{{ product.item.image.url }}" alt="{{ product.name }}">
                             </a>
                         </div>
                         <div class="col-7">
-                            <p class="my-0"><strong>{{ product.item.name }}</strong></p>
-                            <p class="my-0 small text-muted">Qty: {{ product.quantity }}</p>
+                            <p class="my-0 "><strong>{{ product.item.name }}</strong></p>
+                            <p class="my-0 small text-muted">Quantity: {{ product.quantity }}</p>
                         </div>
                         <div class="col-3 text-right">
                             <p class="my-0 small text-muted">${{ product.item.price | calc_subtotal:product.quantity }}</p>
@@ -53,7 +51,7 @@
                     </div>
                 {% endfor %}
                 <hr class="my-0">
-                <div class="row text-black text-right">
+                <div class="row text-black text-right pt-3">
                     <div class="col-7 offset-2">
                         <p class="my-0">Order Total:</p>
                         <p class="my-0">Delivery:</p>
@@ -66,8 +64,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-6">
-                <p class="text-muted">Please fill out the form below to complete your order</p>
+            <div class="col-12 col-lg-6 bg-offwhite pt-4">
+                <p class="text-uppercase lead bg-olive text-white text-center"> Billing Information</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
