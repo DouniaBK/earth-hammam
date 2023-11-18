@@ -26,17 +26,19 @@ body {
     width: fit-content;
 }
 
-.healing-button {
-    background: #D5CDC9;
-    color: white;
-    min-width: 260px;
-}
+
 
 .btn-black {
     background: black;
     color: white;
 }
 
+/* Earth Hammam color Pallet */
+.healing-button {
+    background: #D5CDC9;
+    color: white;
+    min-width: 260px;
+}
 .healing-button:hover,
 .healing-button:active,
 .healing-button:focus,
@@ -91,6 +93,11 @@ body {
 
 .bg-wetsand {
     background: #d39e00;
+}
+
+#border-wetsand {
+    border: solid;
+    border-color: #d39e00;
 }
 .overlay {
     height: 100%;
@@ -196,18 +203,6 @@ body {
 .card{
     width: 100%;
 }
-
-/*divider image*/
-#divider-img {
-    background-color: #0dcaf008;
-  }
-  .underlined {
-    border-bottom: 1px solid #c7c7c7;
-  }
-  
-  .table {
-    text-align: center;
-  }
 
 /* the scroll to the top button*/
 .btt-button {

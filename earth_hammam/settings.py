@@ -130,7 +130,6 @@ SOCIALACCOUNT_PROVIDERS = {
 SITE_ID = 1
 
 
-
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True  # users need an email to login
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
