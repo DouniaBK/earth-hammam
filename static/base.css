@@ -6,15 +6,8 @@ body {
     background: url('/static/images/homepage_massage.png') no-repeat center center fixed;
     background-size: cover;
     color: #555;
-    font-family: 'Chivo', sans-serif;
-    font-weight: 300
+    font-family: 'Montserrat';
 }
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-style: italic;
-   }
 
 /* from Bulma to keep all icons centered with correct size */
 .icon {
