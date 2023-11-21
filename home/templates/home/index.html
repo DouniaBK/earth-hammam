@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+<meta name="description" content=" Earth Hammam welcome page with a button leading to Earth Hammam facility and exclusive offers' page">
+<title> Welcome to Earth Hammma | Leave your stress behind and enter our sunctuary</title>
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -18,7 +23,7 @@
                 </h1>
                 <div class="my-5">
                     <h4>
-                        <a href="{% url 'treatments' %}" class="healing-button bg-olive btn btn-lg rounded-1 py-3">HEALING STARTS HERE</a>
+                        <a href="{% url 'hammam' %}" class="healing-button bg-olive btn btn-lg rounded-1 py-3">Experience Earth Hammam</a>
                     </h4>
                 </div>
             </div>

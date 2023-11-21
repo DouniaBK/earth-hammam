@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+<meta name="description" content="checkout successful page including order summary and billing information and an order-confirmation-email notification ">
+<title> You have successfully ordered an Item from the Earth Hammmam Store</title>
+{% endblock %}
+
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}

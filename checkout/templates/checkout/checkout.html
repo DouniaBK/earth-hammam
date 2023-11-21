@@ -2,6 +2,12 @@
 {% load static %}
 {% load bag_tools %}
 
+{% block extra_meta %}
+<meta name="description" content="checkout page including order summary, billing information and payment">
+<title> Earth Hammma Checkout Details</title>
+{% endblock %}
+
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
