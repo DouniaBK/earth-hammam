@@ -18,19 +18,21 @@
 {% block content %}
 <div class="overlay">
     <div class="container-fluid mt-6">
-        <div class="row">
+
+      <!------------------------------------- Section Earth Hammmam Facility goes here-->
+        <section class="row">
             <div class="container col-8 text-center mt-3">
-                <h2 class="logo-font">Earth Hammam</h2>
+                <h2 class="logo-font">Earth Hammam Facility</h2>
                 <div class="container col-6">
                     <p> Earth Hammam wellness and spa facility is inspired by the North African landscape, culture and colors. Woven through that is serene wellness,
                     bath soaks, stream  and treatments rooms, where ancient Moroccan healing traditions take on a modern twist.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
         <hr class="hr" />
-
-        <div class="row">
+      <!------------------------------------- Section Earth Hammmam Facility Carousel goes here-->
+        <section class="row">
             <div class="container col-sm-6 col-md-6 col-lg-6 col-xl-8">
                 <div class="row mt-1 mb-2">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -65,19 +67,21 @@
                         optimal wellbeing.
                     </p>
                     <div class="d-flex justify-content-center">
-                      <a href="{% url 'tickets' %}" id="tickets">
+                      <a href="{% url 'tickets' %}">
                         <small class="text-muted me-md-2"> Entrance Ticket </small>
                       </a>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <hr class="hr 3px" />
 
+        <!------------------------------------- Section Exclusive Offers goes here-->
 
-        </div>
-        <div class="row">
+
+
+        <section class="row">
           <div class=" container col-8 text-center mt-3">
               <h2 class="logo-font"> Exclusive Offers at Earth Hammam </h2>
               <div class="container col-6">
@@ -86,108 +90,110 @@
                     a full body massage and a rejuvenating facial.</p>
               </div>
           </div>
+       </section>
+        <!------------------------------------- Exclusive Offers Cards goes here-->
+        <section class="row">
+          <div class="container col-8">
+              <div class="row mt-1 pt-5 mb-2 row-cols-1 row-cols-md-3 g-4">
+                          <div class="card mb-3 bg-offwhite">
+                            <div class="card h-100 border-0">
+                              <img src="{% static 'images/back-massage.png' %}" class="card-img-top" alt="Wellness room for massages"/>
+                              <div class="card-body bg-offwhite">
+                                <h5 class="card-title">Wellness and Treatments</h5>
+                                <p class="card-text">Enjoy our serene treatments Packages to help you release, rebalance
+                                  and restore at our Earth Hammam Wellness Center.</p>
+                                <a href="{% url 'treatments' %}" id="treatments">
+                                    <small class="text-muted"> Discover our Treatments Packages</small>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card mb-3 bg-offwhite">
+                            <div class="card card h-100 border-0">
+                              <img
+                                  src="{% static 'images/pamper-img.png' %}"
+                                  alt=" Maroccan Lanterns On restaurant ceiling"
+                                  class="img-fluid rounded-start"
+                              />
+                              <div class="card-body bg-offwhite">
+                                <h5 class="card-title">Dinning and Events</h5>
+                                <p class="card-text">
+                                  Savour healthy local dishes at Earth Hammam's Restaurant.
+                                  Local musicians provide the soundtrack to dining in the restaurant’s
+                                  serene courtyard every evening, a candlelit fountain at its heart.
+                                  Berber culinary traditions and Moorish, Andalusian and Middle Eastern
+                                  influences meet on the menu – a kaleidoscope of flavours true to the
+                                  melting-pot cuisine of Morocco.
+                                </p>
+                                <p class="card-text">
+                                  <small class="text-muted"> No Reservation Needed </small>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="card mb-3 bg-offwhite">
+                            <div class="card h-100 border-0">
+                              <img 
+                                  src="{% static 'images/treatment-room.png' %}"
+                                  alt=" Wellness room for massages" 
+                                  class="card-img-top" 
+                              />
+                              <div class="card-body bg-offwhite">
+                                <h5 class="card-title">Shop Our Products</h5>
+                                <p class="card-text">
+                                  Enjoy our serene treatments Packages to help you release, rebalance
+                                  and restore at our Earth Hammam Wellness Center.
+                                </p>
+                                <p>
+                                <a href="{% url 'items' %}">
+                                    <small class="text-muted">  Shop Our Products</small>
+                                </a>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          
+          </div>
       </div>
+    </section>
 
-            <div class="row">
-              <div class="container col-8">
-                  <div class="row mt-1 pt-5 mb-2 row-cols-1 row-cols-md-3 g-4">
-                              <div class="card mb-3 bg-offwhite">
-                                <div class="card h-100 border-0">
-                                  <img src="{% static 'images/back-massage.png' %}" class="card-img-top" alt="Wellness room for massages"/>
-                                  <div class="card-body bg-offwhite">
-                                    <h5 class="card-title">Wellness and Treatments</h5>
-                                    <p class="card-text">Enjoy our serene treatments Packages to help you release, rebalance
-                                      and restore at our Earth Hammam Wellness Center.</p>
-                                    <a href="{% url 'treatments' %}" id="treatments">
-                                        <small class="text-muted"> Discover our Treatments Packages</small>
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
 
-                              <div class="card mb-3 bg-offwhite">
-                                <div class="card card h-100 border-0">
-                                  <img
-                                      src="{% static 'images/pamper-img.png' %}"
-                                      alt=" Maroccan Lanterns On restaurant ceiling"
-                                      class="img-fluid rounded-start"
-                                  />
-                                  <div class="card-body bg-offwhite">
-                                    <h5 class="card-title">Dinning and Events</h5>
-                                    <p class="card-text">
-                                      Savour healthy local dishes at Earth Hammam's Restaurant.
-                                      Local musicians provide the soundtrack to dining in the restaurant’s
-                                      serene courtyard every evening, a candlelit fountain at its heart.
-                                      Berber culinary traditions and Moorish, Andalusian and Middle Eastern
-                                      influences meet on the menu – a kaleidoscope of flavours true to the
-                                      melting-pot cuisine of Morocco.
-                                    </p>
-                                    <p class="card-text">
-                                      <small class="text-muted"> No Reservation Needed </small>
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                              
-                              <div class="card mb-3 bg-offwhite">
-                                <div class="card h-100 border-0">
-                                  <img 
-                                      src="{% static 'images/treatment-room.png' %}"
-                                      alt=" Wellness room for massages" 
-                                      class="card-img-top" 
-                                  />
-                                  <div class="card-body bg-offwhite">
-                                    <h5 class="card-title">Shop Our Products</h5>
-                                    <p class="card-text">
-                                      Enjoy our serene treatments Packages to help you release, rebalance
-                                      and restore at our Earth Hammam Wellness Center.
-                                    </p>
-                                    <p>
-                                    <a href="{% url 'items' %}" id="items">
-                                        <small class="text-muted">  Shop Our Products</small>
-                                    </a>
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
 
-                             
+<!---------------------------------------- Section Testimonials go here-->
+      <section class="row">
+        <div class="container col-8">
+            <div class="row mt-1  pt-5 mb-2 row-cols-1 g-4">
+              <div class="row mt-1 pt-5">
+                    <div class="row" id="testimonials">
+                        <div class="row d-flex justify-content-center">
+                            <div class=" col text-uppercase mb-2  pb-3 pt-5 text-center">
+                              <h3> <strong> What our clients say</strong> </h3>
+                            </div>
+                        </div>
+
+                        <div class="col-10 row text-center d-flex align-items-stretch">
+                          {% for testimonial in all_testimonials %}
+                          <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+                            <div class="card h-100 border-0 bg-offwhite">
+                              <div class="card-body">
+                                <p class="testimonial-card-body dark-grey-text mt-4">" {{testimonial.body}} "</p>
+                                <hr/>
+                                <small class="mb-5">{{testimonial.name}}</small>
+                              </div>
+                            </div>
+                          </div>
+                          {% endfor %}
+                        </div>
+                    </div>
               </div>
           </div>
-
-
-
-          <!--Testimonials go here-->
-            <div class="row">
-              <div class="container col-8">
-                  <div class="row mt-1  pt-5 mb-2 row-cols-1 g-4">
-                    <div class="row mt-1 pt-5">
-                          <div class="row" id="testimonials">
-                              <div class="row d-flex justify-content-center">
-                                  <div class=" col text-uppercase mb-2  pb-3 pt-5 text-center">
-                                    <h3> <strong> What our clients say</strong> </h3>
-                                  </div>
-                              </div>
-
-                              <div class="col-10 row text-center d-flex align-items-stretch">
-                                {% for testimonial in all_testimonials %}
-                                <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
-                                  <div class="card h-100 border-0 bg-offwhite">
-                                    <div class="card-body">
-                                      <p class="testimonial-card-body dark-grey-text mt-4">" {{testimonial.body}} "</p>
-                                      <hr/>
-                                      <small class="mb-5">{{testimonial.name}}</small>
-                                    </div>
-                                  </div>
-                                </div>
-                                {% endfor %}
-                              </div>
-                          </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-                      <!-- Footer goes here-->{% include 'includes/footer.html' %}
+        </div>
+      </section>
+<!------------------------------------- Footer goes here-->
+      {% include 'includes/footer.html' %}
 
 
 </div>
