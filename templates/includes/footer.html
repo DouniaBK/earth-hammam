@@ -42,10 +42,11 @@
                 <!-- Section: Social media -->
 
                 <!-- Section: Form -->
-                <section class="">
-                    <form action="">
+                <section class="newsletter">
+                    <form action="{% url 'subscribe' %}" method="post">
                     <!--Grid row-->
                     <div class="row d-flex justify-content-center">
+                        {% csrf_token %}
                         <!--Grid column-->
                         <div class="col-md-5 col-12">
                         <p class="pt-2">
@@ -57,10 +58,13 @@
                         <!--Grid column-->
                         <div class="col-md-5 col-12">
                         <!-- Email input -->
+                        <div class="form-outline form-white">
+                            <input type="email" id="SubscriberName" class="form-control" />
+                            <label class="form-label" for="SubscriberName" placeholder="Name"></label>
+                        </div>
                         <div class="form-outline form-white mb-4">
-                            <input type="email" id="form5Example21" class="form-control" />
-                            <label class="form-label" for="form5Example21">Email address</label>
-                            
+                            <input type="email" id="SubscriberEmail" class="form-control" />
+                            <label class="form-label" for="SubscriberEmail" placeholder="Email"></label>
                         </div>
                         <!-- Submit button -->
                             <button type="submit" class="btn btn-outline-light mb-4">
@@ -170,7 +174,7 @@
 
                 <!-- Copyright -->
                 <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2020 Copyright:
+                    © {% now "Y" %} Copyright:
                 <a class="text-white" href="{% url 'hammam' %}">Earth Hammam</a>
                 </div>
                 <!-- Copyright -->
