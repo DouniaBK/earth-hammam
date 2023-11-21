@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.contrib import messages
@@ -67,7 +67,7 @@ def newsletter(request):
             for error in list(form.errors.values()):
                 messages.error(request, error)
 
-        return redirect('/')
+        return redirect('home')
 
     form = NewsletterForm()
     form.fields['receivers'].initial = ','.join(
