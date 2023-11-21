@@ -58,9 +58,10 @@ INSTALLED_APPS = [
     'profiles',
     'booking',
     'marketing',
-    'whitenoise',
     # Other
     'crispy_forms',
+    'whitenoise',
+    'tinymce',
 ]
 
 MIDDLEWARE = [

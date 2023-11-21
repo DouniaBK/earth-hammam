@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.contrib import messages
+from django.core.mail import EmailMessage
+from .forms import NewsletterForm
 from .models import SubscribedUser
+from .decorators import user_is_superuser
 
 
 def subscribe(request):
@@ -17,7 +21,7 @@ def subscribe(request):
         if get_user_model().objects.filter(email=email).first():
             messages.error(
                 request, f"A registered user with associated {email} found, login to proceed."
-                )
+            )
             return redirect(request.META.get("HTTP_REFERER", "/"))
 
         subscribe_user = SubscribedUser.objects.filter(email=email).first()
@@ -39,3 +43,34 @@ def subscribe(request):
         messages.success(
             request, f'{email} successfully subscribed')
         return redirect(request.META.get("HTTP_REFERER", "/"))
+
+
+@user_is_superuser
+def newsletter(request):
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data.get('subject')
+            receivers = form.cleaned_data.get('receivers').split(',')
+            email_message = form.cleaned_data.get('message')
+
+            mail = EmailMessage(
+                subject, email_message, f"PyLessons <{request.user.email}>", bcc=receivers)
+            mail.content_subtype = 'html'
+
+            if mail.send():
+                messages.success(request, "Newsletter succesfully sent.")
+            else:
+                messages.error(request, "There was an error sending email")
+
+        else:
+            for error in list(form.errors.values()):
+                messages.error(request, error)
+
+        return redirect('/')
+
+    form = NewsletterForm()
+    form.fields['receivers'].initial = ','.join(
+        [active.email for active in SubscribedUser.objects.all()])
+    return render(
+        request=request, template_name='marketing/newsletter.html', context={'form': form})
