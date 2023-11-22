@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+      <hr>
+      <h2 class="logo-font mb-4">Unsubscribe to Earth Hammma Newsletter</h2>
+      <hr>
+      
+      <form method="post" action="{% url 'unsubscribe' %}">
+        {% csrf_token %}
+          <input type="email" name="email" id="Unsubscribe" class="form-control"  value="Email"/>
+          <label class="form-label" for="Unsubscribe">Email</label>
+        <button type="submit">Unsubscribe</button>
+        <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Cancel</a>
+      </form>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $('#new-image').change(function() {
+            var file = $('#new-image')[0].files[0];
+            $('#filename').text(`Image will be set to: ${file.name}`);
+        });
+    </script>
+{% endblock %}
