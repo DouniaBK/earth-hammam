@@ -12,18 +12,20 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container">
-      <hr>
-      <h2 class="logo-font mb-4">Unsubscribe to Earth Hammma Newsletter</h2>
-      <hr>
-      <div class="col-md-5 col-8 text-center">
-      <form method="post" action="{% url 'unsubscribe' %}">
-        {% csrf_token %}
-          <input type="email" name="email" id="Unsubscribe" class="form-control"  value="Email"/>
-          <label class="form-label" for="Unsubscribe"></label>
-        <button class="btn btn-black mt-4"   type="submit">Unsubscribe</button>
-      </form>
-    </div>
+    <div class="container-fluid mt-6">
+            <!------------------------------------- Section Earth Hammmam Facility goes here-->
+            <section class="row">
+                <div class="container col-8 text-center mt-3">
+                    <h2 class="logo-font">Unsubscribe to Earth Hammma Newsletter</h2>
+                    <div class="container col-6">
+                        <form method="post" action="{% url 'unsubscribe' %}">
+                            {% csrf_token %}
+                              <input type="email" name="email" id="Unsubscribe" class="form-control"  placeholder="Ente your Email Address"/>
+                            <button class="btn btn-black mt-4"   type="submit">Unsubscribe</button>
+                          </form>
+                    </div>
+                </div>
+            </section>
     </div>
 {% endblock %}
 

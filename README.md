@@ -250,3 +250,9 @@ The content of the Website has been used and developed with the consent of a cer
 
 
 
+notes from rory:
+cloudinary doubled all the images
+css file in its own css
+break down the long lines
+add comments for every function
+database browsers download database schema
