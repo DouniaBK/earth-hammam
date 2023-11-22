@@ -2,6 +2,11 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% block extra_meta %}
+<meta name="description" content="Unsubscribe from Earth Hammam Newsletter">
+<title> Unsubscribe from Earth Hammam Newsletter</title>
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -13,14 +18,14 @@
 {% block content %}
     <div class="overlay"></div>
     <div class="container-fluid mt-6">
-            <!------------------------------------- Section Earth Hammmam Facility goes here-->
+            <!------------------------------------- Section Earth Hammmam Unsibscribe form goes here-->
             <section class="row">
                 <div class="container col-8 text-center mt-3">
-                    <h2 class="logo-font">Unsubscribe to Earth Hammma Newsletter</h2>
-                    <div class="container col-6">
+                    <h2 class="logo-font">Unsubscribe from Earth Hammam Newsletter</h2>
+                    <div class="container col-4">
                         <form method="post" action="{% url 'unsubscribe' %}">
                             {% csrf_token %}
-                              <input type="email" name="email" id="Unsubscribe" class="form-control"  placeholder="Ente your Email Address"/>
+                              <input type="email" name="email" id="Unsubscribe" class="form-control text-center"  placeholder="Ente your Email Address"/>
                             <button class="btn btn-black mt-4"   type="submit">Unsubscribe</button>
                           </form>
                     </div>
