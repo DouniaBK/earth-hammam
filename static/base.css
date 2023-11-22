@@ -99,17 +99,29 @@ body {
     border: solid;
     border-color: #d39e00;
 }
+
 .overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
+    /* height: 100%;*/
+    /* width: 100%;*/
+    /* top: 0;*/
+    /* left: 0;*/
+    /* position: fixed;*/
     background: #fff4eb;
-    z-index: -1;
+    /* z-index: -1;*/
     overflow: scroll!important;
 }
+
+
 /* Product - Ticket - Treatment pages  */
+
+.product-container {
+
+}
+
+.main-content {
+    
+}
+
 
 .form-col-center {
     display: flex!important;
@@ -151,8 +163,8 @@ body {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: nowrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    /*margin-right: -15px;
+    margin-left: -15px;*/
     justify-content: center;
 }
 
