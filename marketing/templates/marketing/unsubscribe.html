@@ -16,14 +16,14 @@
       <hr>
       <h2 class="logo-font mb-4">Unsubscribe to Earth Hammma Newsletter</h2>
       <hr>
-      
+      <div class="col-md-5 col-8 text-center">
       <form method="post" action="{% url 'unsubscribe' %}">
         {% csrf_token %}
           <input type="email" name="email" id="Unsubscribe" class="form-control"  value="Email"/>
-          <label class="form-label" for="Unsubscribe">Email</label>
-        <button type="submit">Unsubscribe</button>
-        <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Cancel</a>
+          <label class="form-label" for="Unsubscribe"></label>
+        <button class="btn btn-black mt-4"   type="submit">Unsubscribe</button>
       </form>
+    </div>
     </div>
 {% endblock %}
 

@@ -55,7 +55,7 @@ def newsletter(request):
             email_message = form.cleaned_data.get('message')
 
             mail = EmailMessage(
-                subject, email_message, f"Earth Hammam <{request.user.email}>", bcc=receivers)
+                subject, email_message, f"Earth Hammam <{request.user.email}>")
             mail.content_subtype = 'html'
 
             if mail.send():
@@ -75,22 +75,15 @@ def newsletter(request):
     return render(
         request=request, template_name='marketing/newsletter.html', context={'form': form})
 
-
 def unsubscribe(request):
-    return render(request, "marketing/unsubscribe.html")
-
-def unsubscribed(request):
     
-    try:
-        if request.method == 'POST':
-            email = request.POST.get('email', None)
-            subscribed_user = SubscribedUser.objects.filter(email=email).first()
+    if request.method == 'POST':
+        email = request.POST.get('email', None)
+        subscribed_user = SubscribedUser.objects.filter(email=email).first()
+        if subscribed_user:
             #  delete subscribed user
             subscribed_user.delete()
             #  send an email to him that he was unsubscribed
             messages.success(
                 request, f'The following {email} addess has successfully been unsubscribed')
-        return render(request, "marketing/unsubscribe.html", context={'blabla': 1})
-    except ImportError as exc:
-        print(exc)
-
+    return render(request, "marketing/unsubscribe.html", context={'blabla': 1})
