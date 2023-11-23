@@ -22,30 +22,27 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">My Profile</h2>
-                <hr>
+            <div class="col container col-8 text-center mt-2 pb-4 pt-4">
+                <h2 class="text-uppercase">My Profile</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <p class="text-muted">Default Delivery Information</p>
-                <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+        <div class="row bg-offwhite pb-3" style="border:solid; border-color: #d39e00; border-radius: 10px;">
+            <div class="col-12 col-lg-6 mb-5 text-center pt-4">
+                <h3 class="text-uppercase lead bg-olive text-white p-1">Delivery Information</h3>
+                <form class="mt-4" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
                     <button class="btn btn-wetsand rounded-0 text-uppercase float-right">Update Information</button>
                 </form>
             </div>
-            <div class="col-12 col-lg-6">
-                <p class="text-muted">Order History</p>
+            <div class="col-12 col-lg-6 pt-4">
+                <h3 class="text-uppercase lead bg-olive text-white text-center p-1">Order History</h3>
                 <div class="order-history table-responsive">
                     <table class="table table-sm table-borderless">
                         <thead>
                             <tr>
                                 <th>Order Number</th>
                                 <th>Date</th>
-                                <th>Items</th>
                                 <th>Order Total</th>
                             </tr>
                         </thead>
@@ -59,15 +56,6 @@
                                         </a>
                                     </td>
                                     <td>{{ order.date }}</td>
-                                    <td>
-                                        <ul class="list-unstyled">
-                                            {% for item in order.lineitems.all %}
-                                                <li class="small">
-                                                    {{ product.item.name }} x {{ product.quantity }}
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
                                     <td>${{ order.grand_total }}</td>
                                 </tr>
                             {% endfor %}

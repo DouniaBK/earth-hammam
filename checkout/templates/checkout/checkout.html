@@ -30,11 +30,11 @@
         </div>
 
         <div class="row bg-offwhite pb-3" style="border:solid; border-color: #d39e00; border-radius: 10px;">
-            <div class="col-12 col-lg-6 order-lg-last mb-5 text-center pt-4">
-                <p class="text-uppercase lead bg-olive text-white">Order Summary </p>
-                <div class="row">
+            <div class="col-12 col-lg-6 order-lg-last mb-5 text-center pt-4 ">
+                <h3 class="text-uppercase lead bg-olive text-white p-1">Order Summary </h3>
+                <div class="row mt-4">
                     <div class="col-7 offset-2">
-                        <p class="mb-1 mt-0 small text-muted">Item</p>
+                        <p class="mb-1 mt-0 small text-muted p-1">Item</p>
                     </div>
                     <div class="col-3 text-right">
                         <p class="mb-1 mt-0 small text-muted">Subtotal</p>
@@ -49,19 +49,19 @@
                         </div>
                         <div class="col-7">
                             <p class="my-0 "><strong>{{ product.item.name }}</strong></p>
-                            <p class="my-0 small text-muted">Quantity: {{ product.quantity }}</p>
+                            <p class="my-0 small text-muted ">Quantity: {{ product.quantity }}</p>
                         </div>
                         <div class="col-3 text-right">
-                            <p class="my-0 small text-muted">${{ product.item.price | calc_subtotal:product.quantity }}</p>
+                            <p class="my-0 small text-black ">${{ product.item.price | calc_subtotal:product.quantity }}</p>
                         </div>
                     </div>
                 {% endfor %}
                 <hr class="my-0">
                 <div class="row text-black text-right pt-3">
                     <div class="col-7 offset-2">
-                        <p class="my-0">Order Total:</p>
-                        <p class="my-0">Delivery:</p>
-                        <p class="my-0">Grand Total:</p>
+                        <p class="my-0 text-muted">Order Total:</p>
+                        <p class="my-0 text-muted">Delivery:</p>
+                        <p class="my-0 text-muted">Grand Total:</p>
                     </div>
                     <div class="col-3">
                         <p class="my-0">${{ total | floatformat:2 }}</p>
@@ -71,11 +71,11 @@
                 </div>
             </div>
             <div class="col-12 col-lg-6 bg-offwhite pt-4">
-                <p class="text-uppercase lead bg-olive text-white text-center"> Billing Information</p>
+                <h3 class="text-uppercase lead bg-olive text-white text-center p-1"> Billing Information</h3>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                        <legend class="fieldset-label small text-black px-2 w-auto pt-4">Details</legend>
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                     </fieldset>
@@ -111,15 +111,15 @@
                     </fieldset>
 
                     <div class="submit-button text-right mt-5 mb-2 d-flex flex-row justify-content-between align-items-start">
-                        <a href="{% url 'view_bag' %}" class="btn btn-wetsand rounded-0">
+                        <a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0 btn-lg">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
-                            <span class="font-weight-bold">Adjust Bag</span>
+                            <span class="text-uppercase">Adjust Bag</span>
                         </a>
                         <div>
-                        <button id="submit-button" class="btn btn-black rounded-0">
-                            <span class="font-weight-bold">Complete Order</span>
+                        <button id="submit-button" class="btn btn-wetsand rounded-0 btn-lg">
+                            <span class="text-uppercase">Complete Order</span>
                             <span class="icon">
                                 <i class="fas fa-lock"></i>
                             </span>

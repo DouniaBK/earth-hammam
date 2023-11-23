@@ -4,6 +4,7 @@
 
 {% block extra_meta %}
 <meta name="description" content=" Customer shopping bag detailing what the customer added to their shopping bag including price, adjustable quantity section and secure checkout button at the bottom leading to the payment section">
+<title> Shopping Bag Summary</title>
 {% endblock %}
 
 {% block page_header %}
@@ -29,9 +30,9 @@
             <div class="container col-sm-6 col-md-6 col-lg-6 col-xl-8 bg-offwhite pb-3" style="border:solid; border-color: #d39e00; border-radius: 10px;">
                 {% if bag_items %}
                     <div class="table-responsive rounded pt-3">
-                        <table class="table table-sm table-borderless text-center">
-                            <thead class=" text-uppercase bg-olive pt-5 text-white">
-                                <tr>
+                        <table class="table table-sm table-borderless text-center pt-4">
+                            <thead class=" text-uppercase bg-olive p-1 lead text-white">
+                                <tr class="mb-4">
                                     <th scope="col">Product Info</th>
                                     <th scope="col"></th>
                                     <th scope="col">Price</th>
@@ -85,7 +86,7 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-link text-info"><small>Update</small></a>
+                                        <a class="update-link text-info float-left"><small>Update</small></a>
                                         <a class="remove-item text-danger float-right" id="remove_{{ product.item_id }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
