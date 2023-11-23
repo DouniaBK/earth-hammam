@@ -3,12 +3,17 @@ html {
 }
 
 body {
-    /* background: url('/static/images/homepage_massage.png') no-repeat center center fixed; */
-    background-size: cover;
     /*background-color: #fff4eb;*/
     color: #555;
     font-family: 'Montserrat';
 }
+
+.index-wrapper {
+    background: url('/static/images/homepage_massage.png') no-repeat center center fixed; 
+    background-size: cover;
+}
+
+
 
 /* from Bulma to keep all icons centered with correct size */
 .icon {
