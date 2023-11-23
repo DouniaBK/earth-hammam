@@ -11,9 +11,18 @@ body {
 .index-wrapper {
     background: url('/static/images/homepage_massage.png') no-repeat center center fixed; 
     background-size: cover;
+    height: 100vh;
 }
 
+.index-content {
+    padding-top: 35vh;
+    padding-left: 10vw;
+    padding-right: 20vw;
+}
 
+.topnav {
+
+}
 
 /* from Bulma to keep all icons centered with correct size */
 .icon {
