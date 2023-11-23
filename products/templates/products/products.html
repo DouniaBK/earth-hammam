@@ -16,26 +16,19 @@
 {% endblock %}
 
 {% block content %}
-    <div class="" style="background:#fff4eb;">
     <div class="main-content">
-        <div class="">
             <div class="col text-center pt-5">
-                <h2 class="text-uppercase">earth Hammam Signature Products</h2>
-                <div class="container col-6">
-                    <p>
-                        Give the gift of a quiet nurturing moment, or one that uplifts and revives to yourself.
-                        Earth Hammam candles, soaps and essential oils are perfectly suited to those who consider their home a sanctuary. Earth Hammam products are inspired by our facility atmosphere. 
-                        Take Earth Hammam signature atmosphere and scent home with you.
-                    </p>
-                </div>
+                <h2 class="text-uppercase">Earth Hammam Signature Products</h2>
+                <p>
+                    Give the gift of a quiet nurturing moment, or one that uplifts and revives to yourself.
+                    Earth Hammam candles, soaps and essential oils are perfectly suited to those who consider their home a sanctuary. Earth Hammam products are inspired by our facility atmosphere. 
+                    Take Earth Hammam signature atmosphere and scent home with you.
+                </p>
             </div>
-        </div>
-        <div class="">
+            
             <div class="product-container">
-                <div class="d-flex mt-1 mb-2"></div>
-                <div class="d-flex justify-content-center">
                     {% for item in items %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="product">
                             <div class="card h-100 border-0">
                                 {% if item.image %}
                                 <a href="">
@@ -88,20 +81,14 @@
                             </div>
                         </div>
                     {% endfor %}
-                </div>
             </div>
-
-
-        </div>
     </div>
 
-        <!-- Footer goes here
-    {% include 'includes/footer.html' %}
-
-</div>
+        <!-- Footer goes here -->
+{% include 'includes/footer.html' %}
 
 {% endblock %}
-
+<!-- 
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">

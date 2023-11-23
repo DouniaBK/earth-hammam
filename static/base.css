@@ -3,8 +3,9 @@ html {
 }
 
 body {
-    background: url('/static/images/homepage_massage.png') no-repeat center center fixed;
+    /* background: url('/static/images/homepage_massage.png') no-repeat center center fixed; */
     background-size: cover;
+    /*background-color: #fff4eb;*/
     color: #555;
     font-family: 'Montserrat';
 }
@@ -114,12 +115,21 @@ body {
 
 /* Product - Ticket - Treatment pages  */
 
-.product-container {
-
+.main-content {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.main-content {
-    
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    flex: 1;
+    margin: 1rem;
+    min-width: 300px;
 }
 
 
