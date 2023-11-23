@@ -377,6 +377,10 @@ a.category-badge > span.badge:hover {
 
 /* Footer */
 
+footer {
+    background-color: #52452e!important;
+}
+
 .bg-footer {
     background-color: #52452e!important;
 }

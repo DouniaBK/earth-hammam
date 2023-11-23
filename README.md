@@ -69,37 +69,40 @@ The font family and style used are:
 A minimalistic favicon with the word 'Hammam" has been added giving the site a professional look. The favicon has been generated using [Hoststar](https://www.hoststar.ch/de).
 # Features
 ## Page Elements:
-The site contains various pages to introduce the user to the services and approaches this particular life coach/therapist offers. The following pages are accessible from the extendable navbar on top:
+The site contains various pages to introduce the user to the services and approaches Earth Hammam offers. The following pages are accessible from the extendable navbar on top:
 ### Home page:
 
-The first page welcomes the user into a simple and serene site of a life coach that offers different services and information to help female cancer patients. The site has a simple navbar that redirects the user to the Coaching Services, Free Resouces, Coaching Sessions, a dropdown menu for login/logout/register/Profile feature and back to the Home page. Once logged in or registered the navbar expands adding the coaching sessions section, where the user can book sessions with the therapist, and the profile section, where the user can edit or delete their account to protect their privacy. Furthermore, the home page is divided into 4 main sections:
+The Home page welcomes the user into the serene world of wellness by Earth Hammam, with an elegant image of a woman being pampered with a massage and a title inviting the customer to "Treat the body and ease the soul" amd button leading the user to discover Earth Hammam Marrakech. The button leads to the Hammam section of the site where the overall facility is described.
 
-    1. The hero section features as a background an image of a sunset with a gradient that sets the tone of the entire website, evoking a calm, relaxing and welcoming atmosphere, topped with text to showcase the coach's name/brand and inspirational quotes. 
+### Hammam:
 
-    2. The About the Coach section features a personal introduction of the coach, who is also a cancer survivor and a certified therapist.
- 
-    3. The Coaching Services section is headed with a brief introduction of the coaching packages the coach offers including a button, get started, which prompts the user to register, and an account and eventually book a first free session with the coach using the booking calendar.
+    1. The first section features the Earth Hammam facility including a brief description of what Earth Hammam stands for, a carousel with images of everything the facility offers such as a hammam, pool, soak tub, aromatherapy treatments and massage rooms. 
+
+    2. The next section features exclusive offers at Earth Hammam, such as the treatments, the restaurants and the Earth Hammam signature products with links to draw the user to shop as well as to facilitate navigation.
+
+    3. The Testimonials section is displayed as a powerful marketing tool to build trust and inspire professionalism. The testimonials section features only three testimonials to foster esthetic balance and harmony. The admin can update, delete, publish or choose to keep some testimonials saved as drafts for later. This site section is minimal, responsive and centered containing the author of the testimonial and the body of the testimonial. The establishment is then in control of the image they want to portray to clients.
     
-    4. The Testimonials section is displayed as a powerful marketing tool to build trust and inspire professionalism.
-    
-### Coaching services:
+### Tickets:
 This part is featured twice on the site, once with brief information on the home page and again accessible from the navbar with more detailed information about the number of sessions, the duration, price and techniques used allowing the user to delve in and find the most suitable package. This section includes a button that will redirect the user to registering or logging in and then selecting a service and eventually booking a session at a suitable time and canceling it in case of a change of plan.
 
-### Coaching resources:
+### Treatments:
 This page is intended to simply give more information about the free resources available to them at the clinic and during the therapy sessions. As the goal is to inform, the esthetic is clean, minimal, light and familiar to help the user's brain focus and pay attention. 
  
-### Coaching sessions:
+### Products:
 
-![Coaching Sessions](static/images/booking-screenshot.png)
-This page is accessible from the navbar once registered or logged in as well as from the coaching sections and the home page. This section allows the user to select a service and then book a session with the coach with a handy calendar that shows which days and times are still available in white and the sessions that are not available greyed out as well as the sessions selected by that particular user in blue. Once the user selects an appropriate time and a service and submits it that session then appears in their personal list of sessions which in turn can be cancelled. To sum up, the user selects a service from the drop-down list then an available session on the calendar, clicks submit and that session will then appear as booked by them on the calendar in a light blue colour as well as on the my sessions section. The coach/admin will then personally review their schedule and the user’s profile information on the admin panel to contact the user if needed. 
 
+
+
+### Booking:
+
+![Booking](static/images/booking-screenshot.png)
+
+This page is accessible from the navbar once registered or logged in. This section allows the user to select a service and then book one of the Treatments offered with a handy calendar that shows which days and times are still available and the slots that are not available are grayed out. Once the user selects an appropriate time and a service and submits it that appointment then appears in their personal list of booked treatments which in turn can be cancelled. The design of the booking system is coherent with the serene, minimal and earth tones of the site for seamless user experience.
 ### Accounts:
 
-A site user has to register to book a session and edit their profile. The user can log in, log out and access their profile through the right end section of the navbar, login and drop-down menu list profile and logout. These account features have been implemented to give the necessary information to the admin/coach for billing purposes, client and time management. However, the account can also be deleted giving the user the right to privacy thus all CRUD functionalities have been implemented for better usability.
+A site user has to register to book an appointment, edit their profile, see order history and purchase items sold on the site. The user can log in, log out and access their profile through the right end section of the navbar, login and drop-down menu list profile and logout. These account features have been implemented to give the necessary information to the admin for billing purposes, client and time management. However, the account can also be deleted giving the user the right to privacy thus all CRUD functionalities have been implemented for better usability.
 
 
-### Testimonials:
-The ancient Greek philosopher, Pythagoras, postulated that the number 3 was considered the perfect number, the number of harmony, wisdom and understanding which is often used in hypnotherapy, neurolinguistics and the realm of psychology and thus the Testimonials section features only three testimonials to foster esthetic balance and harmony of the site and not overwhelm the user risking losing them as patients. The admin can update, delete, publish or choose to keep some testimonials saved as drafts for later. This site section is minimal, responsive and centered containing the author of the testimonial and the body of the testimonial. The therapist is then in control of the image they want to portray to other/future patients.
 
 ### Error Pages:
 * 400 Error page appears when the server can not or will not process the request due to something that is perceived to be a client error 

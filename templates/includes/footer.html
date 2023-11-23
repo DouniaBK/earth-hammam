@@ -1,186 +1,88 @@
 
 <!-- Footer -->
 
-<div class="container-fluid col">
-    <div class="row mt-1 pt-5">
-      <div class="col-footer">
-            <footer class="bg-footer text-center text-white sticky-bottom">
-                <!-- Grid container -->
-                <div class="container">
-                <!-- Section: Social media -->
-                <section class="mb-4 pt-5">
-                    <!-- Facebook -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" rel="noopener"
-                    ><i class="fab fa-facebook-f"></i
-                    ></a>
+        <footer class="bg-footer text-center text-white sticky-bottom">
+            <!-- Grid container -->
+            <div class="container">
+            <!-- Section: Social media -->
+            <section class="mb-2 mt-2">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" rel="noopener"
+                ><i class="fab fa-facebook-f"></i
+                ></a>
 
-                    <!-- Twitter -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" rel="noopener"
-                    ><i class="fab fa-twitter"></i
-                    ></a>
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" rel="noopener"
+                ><i class="fab fa-twitter"></i
+                ></a>
 
-                    <!-- Google -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" rel="noopener"
-                    ><i class="fab fa-google"></i
-                    ></a>
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" rel="noopener"
+                ><i class="fab fa-google"></i
+                ></a>
 
-                    <!-- Instagram -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" rel="noopener"
-                    ><i class="fab fa-instagram"></i
-                    ></a>
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" rel="noopener"
+                ><i class="fab fa-instagram"></i
+                ></a>
 
-                    <!-- Linkedin -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" rel="noopener"
-                    ><i class="fab fa-linkedin-in"></i
-                    ></a>
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" rel="noopener"
+                ><i class="fab fa-linkedin-in"></i
+                ></a>
 
-                    <!-- Github -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" rel="noopener"
-                    ><i class="fab fa-github"></i
-                    ></a>
-                </section>
-                <!-- Section: Social media -->
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" rel="noopener"
+                ><i class="fab fa-github"></i
+                ></a>
+            </section>
+            <!-- Section: Social media -->
 
-                <!-- Section: Form -->
-                <section class="newsletter">
-                    <form action="{% url 'subscribe' %}" method="post">
-                    <!--Grid row-->
-                    <div class="row d-flex justify-content-center">
-                        {% csrf_token %}
-                        <!--Grid column-->
-                        <div class="col-md-5 col-12">
-                        <p class="pt-2">
-                            <strong>To receive updates about exclusive experiences, events, new destinations, sign up to our Newsletter.</strong>
-                        </p>
-                        </div>
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <div class="col-md-5 col-12">
-                        <!-- Email input -->
-                        <div class="form-outline form-white">
-                            <input type="text" name="name" id="SubscriberName" class="form-control" placeholder="Name"/>
-                            <label class="form-label" for="SubscriberName" >Name</label>
-                        </div>
-                        <div class="form-outline form-white mb-4">
-                            <input type="email" name="email" id="SubscriberEmail" class="form-control"  placeholder="Email"/>
-                            <label class="form-label" for="SubscriberEmail">Email</label>
-                        </div>
-                        <!-- Submit button -->
-                            <button type="submit" class="btn btn-outline-light mb-4">
-                                Subscribe
-                            </button>
-                        </div>
-                        <!--Grid column-->
-                    </div>
-                    <!--Grid row-->
-                    </form>
-                </section>
-                <!-- Section: Form -->
-
-                <!-- Section: Links -->
-                <section class="">
-                    <!--Grid row-->
-                    <div class="row">
+            <!-- Section: Form -->
+            <section class="newsletter">
+                <form action="{% url 'subscribe' %}" method="post">
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center">
+                    {% csrf_token %}
                     <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Links</h5>
-
-                        <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="{% url 'unsubscribe' %}" class="text-white">Unsubscribe</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                        </ul>
+                    <div class="col-md-5 col-12">
+                    <p class="pt-2">
+                        <strong>To receive updates about exclusive experiences, events, new destinations, sign up to our Newsletter.</strong>
+                    </p>
                     </div>
                     <!--Grid column-->
 
                     <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Links</h5>
-
-                        <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                        </ul>
+                    <div class="d-flex justify-content-center align-items-start">
+                    <!-- Email input -->
+                    <div class="form-outline form-white m-1">
+                        <input type="text" name="name" id="SubscriberName" class="form-control" placeholder="Name"/>
+                    </div>
+                    <div class="form-outline form-white  m-1">
+                        <input type="email" name="email" id="SubscriberEmail" class="form-control"  placeholder="Email"/>
+                    </div>
+                    <!-- Submit button -->
+                        <button type="submit" class="btn btn-outline-light m-1">
+                            Subscribe
+                        </button>
                     </div>
                     <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Links</h5>
-
-                        <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                        </ul>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Links</h5>
-
-                        <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                        </ul>
-                    </div>
-                    <!--Grid column-->
-                    </div>
-                    <!--Grid row-->
-                </section>
-                <!-- Section: Links -->
                 </div>
-                <!-- Grid container -->
+                <!--Grid row-->
+                </form>
+            </section>
+            <!-- Section: Form -->
 
-                <!-- Copyright -->
-                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                    © {% now "Y" %} Copyright:
-                <a class="text-white" href="{% url 'hammam' %}">Earth Hammam</a>
-                </div>
-                <!-- Copyright -->
+            </div>
+            <!-- Grid container -->
 
-            </footer>
-        </div>
-    </div>
-</div>
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                <a href="{% url 'unsubscribe' %}" class="text-white mr-4">Unsubscribe</a>
+                © {% now "Y" %} Copyright:
+            <a class="text-white" href="{% url 'hammam' %}">Earth Hammam</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
 <!-- Footer -->
