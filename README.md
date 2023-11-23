@@ -38,30 +38,35 @@ The site brings the serene Earth Hammam experience to the world, inviting visito
 # Business Goals
 ## Target Audience :
 The site is designed for Earth Hammam tourists, influencers and business travelers who would like to visit the facility during their trip to Marrakech, it is designed to attract tourists, influencers and business travelers from around the world who are tempted by this luxury yet authentic experience to indulge, be pampered and promote the facility.
-The treatments can be bought in the form of a gift card which makes an ideal corporate incentive targeting corporate individuals as well as influencers. The gift card option incites individuals to go to the facility and spend more and
+The treatments can be bought in the form of a gift card which makes an ideal corporate incentive targeting corporate individuals as well as influencers. The gift card option incites individuals to go to the facility and spend more benefitting the business.
 
 ## Gift Card Business Model:
 
-The Earth Hammam profits when retailers buy their gift cards online. Earth Hammam profits as well when the gift card has not been redeemed. The booking system gives the sense that the gift card can be redeemed whenever the client wants and thus encourages clients to buy gift cards online. 
+The Earth Hammam profits when individuals buy their gift cards online whether for personal use or as a gift. Earth Hammam profits as well when the gift card has not been redeemed. The booking system gives the sense that the gift card can be redeemed whenever the client wants and thus encourages clients to buy gift cards online as long as they have the freedom of booking within the next five years. 
 
-## Site owner:
-The therapist/life coach needs a landing page with a custom design to inform the patients of the different techniques and services available to them to improve their life journey through these tough times. The admin part is meant to ease the process of patient management such as the sessions schedule and the admin information. The therapist specializing in cancer treatments, warns of the patient's sensitivity to overwhelming designs, bright colors and difficulty concentrating and thus wishes to use calming sunset/beach/nature themes, soothing pink and blue color palettes, simple feminine aesthetics and intuitive workflow.
+## Site Admin:
+The admin managing the site of Earth Hammam has access to a frontend and backend admin page allowing them to perform the following daily tasks:
+1. Manage Merchandise: the admin can add, edit and delete items sold on the site.
+2. Newsletter: The admin can send newsletters with a handy email function thanks to a package called "Django-TinyMCE", which allows the admin to format the newsletter content as they wish. 
+3. Testimonials: The admin can manage testimonials from the backend, publishing, deleting and updating testimonials
+4. Booked Appointments: The admin can view and edit all the appointments made by the clients, assisting them in managing personal as well as helping clients if assistance is needed
+5. Orders: The admin is able to see all the orders made by the clients thus they can complete the shipment procedure.
+6. Manage subscribers: the admin can view and manage subscribers to the newsletter allowing them to manage all marketing aspects as well as further market estimations.
+
 
 ## Visual Design:
-A folder with further design elements can be accessed [here](https://drive.google.com/drive/folders/10s7BAd4owB5MGW1j-WFyv9pZy37bf08E?usp=sharing) as well as the [flowchart](https://drive.google.com/drive/folders/1BzyiPCHem474jnxKKmtgODtBxWiFTp0v?usp=sharing).
+A folder with further design elements can be accessed [here](ADD LINK) as well as the [flowchart](ADD LINK).
 ### Site Design:
 
-This particular site is solely dedicated to women diagnosed with cancer and undergoing cancer treatment and thus the design has a feminine touch with calming pastel colors inspired by a sunset with pink and blue hues matching the wished-for palette. Intended as a healing meditative space that takes the anxiety of seeking yet another medical assistance away from the patient. The header also features a carousel with inspirational quotes to encourage cancer patients to seek help and regain their strength as well as set a meditative and empowering mood creating an emotional connection between the user and the coach. The site also features a divider image quoting self-care to remind the user that self-care is essential to surviving cancer. 
-
-The site has a minimal aesthetic and color palette to avoid sensory overstimulation often as a result of chemotherapy as well as offers an intuitive workflow leading to booking a session and starting a journey of mental repair. Furthermore, as the site contains key information about the therapy packages, familiar colors, fonts, images, and other matching elements have been used throughout to reflect the site's organization as well as alert the patient to pay attention.
+This particular site is dedicated to wellness and relaxation transporting the user to a serene space inspired by the rose-hued architecture and landscape of North Africa. The site has an earthy North African color pallet, aiming at embracing healing, rejuvenation and indulging in a promise of luxury and pampering. The site has a minimal aesthetic and color palette to avoid sensory overstimulation often and offers an intuitive workflow leading to, buying, an entrance ticket, a product or even better a treatment gift card and then if logged in, booking a session and starting a journey of mental repair and pampering. Furthermore, the site contains key information about the facility in the section dedicated to the Hammam, accessible from the navigation, such as a carousel with images inspiring luxurious wellness with unique architecture, authentic ancient healing treatments and beauty rituals. Moreover, a section describing the exclusive offers Earth Hammam provides with links leading the user to shop. Finally, a Testimonial section is added to provide a sense of trust and professionalism.
 
 ### Fonts:
 The font family and style used are:
 
-   * font-family: 'Open Sans'
+   * font-family: 'Montserrat'
    * Lead feature from Bootstrap
 ### Favicon:
-A minimalistic favicon with the life coach's initials has been added giving the site a professional look. The favicon has been generated using [favicon.io](https://favicon.io/favicon-generator/).
+A minimalistic favicon with the word 'Hammam" has been added giving the site a professional look. The favicon has been generated using [Hoststar](https://www.hoststar.ch/de).
 # Features
 ## Page Elements:
 The site contains various pages to introduce the user to the services and approaches this particular life coach/therapist offers. The following pages are accessible from the extendable navbar on top:

@@ -10,7 +10,8 @@ def user_is_superuser(function=None, redirect_url='/'):
     def decorator(view_func):
         def _wrapped_view(request, *args, **kwargs):
             if not request.user.is_superuser:
-                messages.error(request, "You are not authorized to access this!")
+                messages.error(
+                    request, "You are not authorized to access this!")
                 return redirect(redirect_url)
                 
             return view_func(request, *args, **kwargs)

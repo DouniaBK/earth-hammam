@@ -1,22 +1,29 @@
 {% extends "account/base.html" %}
 
+{% block extra_meta %}
+<meta name="Log In" content="Earth Hammam Login to you account page">
+<title> Login</title>
+{% endblock %}
+
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "Login" %}{% endblock %}
 
 {% block inner_content %}
 
-<hr>
-<h2 class="logo-font mb-4">{% trans "Sign In" %}</h2>
-<hr>
+<section class="row">
+  <div class="container col-8 text-center mt-3">
+      <h2 class="text-uppercase">{% trans "Login" %}</h2>
+  </div>
+</section>
 
 {% get_providers as socialaccount_providers %}
 
 {% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+<p>{% blocktrans with site.name as site_name %}Please Login with one
+of your existing third party accounts. Or, <a href="{{ signup_url }}">Login</a>
+for a {{ site_name }} account and Login below:{% endblocktrans %}</p>
 
 <div class="socialaccount_ballot">
 
@@ -32,7 +39,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 {% else %}
 <p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+<a class="text-black font-weight-bold" href="{{ signup_url }}">Register an Account</a> first.{% endblocktrans %}</p>
 {% endif %}
 
 <form class="login" method="POST" action="{% url 'account_login' %}">
@@ -41,10 +48,9 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Home</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+  <button class="primaryAction float-right btn btn-wetsand" type="submit">{% trans "Login" %}</button>
   <p class="mt-2">
-    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+    <a class="button secondaryAction text-black font-weight-bold" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </p>
 </form>
 
