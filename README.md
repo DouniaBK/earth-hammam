@@ -37,22 +37,13 @@ The site brings the serene Earth Hammam experience to the world, inviting visito
 
 # Business Goals
 ## Target Audience :
+
 The site is designed for Earth Hammam tourists, influencers and business travelers who would like to visit the facility during their trip to Marrakech, it is designed to attract tourists, influencers and business travelers from around the world who are tempted by this luxury yet authentic experience to indulge, be pampered and promote the facility.
 The treatments can be bought in the form of a gift card which makes an ideal corporate incentive targeting corporate individuals as well as influencers. The gift card option incites individuals to go to the facility and spend more benefitting the business.
 
 ## Gift Card Business Model:
 
-The Earth Hammam profits when individuals buy their gift cards online whether for personal use or as a gift. Earth Hammam profits as well when the gift card has not been redeemed. The booking system gives the sense that the gift card can be redeemed whenever the client wants and thus encourages clients to buy gift cards online as long as they have the freedom of booking within the next five years. 
-
-## Site Admin:
-The admin managing the site of Earth Hammam has access to a frontend and backend admin page allowing them to perform the following daily tasks:
-1. Manage Merchandise: the admin can add, edit and delete items sold on the site.
-2. Newsletter: The admin can send newsletters with a handy email function thanks to a package called "Django-TinyMCE", which allows the admin to format the newsletter content as they wish. 
-3. Testimonials: The admin can manage testimonials from the backend, publishing, deleting and updating testimonials
-4. Booked Appointments: The admin can view and edit all the appointments made by the clients, assisting them in managing personal as well as helping clients if assistance is needed
-5. Orders: The admin is able to see all the orders made by the clients thus they can complete the shipment procedure.
-6. Manage subscribers: the admin can view and manage subscribers to the newsletter allowing them to manage all marketing aspects as well as further market estimations.
-
+The Earth Hammam profits when individuals buy their gift cards online whether for personal use or as a gift. Earth Hammam profits as well when the gift card has not been redeemed. The booking system gives the sense that the gift card can be redeemed whenever the client wants and thus encourages clients to buy gift cards online as long as they have the freedom of booking within the next five years.
 
 ## Visual Design:
 A folder with further design elements can be accessed [here](ADD LINK) as well as the [flowchart](ADD LINK).
@@ -108,9 +99,27 @@ The Categories of Items are:
 ![Booking](static/images/booking-screenshot.png)
 
 This page is accessible from the navbar once registered or logged in. This section allows the user to select a service and then book one of the Treatments offered with a handy calendar that shows which days and times are still available and the slots that are not available are grayed out. Once the user selects an appropriate time and a service and submits it that appointment then appears in their personal list of booked treatments which in turn can be cancelled. The design of the booking system is coherent with the serene, minimal and earth tones of the site for seamless user experience.
+
 ### Accounts:
 
-A site user has to register to book an appointment, edit their profile, see order history and purchase items sold on the site. The user can log in, log out and access their profile through the right end section of the navbar, login and drop-down menu list profile and logout. These account features have been implemented to give the necessary information to the admin for billing purposes, client and time management. However, the account can also be deleted giving the user the right to privacy thus all CRUD functionalities have been implemented for better usability.
+
+///////////////////////////////////////////////////add image of login
+ 1. **User Account**: the user can log in, log out and access their profile through the right end section of the navbar, login and drop-down menu list profile and logout. The authentification system has been done with the django-allauth package.
+
+- Register: New users are prompted to register in order to continue their purchase or book an appointment by filling out a registration form, confirming their account with a confirmation email and then logging in.
+- Log in: The flow is standard, provide a username or email and a password, check the *Remember Me* box if the user wants to stay logged in and a *forgot Password* link to reset their password redirecting to *Password Reset* page, login button to access their account
+- My Profile: Allows them to see their profile information, update it and delete their account giving the user CRUD functionality for better usability and the right to privacy. This section also has all their order history.
+- Logout: Allows the user to log out by clicking logging out.
+
+ 2. **Superuser/Admin Account**: this account is meant for the admin for site management such as merchandising, retailing, client assistance and personal management. The admin managing the site of Earth Hammam has access to a frontend and backend admin page allowing them to perform the following daily tasks:
+
+- Manage Merchandise: the admin can add, edit and delete items sold on the site.
+- Newsletter: The admin can send newsletters with a handy email function thanks to a package called "Django-TinyMCE", which allows the admin to format the newsletter content as they wish. 
+- Testimonials: The admin can manage testimonials from the backend, publishing, deleting and updating testimonials
+- Booked Appointments: The admin can view and edit all the appointments made by the clients, assisting them in managing personal as well as helping clients if assistance is needed
+- Orders: The admin is able to see all the orders made by the clients thus they can complete the shipment procedure.
+- Manage subscribers: the admin can view and manage subscribers to the newsletter allowing them to manage all marketing aspects as well as further market estimations.
+
 
 
 
