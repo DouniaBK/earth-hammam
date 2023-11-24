@@ -81,17 +81,27 @@ The Home page welcomes the user into the serene world of wellness by Earth Hamma
     2. The next section features exclusive offers at Earth Hammam, such as the treatments, the restaurants and the Earth Hammam signature products with links to draw the user to shop as well as to facilitate navigation.
 
     3. The Testimonials section is displayed as a powerful marketing tool to build trust and inspire professionalism. The testimonials section features only three testimonials to foster esthetic balance and harmony. The admin can update, delete, publish or choose to keep some testimonials saved as drafts for later. This site section is minimal, responsive and centered containing the author of the testimonial and the body of the testimonial. The establishment is then in control of the image they want to portray to clients.
+
+
+### Earth Hammam Store Categories:
+
+Earth Hammam has three categories of items sold online, Entrance tickets, Treatments Gift Cards and Signature Products. Each category has a page accessible from the navbar and referenced in the hammam page as well. Each category page features items contained in a card with an image, a title, a description, a price and an add-to-bag button. When the user clicks on the add-to-bag button, a default quantity of one is added to the bag. The client can then adjust the quantity on the bag page. The items sold by Earth Hammam type of establishments are very limited in comparison to a large store, and thus the items sold are displayed on one page shortening the buying process for the client, instead of adding a product-detail type page where the client clicks on the product leading to a page with just information about that particular product and only then adds it to the bag. The items have enough information in the description for the client to add them to their cart with fewer clicks.
+
+Once the shopper adds the items to their shopping bag, they can proceed with the payment by filing out proper information, approving and then they will receive a confirmation of their order.
+
+The admin, when logged in as a superuser, will have an extra section to manage Merchandising appearing under the add-to-bag button.
+///////////////////////////////add Update store Merchandise image///////////////////
+This section allows the admin to delete the item or editing it. If the admin chooses to edit the item, they will be redirected to the Merchandising page, with the item they want to edit information already prefilled, once they undergo the necessary changes, a submit button will then update the information of the item in the proper category. Furthermore, the admin can also simply add another item including an image from the merchandising drop-down menu.
+
+The design of the category pages has a balanced serene and minimalistic aesthetic with an earthy color palette that aims at not overwhelming the shopper with too much information. The design is balanced between a promise of luxury, pampering and relaxation.
+
+The Categories of Items are:
+
+    1. Tickets: The shopper can buy the entrance tickets at the store. featuring two types of tickets, the day ticket and the year ticket allowing visitors to buy their tickets ahead of their visit.
     
-### Tickets:
-This part is featured twice on the site, once with brief information on the home page and again accessible from the navbar with more detailed information about the number of sessions, the duration, price and techniques used allowing the user to delve in and find the most suitable package. This section includes a button that will redirect the user to registering or logging in and then selecting a service and eventually booking a session at a suitable time and canceling it in case of a change of plan.
-
-### Treatments:
-This page is intended to simply give more information about the free resources available to them at the clinic and during the therapy sessions. As the goal is to inform, the esthetic is clean, minimal, light and familiar to help the user's brain focus and pay attention. 
+    2. Treatments: The shopper can choose to buy the treatments as a gift card, gift it or redeem it for themselves. The gift card is valid for five years giving the shopper enough time to book an appointment using the booking system accessible from the navbar. The business model is to entice the shopper to buy the treatment packages with ease through gift card format appealing to not only individuals but also the corporate industry as an incentive. Whether the gift card has been used or not, Earth Hammam benefits from it. After purchase the shopper will then receive an order confirmation email as well as an elegant e-Gift Card.
  
-### Products:
-
-
-
+    3. Products: The shopper often buys spa products at the facility after having experienced the spa and thus the products sold by Earth Hammam target clients that want to take the unique Earth Hammam products to recreate that experience at home.
 
 ### Booking:
 
