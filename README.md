@@ -58,12 +58,29 @@ The font family and style used are:
    * Lead feature from Bootstrap
 ### Favicon:
 A minimalistic favicon with the word 'Hammam" has been added giving the site a professional look. The favicon has been generated using [Hoststar](https://www.hoststar.ch/de).
+
+### Colour Schemes:
+///////////////image of the color pallet
+ Earth Hammam project is inspired by the rose-hued landscape and architecture of North Africa. The color of limestone, wet sand, olive tree leaves, and desert sand make the tones of the site, installing a sense of peace, relaxation and luxury and ensuring a calm user experience.
+
+
 # Features
+
 ## Page Elements:
 The site contains various pages to introduce the user to the services and approaches Earth Hammam offers. The following pages are accessible from the extendable navbar on top:
-### Home page:
 
-The Home page welcomes the user into the serene world of wellness by Earth Hammam, with an elegant image of a woman being pampered with a massage and a title inviting the customer to "Treat the body and ease the soul" amd button leading the user to discover Earth Hammam Marrakech. The button leads to the Hammam section of the site where the overall facility is described.
+### Navigation:
+The navbar is centered above the main content of the site where the user can navigate to the Hammam, tickets, treatments,  products or the booking page. The navbar collapses for small and medium screens allowing better user experience and optics.
+### Logo: 
+Simple clean logo featuring the name of the establishment written in uppercase and bold, placed in the top left corner of the site including the only link that redirects to the welcome page.
+### Footer:
+The footer includes multiple Social media links for the user to find out more about the establishment. These will open in a new tab. Furthermore, it includes a subscription section allowing the users to receive the newsletter. Underneath the Unsubscribe link, redirect the returning to an unsubscribe page, where the user is prompted to enter their email address and press unsubscribe if they no longer want to receive the newsletter.
+### Toast Messages:
+
+
+### Welcome page:
+
+A simple and clean welcome page with the Earth Hammam Logo, welcomes the user into the serene world of wellness by Earth Hammam, with an elegant image of a woman being pampered with a massage and a title inviting the customer to "Treat the body and ease the soul" and button leading the user to discover Earth Hammam Marrakech. The button leads to the Hammam section of the site where the overall facility is described.
 
 ### Hammam:
 
@@ -132,8 +149,21 @@ This page is accessible from the navbar once registered or logged in. This secti
 
 
 ## Features Not Yet Implemented
-### Post Content:
+
+- Post Content:
 The admin ability to post articles, meditation guides, journals and workbooks. 
+
+- Book Retreat Stay:
+Allowing the user to book a stay or a retreat for multiple days with the booking system will be incorporated in the future.
+
+# User Stories:
+
+
+///////////////////////////////
+
+
+
+
 
 # Information Architecture
 ## Database:

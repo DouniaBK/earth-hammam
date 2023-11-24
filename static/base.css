@@ -125,14 +125,26 @@ body {
     /* z-index: -1;*/
     overflow: scroll!important;
 }
+/* Hammam page */
+
+.hammam-section {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 
 
 /* Product - Ticket - Treatment pages  */
 
 .main-content {
-    width: 80%;
+    width: 70%;
     margin-right: auto;
     margin-left: auto;
+    max-width: 1200px;
+    min-width: 300px;
 }
 
 .product-container {
@@ -236,6 +248,8 @@ body {
   
 .card{
     width: 100%;
+    max-width: 400px;
+    margin: 1rem;
 }
 
 /* the scroll to the top button*/
