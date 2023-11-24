@@ -29,7 +29,7 @@ class StripeWH_Handler:
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
         body = render_to_string(
-            'checkout/email_template.txt',
+            'checkout/email_template.html',
             {'content': content})
 
         send_mail(
