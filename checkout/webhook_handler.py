@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.conf import settings
 
@@ -38,6 +39,15 @@ class StripeWH_Handler:
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
         )
+
+        # Test HTML email
+        from_email = settings.DEFAULT_FROM_EMAIL
+        to = cust_email
+        text_content = 'This is an important message.'
+        html_content = '<p>This is an <strong>important</strong> message.</p>'
+        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
 
     def handle_event(self, event):
         """
