@@ -144,8 +144,8 @@ body {
     flex: 1;
     margin: 1rem;
     min-width: 300px;
+    border: 1px solid #00000029;
 }
-
 
 .form-col-center {
     display: flex!important;
@@ -467,12 +467,11 @@ footer {
 }
 
 #scheduler-container{
-    background: #fff4eb!important;
+    background: #f3e9e0!important;
     box-sizing: border-box;
-    border-radius: 10px;
     min-height: 87vh;
     padding: 2rem;
-    border: 2px solid #d39e00;
+    border: 1px solid #0000001c;
 }
 
 .scheduler-next{

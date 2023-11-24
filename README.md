@@ -129,20 +129,6 @@ This page is accessible from the navbar once registered or logged in. This secti
 * 404 Error page appears when the server can not find the page requested
 * 500 Error page appears when the server encounters a problem, and can not complete a request
 
-## Admin Page Elements
-### Account management
-The admin Panel contains three main sections:
-### Custom User:
-The patients that register are saved and displayed in the panel with the status of active or not and staff or not. The super user has then all the permissions and can also grant permissions to the users for example if another user such as an assistant can be permitted to maintain the site and manage the clients' sessions and accounts.
-
-### User Profile
-The custom user information section combined with the registration form displays the First Name, Last Name, Address, and Email address of the user that can be changed using the CRUD functionality available to the user on the home page
-
-### Coaching Sessions Calendar and Display:
-Displaying the user information, the time and date of the session chosen by the user. These sessions can be canceled by the user, from the site once logged in, if they choose to.
-
-### Testimonials:
-Displaying the name, body and status of the testimonials published will publish them on the site and draft status will save them. The testimonials are solely managed by and through the admin panel.
 
 
 ## Features Not Yet Implemented
