@@ -72,6 +72,23 @@ class StripeWH_Handler:
         msg.send()
         print('done send')
 
+    def _process_treatment_emails(order):
+        # Send gift card emails if applicable
+        l_items = OrderLineItem.objects.filter(order=order)
+        print("Sending treatment emails")
+        for l_item in l_items:
+            if l_item.item.category.name == 'Treatments':
+                if l_item.item.name == 'Signature':
+                    self._send_treatment_card_email(order, 'Signature')
+                    print("Signature")
+        
+                if l_item.item.name == 'Essential':
+                    self._send_treatment_card_email(order, 'Essential')
+                    print("Essential")
+
+                if l_item.item.name == 'Vital':
+                    self._send_treatment_card_email(order, 'Vital')
+                    print("Vital")
 
     def handle_event(self, event):
         """
@@ -146,6 +163,7 @@ class StripeWH_Handler:
 
         if order_exists:
             self._send_confirmation_email(order)
+            self._process_treatment_emails(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -190,26 +208,8 @@ class StripeWH_Handler:
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
         self._send_confirmation_email(order)
+        self._process_treatment_emails(order)
         
-        
-            
-        # Send gift card emails if applicable
-        l_items = OrderLineItem.objects.filter(order=order)
-        print("Sending treatment emails")
-        for l_item in l_items:
-            if l_item.item.category.name == 'Treatments':
-                if l_item.item.name == 'Signature':
-                    self._send_treatment_card_email(order, 'Signature')
-                    print("Signature")
-        
-                if l_item.item.name == 'Essential':
-                    self._send_treatment_card_email(order, 'Essential')
-                    print("Essential")
-
-                if l_item.item.name == 'Vital':
-                    self._send_treatment_card_email(order, 'Vital')
-                    print("Vital")
-
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
