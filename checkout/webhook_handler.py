@@ -42,7 +42,7 @@ class StripeWH_Handler:
         msg.attach_alternative(html_content, "text/html")
         msg.send()
 
-    def _send_treatment_card_email(order, treatment_name):
+    def _send_treatment_card_email(self, order, treatment_name):
         print('_send_treatment_card_email')
         print(treatment_name)
         """Send the user a treatment gift card email"""
