@@ -43,7 +43,8 @@ class StripeWH_Handler:
         msg.send()
 
     def _send_treatment_card_email(order, treatment_name):
-
+        print('_send_treatment_card_email')
+        print(treatment_name)
         """Send the user a treatment gift card email"""
         cust_email = order.email
         subject = render_to_string(
@@ -69,6 +70,7 @@ class StripeWH_Handler:
         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
         msg.attach_alternative(html_content, "text/html")
         msg.send()
+        print('done send')
 
 
     def handle_event(self, event):
@@ -193,17 +195,20 @@ class StripeWH_Handler:
             
         # Send gift card emails if applicable
         l_items = OrderLineItem.objects.filter(order=order)
-        
+        print("Sending treatment emails")
         for l_item in l_items:
             if l_item.item.category.name == 'Treatments':
                 if l_item.item.name == 'Signature':
                     self._send_treatment_card_email(order, 'Signature')
+                    print("Signature")
         
                 if l_item.item.name == 'Essential':
                     self._send_treatment_card_email(order, 'Essential')
+                    print("Essential")
 
                 if l_item.item.name == 'Vital':
                     self._send_treatment_card_email(order, 'Vital')
+                    print("Vital")
 
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
