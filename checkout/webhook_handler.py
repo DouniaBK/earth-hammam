@@ -72,7 +72,7 @@ class StripeWH_Handler:
         msg.send()
         print('done send')
 
-    def _process_treatment_emails(order):
+    def _process_treatment_emails(self, order):
         # Send gift card emails if applicable
         l_items = OrderLineItem.objects.filter(order=order)
         print("Sending treatment emails")
