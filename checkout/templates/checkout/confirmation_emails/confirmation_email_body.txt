@@ -1,20 +1,21 @@
-Hello {{ order.full_name }}!<br />
-<br />
-This is a confirmation of your order at Earth Hammam. Your order information is:
-Order Number: {{ order.order_number }}
-Order Date: {{ order.date }}
-Order Total: ${{ order.order_total }}
-\r\n
-\r\n
-Delivery: ${{ order.delivery_cost }}
-\r\n
-\r\n
-Grand Total: ${{ order.grand_total }}
+Hello {{ order.full_name }}!<br/>
+<br/>
+This is a confirmation of your order at Earth Hammam. 
+<br/>
+Your order information is:
+Order Number: {{ order.order_number }}<br/>
+Order Date: {{ order.date }}<br/>
+Order Total: ${{ order.order_total }}<br/>
+Delivery: ${{ order.delivery_cost }}<br/>
+Grand Total: ${{ order.grand_total }}<br/>
+<br/>
 Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+<br/>
 We've got your phone number on file as {{ order.phone_number }}.
+<br/>
 If you have any questions, feel free to contact us at {{ contact_email }}.
-<br />
+<br/>
 Thank you for your order!
-<br />
+<br/>
 Sincerely,
 Earth Hammam

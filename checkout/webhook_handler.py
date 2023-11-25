@@ -33,17 +33,19 @@ class StripeWH_Handler:
             'checkout/email_template.html',
             {'content': content})
 
+        '''
         send_mail(
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
         )
-
+        '''
+        
         # Test HTML email
         from_email = settings.DEFAULT_FROM_EMAIL
         to = cust_email
-        text_content = 'This is an important message.'
+        text_content = content
         html_content = body
         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
         msg.attach_alternative(html_content, "text/html")
