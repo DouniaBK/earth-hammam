@@ -1,0 +1,1 @@
+Earth Hammam Order Number Confirmation {{ order.order_number }}

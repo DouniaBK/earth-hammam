@@ -156,7 +156,7 @@ def checkout_success(request, order_number):
     total = float(current_bag['total'])
     grand_total = float(current_bag['grand_total'])
     delivery = float(current_bag['delivery'])
-
+    
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order

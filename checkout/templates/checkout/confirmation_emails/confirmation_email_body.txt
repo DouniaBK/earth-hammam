@@ -17,5 +17,5 @@ If you have any questions, feel free to contact us at {{ contact_email }}.<br/>
 <br/>
 Thank you for your order!<br/>
 <br/>
-Sincerely,
+Sincerely,<br/>
 Earth Hammam

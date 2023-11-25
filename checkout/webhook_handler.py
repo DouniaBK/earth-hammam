@@ -32,15 +32,6 @@ class StripeWH_Handler:
         body = render_to_string(
             'checkout/email_template.html',
             {'content': content})
-
-        '''
-        send_mail(
-            subject,
-            body,
-            settings.DEFAULT_FROM_EMAIL,
-            [cust_email]
-        )
-        '''
         
         # Test HTML email
         from_email = settings.DEFAULT_FROM_EMAIL
@@ -50,6 +41,35 @@ class StripeWH_Handler:
         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
         msg.attach_alternative(html_content, "text/html")
         msg.send()
+
+    def _send_treatment_card_email(order, treatment_name):
+
+        """Send the user a treatment gift card email"""
+        cust_email = order.email
+        subject = render_to_string(
+            'checkout/confirmation_emails/treatment_email_subject.txt',
+            {'order': order})
+        content = render_to_string(
+            'checkout/confirmation_emails/treatment_email_body.txt',
+            {
+                'order': order, 
+                'contact_email': settings.DEFAULT_FROM_EMAIL,
+                'treatment_type': treatment_name
+            })
+
+        body = render_to_string(
+            'checkout/email_template.html',
+            {'content': content})
+        
+        # Test HTML email
+        from_email = settings.DEFAULT_FROM_EMAIL
+        to = cust_email
+        text_content = content
+        html_content = body
+        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+
 
     def handle_event(self, event):
         """
@@ -168,6 +188,23 @@ class StripeWH_Handler:
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
         self._send_confirmation_email(order)
+        
+        
+            
+        # Send gift card emails if applicable
+        l_items = OrderLineItem.objects.filter(order=order)
+        
+        for l_item in l_items:
+            if l_item.item.category.name == 'Treatments':
+                if l_item.item.name == 'Signature':
+                    self._send_treatment_card_email(order, 'Signature')
+        
+                if l_item.item.name == 'Essential':
+                    self._send_treatment_card_email(order, 'Essential')
+
+                if l_item.item.name == 'Vital':
+                    self._send_treatment_card_email(order, 'Vital')
+
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
