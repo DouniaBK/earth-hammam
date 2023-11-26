@@ -433,9 +433,14 @@ footer {
 
 /* Booking */
 .booking_form {
-
     display: flex;
     flex-direction: column;
+}
+
+.booking_feedback {
+    text-align: center;
+    margin: 1rem;
+    font-size: x-large;
 }
 
 .table {
@@ -466,7 +471,7 @@ footer {
 
 .table .thead-light th {
     color: #495057;
-    background-color: #fff4eb;
+    background-color: #ffffff00;
     border-color: #d39e00;
 }
 
