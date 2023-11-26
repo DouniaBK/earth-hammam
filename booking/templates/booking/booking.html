@@ -24,27 +24,41 @@
             <hr>
         </div>
 
+        {% if not is_authenticated %}
+        <div class="booking_feedback">
+            Please <a href="/accounts/login">login</a> or <a href="/accounts/signup">register</a> to make a booking.
+        </div>
+        {% endif %}
+        
+
         <h3 class="logo-font mt-5"><strong class="mr-4">1)</strong>Select a Treatment</h3>
         <div class="divider"></div>
-        <div class="appointment_types">
-            {% for treatment in treatments %}
-                <div class="appointment_type_button" onclick="onTypeClickCallback('{{treatment.id}}', {{treatment_ids_json}})">
-                    <h4 style="margin: 10px;">{{treatment.name}}</h4>
-                    <img class="card-img-top img-fluid" src="{{ treatment.image }}" alt="{{ treatment.name }}">
-                    
-                    <div id="hover_mask_{{treatment.id}}" class="appointment_type_button_hover_mask">
-                        <div id="checkmark_{{treatment.id}}" class="appointment_type_checkmark">
-                            ✔
+        <div id="selectTreatmentWrapper">    
+            <div class="appointment_types">
+                {% for treatment in treatments %}
+                    <div class="appointment_type_button" onclick="onTypeClickCallback('{{treatment.id}}', {{treatment_ids_json}})">
+                        <h4 style="margin: 10px;">{{treatment.name}}</h4>
+                        <img class="card-img-top img-fluid" src="{{ treatment.image }}" alt="{{ treatment.name }}">
+                        
+                        <div id="hover_mask_{{treatment.id}}" class="appointment_type_button_hover_mask">
+                            <div id="checkmark_{{treatment.id}}" class="appointment_type_checkmark">
+                                ✔
+                            </div>
                         </div>
-                    </div>
 
-                </div>
-            {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% if not is_authenticated %}
+            <div id="selectTreatmentWrapperBlur"></div>
+            {% endif %}
         </div>
 
+
         <h3 class="logo-font mt-5"><strong class="mr-4">2)</strong>Choose your Time</h3>
-        
         <div class="divider"></div>
+        <div id="selectTimeWrapper">
             <div id="scheduler-container">
                 <form 
                     class="booking_form"
@@ -123,10 +137,15 @@
                         Please select a treatment and time
                     </div>
 
-                    <input type="submit" class="btn btn-scheduler text-white btn-form-large" value="Submit">
+                    <input type="submit" class="btn btn-scheduler text-white btn-form-large" value="Book Treatment">
                 </form>
             </div>
 
+            <div id="selectTimeWrapperBlur"></div>
+        </div>
+
+        
+        {% if is_authenticated %}
 
             <h3 class="logo-font mt-5">Your Booked Appointments</h3>
             <div class="divider"></div>
@@ -159,7 +178,9 @@
                     </tbody>
                 </table>
             </div>
-            <script type="text/javascript" src="{% static 'script/booking.js' %}"></script>
+        
+        {% endif %}
+        <script type="text/javascript" src="{% static 'script/booking.js' %}"></script>
 </div>
 
 

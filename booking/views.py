@@ -105,8 +105,10 @@ def booking(request):
                             sessions_of_the_week[d].append(str(i))
         
         user = None
+        is_authenticated = False
         try:
             user = UserProfile.objects.get(user=request.user)
+            is_authenticated = True
         except Exception as e:
             pass
 
@@ -172,7 +174,7 @@ def booking(request):
                     return HttpResponseRedirect("/booking?offset=" + str(offset_param))   # noqa
             else:
                 print("Error", form.errors)
-
+                
         # if a GET (or any other method) we'll create a blank form
         form = AppointmentInputFormFrontEnd()
         return render(request,  'booking/booking.html', {'form': form,   # noqa
@@ -186,7 +188,8 @@ def booking(request):
                                 'register_book_success': success,  # noqa
                                 'scheduleHours_json': json.dumps(hours_vec),# noqa
                                 'treatment_ids_json': json.dumps(treatment_ids_vec), # noqa
-                                'treatments': all_treatments,})  # noqa
+                                'treatments': all_treatments,
+                                'is_authenticated': is_authenticated})  # noqa
     except Exception as e:
         print(str(e), e.args)
         return HttpResponseRedirect("")

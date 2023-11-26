@@ -33,7 +33,7 @@ function onClickCallback(d, t, id, hours_str) {
     // Color the element
     const elem = document.getElementById(id);
     elem.style.backgroundColor = 'rgb(255 255 255 / 76%)';
-    updateFeedbackText();
+    updatePage();
 }
 
 function onTypeClickCallback(type, treatment_ids) {
@@ -57,15 +57,22 @@ function onTypeClickCallback(type, treatment_ids) {
     
     selectedService = service_selector.options[service_selector.selectedIndex].text
 
-    updateFeedbackText();
+    updatePage();
 }
 
-function updateFeedbackText() {
+function updatePage() {
     
+    console.log("updatePage", 1)
     var paragraph = document.getElementById("booking_feedback");
 
     if (selectedService !== null && selectedDate !== null && selectedTime !== null) {
         paragraph.innerHTML = `You selected the ${selectedService} treatment at ${selectedTime} on ${selectedDate}`;
+    }
+
+    console.log("updatePage", 2)
+    if (selectedService !== null) {
+        var time_blur = document.getElementById("selectTimeWrapperBlur");
+        time_blur.style.visibility = 'hidden';
     }
 }
 
