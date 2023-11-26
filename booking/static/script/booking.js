@@ -26,3 +26,15 @@ function onClickCallback(d, t, id, hours_str) {
     elem.style.backgroundColor = '#f3b0dc';
 }
 
+function onTypeClickCallback(type) {
+    console.log("onTypeClickCallback", type)
+    
+    const date = document.getElementById("id_service")
+    
+    date.value = type
+    
+}
+
+
+
+

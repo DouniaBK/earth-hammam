@@ -11,6 +11,7 @@ from .models import Appointment
 import json
 
 
+
 # Returns the days of the week for a specific day
 def getDaysOfWeekForDay(t_current):
     # Get day of week as an integer
@@ -102,8 +103,12 @@ def booking(request):
                     for i in range(h_min, h_max):
                         if not str(i) in sessions_of_the_week[d] and not (str(i) + "me") in sessions_of_the_week[d]:   # noqa
                             sessions_of_the_week[d].append(str(i))
-
-        user = UserProfile.objects.get(user=request.user)
+        
+        user = None
+        try:
+            user = UserProfile.objects.get(user=request.user)
+        except Exception as e:
+            pass
 
         # Get all appointments of the user
         all_user_sessions_templ = []
@@ -111,7 +116,7 @@ def booking(request):
         try:
             all_user_sessions = Appointment.objects.filter(user=user)
         except Exception as e:
-            all_user_sessions = []
+            pass
 
         for us in all_user_sessions:
             info = {}
@@ -125,6 +130,18 @@ def booking(request):
         hours_vec = []
         for i in range(h_min, h_max):
             hours_vec.append(str(i))
+
+        # Get treatment possibilites
+        treatments = Item.objects.filter(category=1)
+        all_treatments = []
+        for treatment in treatments:
+            trtm = {}
+            trtm["id"] = treatment.id
+            trtm["name"] = treatment.name
+            trtm["description"] = treatment.description
+            trtm["image"] = treatment.image.url
+
+            all_treatments.append(trtm)
 
         # if this is a POST request, handle saving the session
         if request.method == "POST":
@@ -165,7 +182,8 @@ def booking(request):
                                 'isThisWeek': week_current == week_now,  # noqa
                                 'register_to_book': register_to_book,  # noqa
                                 'register_book_success': success,  # noqa
-                                'scheduleHours_json': json.dumps(hours_vec), })  # noqa
+                                'scheduleHours_json': json.dumps(hours_vec), # noqa
+                                'treatments': all_treatments,})  # noqa
     except Exception as e:
         print(str(e), e.args)
         return HttpResponseRedirect("")

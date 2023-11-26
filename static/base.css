@@ -249,6 +249,12 @@ body {
     width: 100%;
 }
 
+.hammam-offer {
+    flex: 1;
+    margin: 1rem;
+    min-width: 300px;
+}
+
 /* the scroll to the top button*/
 .btt-button {
     height: 42px;
@@ -497,6 +503,11 @@ footer {
 #datetimepicker {
     background-color: #ffffff08;
     border: none;
+    visibility: hidden;
+}
+
+.appointment_type{
+    visibility: hidden;
 }
 
 .appointment_type_form > p {
@@ -506,6 +517,40 @@ footer {
 
 .appointment_type_form > label {
     margin-right: 1rem;
+}
+
+.appointment_type_button {
+    background-color: #f3e9e0;
+    border: 1px solid grey;
+    margin: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #00000029;
+    position: relative;
+}
+
+.appointment_type_button_hover_mask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.appointment_type_button_hover_mask:hover {
+    background-color: #ffffff3d;
+}
+
+.divider {
+    background-color: #f3e9e0;
+    height: 1px;
+    width: 100%;
+    margin: 1rem;
+}
+
+.appointment_types {
+    display: flex;
 }
 
 .scheduler-next{

@@ -34,6 +34,12 @@
                     {{ form|crispy }}
                     <button class="btn btn-wetsand rounded-0 text-uppercase float-right">Update Information</button>
                 </form>
+                
+                <form class="mt-4" action="{% url 'delete' %}" method="POST" id="profile-delete">
+                    {% csrf_token %}
+                    <button class="btn btn-wetsand rounded-0 text-uppercase float-right">Delete</button>
+                </form>
+
             </div>
             <div class="col-12 col-lg-6 pt-4">
                 <h3 class="text-uppercase lead bg-olive text-white text-center p-1">Order History</h3>

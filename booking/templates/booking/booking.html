@@ -16,16 +16,30 @@
 {% endblock %}
 
 {% block content %}
-<div class="main-content">
-    <div class="col text-center mt-3">
-        <h2 class="logo-font">Book a Treatment</h2>
-        <p class="fs-3"> Throughout the year, Earth Hammam welcomes a host of wellbeing experts
-            and healing specialists to offer our guests exclusive treatments and therapies.</p>
-        <hr>
-        <h5 class="text-uppercase p-4"><strong>Select a Treatment and Book an Available Appointment</strong>
-        </h5>
-    </div>
+<div class="main-content" style="display: flex; flex-direction: column; align-items: center;">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Book a Treatment</h2>
+            <p class="fs-3"> Throughout the year, Earth Hammam welcomes a host of wellbeing experts
+                and healing specialists to offer our guests exclusive treatments and therapies.</p>
+            <hr>
+        </div>
 
+        <h3 class="logo-font">Select a Treatment</h3>
+        <div class="divider"></div>
+        <div class="appointment_types">
+            {% for treatment in treatments %}
+                <div class="appointment_type_button" onclick="onTypeClickCallback('{{treatment.id}}')"">
+                    <h4 style="margin: 10px;">{{treatment.name}}</h4>
+                    <img class="card-img-top img-fluid" src="{{ treatment.image }}" alt="{{ treatment.name }}">
+                    
+                    <div class="appointment_type_button_hover_mask"></div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h3 class="logo-font">Choose your Time</h3>
+        
+        <div class="divider"></div>
         <div id="scheduler-container">
             <!-- If the booking is part of registration workflow, show pills -->
             {% if register_to_book %}
@@ -57,10 +71,14 @@
 
             <!-- otherwise render the normal booking view-->
             {% else %}
+
+            
+
             <form method="post" name="booking"
                 action="{% url 'booking' %}?offset={{currentWeekOffset}}{% if register_to_book %}&rtb=true{% endif %}"
                 required>
                 {% csrf_token %}
+
                 <div class="scheduler-next bg-olive">
                     <span>
                         <!-- Disable previous week button for the current week -->
@@ -121,9 +139,6 @@
 
                 <!-- Appointment -->
                 <div class="appointment_type mt-3">
-                    <h4 class="pb-2 mb-4 underlined"><strong> Select a Treatment </strong></h4>
-                    <small class="pb-4"> If you already have a Treatment Gift Card, please select the Treatment
-                        mentioned on the Gift Card.</small>
                     <div class="appointment_type_form form form-control p-0 pt-3" id="datetimepicker">
                         {{ form }}
                     </div>
