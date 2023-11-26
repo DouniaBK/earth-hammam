@@ -23,15 +23,28 @@ function onClickCallback(d, t, id, hours_str) {
 
     // Color the element pink
     const elem = document.getElementById(id);
-    elem.style.backgroundColor = '#f3b0dc';
+    elem.style.backgroundColor = 'rgb(255 255 255 / 76%)';
 }
 
-function onTypeClickCallback(type) {
-    console.log("onTypeClickCallback", type)
-    
+function onTypeClickCallback(type, treatment_ids) {
     const date = document.getElementById("id_service")
     
     date.value = type
+
+    for (idx in treatment_ids) {
+        const elem1 = document.getElementById(`hover_mask_${treatment_ids[idx]}`);
+        elem1.style.backgroundColor = 'rgb(255 255 255 / 0%)';
+
+        const elem2 = document.getElementById(`checkmark_${treatment_ids[idx]}`);
+        elem2.style.visibility = 'hidden';
+    }
+    
+
+    const elem1 = document.getElementById(`hover_mask_${type}`);
+    elem1.style.backgroundColor = '#ffffff3d';
+
+    const elem2 = document.getElementById(`checkmark_${type}`);
+    elem2.style.visibility = 'visible';
     
 }
 

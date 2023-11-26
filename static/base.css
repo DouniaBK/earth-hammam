@@ -432,18 +432,36 @@ footer {
 }
 
 /* Booking */
+.booking_form {
+
+    display: flex;
+    flex-direction: column;
+}
 
 .table {
     font-size: large;
+    text-align: center;
 }
 .table td {
     border: 1px solid #d39e00;
     padding: 0.5rem;
+    text-align: center;
 }
 
+.table th {
+    text-align: center;
+}
+
+.table tr {
+    text-align: center;
+}
 
 .table td:visited {
     background: #495057;
+}
+
+.table td:hover {
+    background: #ffffff75;
 }
 
 .table .thead-light th {
@@ -454,11 +472,17 @@ footer {
 
 .table-session-overview {
     width: 100%;
+    font-size: 18px;
 }
 
 .table-session-overview td {
     padding: 4px;
 }
+
+.table-session-overview tr {
+    border-bottom: 1px solid #00000057;
+}
+
 
 
 .disableME {
@@ -486,9 +510,9 @@ footer {
 #scheduler-container{
     background: #f3e9e0!important;
     box-sizing: border-box;
-    min-height: 87vh;
     padding: 2rem;
     border: 1px solid #0000001c;
+    width: 100%;
 }
 
 .scheduler-next{
@@ -508,6 +532,7 @@ footer {
 
 .appointment_type{
     visibility: hidden;
+    height: 0px;
 }
 
 .appointment_type_form > p {
@@ -536,11 +561,32 @@ footer {
     position: absolute;
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
 }
 
 .appointment_type_button_hover_mask:hover {
     background-color: #ffffff3d;
 }
+
+.appointment_type_checkmark {
+    color: #52452e;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 3rem;
+    background-color: #faebd78c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    visibility: hidden;
+}
+
+
 
 .divider {
     background-color: #f3e9e0;

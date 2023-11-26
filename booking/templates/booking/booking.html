@@ -24,136 +24,115 @@
             <hr>
         </div>
 
-        <h3 class="logo-font">Select a Treatment</h3>
+        <h3 class="logo-font mt-5"><strong class="mr-4">1)</strong>Select a Treatment</h3>
         <div class="divider"></div>
         <div class="appointment_types">
             {% for treatment in treatments %}
-                <div class="appointment_type_button" onclick="onTypeClickCallback('{{treatment.id}}')"">
+                <div class="appointment_type_button" onclick="onTypeClickCallback('{{treatment.id}}', {{treatment_ids_json}})">
                     <h4 style="margin: 10px;">{{treatment.name}}</h4>
                     <img class="card-img-top img-fluid" src="{{ treatment.image }}" alt="{{ treatment.name }}">
                     
-                    <div class="appointment_type_button_hover_mask"></div>
+                    <div id="hover_mask_{{treatment.id}}" class="appointment_type_button_hover_mask">
+                        <div id="checkmark_{{treatment.id}}" class="appointment_type_checkmark">
+                            ✔
+                        </div>
+                    </div>
+
                 </div>
             {% endfor %}
         </div>
 
-        <h3 class="logo-font">Choose your Time</h3>
+        <h3 class="logo-font mt-5"><strong class="mr-4">2)</strong>Choose your Time</h3>
         
         <div class="divider"></div>
-        <div id="scheduler-container">
-            <!-- If the booking is part of registration workflow, show pills -->
-            {% if register_to_book %}
-            <div class="register_pill_container">
-                <div class="register_pill inactive" id="register_pill_1">
+            <div id="scheduler-container">
+                <form 
+                    class="booking_form"
+                    method="post"
+                    name="booking"
+                    action="{% url 'booking' %}?offset={{currentWeekOffset}}{% if register_to_book %}&rtb=true{% endif %}"
+                    required>
+                    {% csrf_token %}
 
-                </div>
-
-                <div class="register_pill{% if not register_book_success and register_to_book %} active {% else %} inactive {% endif %}"
-                    id="register_pill_2">
-
-                </div>
-
-                <div class="register_pill{% if  register_book_success and register_to_book %} active {% else %} inactive {% endif %}"
-                    id="register_pill_3">
-
-                </div>
-            </div>
-            {% endif %}
-
-            <!-- Show success message if the booking is part of registration and was successful -->
-            {% if register_book_success and register_to_book %}
-
-            <div class="register_complete_main">
-                <p class="thank_you_header"> Thank you for your trust {{user.first_name}}.</p>
-                <p class="thank_you_subheader"> You have successfully booked a treatment at Earth Hammam. </p>
-                <a class="btn btn-danger" id="booking-btn" href="{% url 'booking' %}"> Treatments Booked </a>
-            </div>
-
-            <!-- otherwise render the normal booking view-->
-            {% else %}
-
-            
-
-            <form method="post" name="booking"
-                action="{% url 'booking' %}?offset={{currentWeekOffset}}{% if register_to_book %}&rtb=true{% endif %}"
-                required>
-                {% csrf_token %}
-
-                <div class="scheduler-next bg-olive">
-                    <span>
-                        <!-- Disable previous week button for the current week -->
-                        {% if not isThisWeek %}
-                        <a href="{% url 'booking' %}?offset={{currentWeekOffset|add:-1}}{% if register_to_book %}&rtb=true{% endif %}"
-                            style="text-decoration: none; display: flex; align-items: center; color:rgb(247, 243, 243); text-transform: uppercase;
-                                font-weight: bold;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                class="bi bi-arrow-left" viewBox="0 0 16 16" style="margin: 10px;">
-                                <path fill-rule="evenodd"
-                                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
-                            </svg>
-                            Previous week</a>
-                        {% endif %}
-                    </span>
-                    <span>
-                        <a href="{% url 'booking' %}?offset={{currentWeekOffset|add:1}}{% if register_to_book %}&rtb=true{% endif %}"
-                            style="text-decoration: none; display: flex; align-items: center; color:rgb(247, 243, 243); text-transform: uppercase;
-                                font-weight: bold;">Next week
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                class="bi bi-arrow-right" viewBox="0 0 16 16" style="margin: 10px;">
-                                <path fill-rule="evenodd"
-                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                            </svg>
-                        </a>
-                    </span>
-                </div>
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead class="thead-light">
-                            <tr>
-                                <th class="fw-normal" scope="col">Monday {{weekdays.0}}</th>
-                                <th class="fw-normal" scope="col">Tuesday {{weekdays.1}}</th>
-                                <th class="fw-normal" scope="col">Wednesday {{weekdays.2}}</th>
-                                <th class="fw-normal" scope="col">Thursday {{weekdays.3}}</th>
-                                <th class="fw-normal" scope="col">Friday {{weekdays.4}}</th>
-                                <th class="fw-normal" scope="col">Saturday {{weekdays.5}}</th>
-                                <th class="fw-normal" scope="col">Sunday {{weekdays.6}}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Assemble calendar by iterating over all hours and days template parameters, also adjust styling and selectability via custom class and id selectors -->
-                            {% for hour in scheduleHours %}
-                            <tr>
-                                {% for weekday, value in weekdays.items %}
-                                <td scope="row"
-                                    class="{% for session_day, session_values in weeksSessions.items %}{% if session_day == weekday %}   {% if hour in session_values %}disableME{% endif %} {% if hour|add:"me" in session_values %}disableME isMine{% endif %} {% endif %}{% endfor %}"
-                                    id="{{weekday}}_{{hour}}" style="cursor: pointer;"
-                                    onclick="{% for session_day, session_values in weeksSessions.items %}{% if session_day == weekday %}{% if not hour in session_values %}onClickCallback('{{value}}', '{{hour}}', '{{weekday}}_{{hour}}', '{{scheduleHours_json}}') {% endif %}{% endif %}{% endfor %}">
-                                    {{hour}}:00
-                                </td>
-                                {% endfor %}
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Appointment -->
-                <div class="appointment_type mt-3">
-                    <div class="appointment_type_form form form-control p-0 pt-3" id="datetimepicker">
-                        {{ form }}
+                    <div class="scheduler-next bg-olive">
+                        <span>
+                            <!-- Disable previous week button for the current week -->
+                            {% if not isThisWeek %}
+                            <a href="{% url 'booking' %}?offset={{currentWeekOffset|add:-1}}{% if register_to_book %}&rtb=true{% endif %}"
+                                style="text-decoration: none; display: flex; align-items: center; color:rgb(247, 243, 243); text-transform: uppercase;
+                                    font-weight: bold;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-arrow-left" viewBox="0 0 16 16" style="margin: 10px;">
+                                    <path fill-rule="evenodd"
+                                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                                </svg>
+                                Previous week</a>
+                            {% endif %}
+                        </span>
+                        <span>
+                            <a href="{% url 'booking' %}?offset={{currentWeekOffset|add:1}}{% if register_to_book %}&rtb=true{% endif %}"
+                                style="text-decoration: none; display: flex; align-items: center; color:rgb(247, 243, 243); text-transform: uppercase;
+                                    font-weight: bold;">Next week
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-arrow-right" viewBox="0 0 16 16" style="margin: 10px;">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                </svg>
+                            </a>
+                        </span>
                     </div>
-                </div>
-                <br />
-                <input type="submit" class="btn btn-scheduler text-white btn-form-large" value="Submit">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th class="fw-normal" scope="col">Monday {{weekdays.0}}</th>
+                                    <th class="fw-normal" scope="col">Tuesday {{weekdays.1}}</th>
+                                    <th class="fw-normal" scope="col">Wednesday {{weekdays.2}}</th>
+                                    <th class="fw-normal" scope="col">Thursday {{weekdays.3}}</th>
+                                    <th class="fw-normal" scope="col">Friday {{weekdays.4}}</th>
+                                    <th class="fw-normal" scope="col">Saturday {{weekdays.5}}</th>
+                                    <th class="fw-normal" scope="col">Sunday {{weekdays.6}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Assemble calendar by iterating over all hours and days template parameters, also adjust styling and selectability via custom class and id selectors -->
+                                {% for hour in scheduleHours %}
+                                <tr>
+                                    {% for weekday, value in weekdays.items %}
+                                    <td scope="row"
+                                        class="{% for session_day, session_values in weeksSessions.items %}{% if session_day == weekday %}   {% if hour in session_values %}disableME{% endif %} {% if hour|add:"me" in session_values %}disableME isMine{% endif %} {% endif %}{% endfor %}"
+                                        id="{{weekday}}_{{hour}}" style="cursor: pointer;"
+                                        onclick="{% for session_day, session_values in weeksSessions.items %}{% if session_day == weekday %}{% if not hour in session_values %}onClickCallback('{{value}}', '{{hour}}', '{{weekday}}_{{hour}}', '{{scheduleHours_json}}') {% endif %}{% endif %}{% endfor %}">
+                                        {{hour}}:00
+                                    </td>
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
 
-                <h4 class="pb-2 mb-4 mt-5 underlined"><strong>Booked Treatments</strong></h4>
+                    <!-- Appointment -->
+                    <div class="appointment_type mt-3">
+                        <div class="appointment_type_form form form-control p-0 pt-3" id="datetimepicker">
+                            {{ form }}
+                        </div>
+                    </div>
+                    <br />
+                    <input type="submit" class="btn btn-scheduler text-white btn-form-large" value="Submit">
+                </form>
+            </div>
 
 
+            <h3 class="logo-font mt-5">Your Booked Appointments</h3>
+            <div class="divider"></div>
+
+            <div id="scheduler-container">
                 <table class="table-session-overview">
                     <thead class="thead-light">
                         <tr>
-                            <th style="border-bottom: none;" scope="col"></th>
-                            <th style="border-bottom: none;" scope="col"></th>
+                            <th style="border-bottom: none;" scope="col">Time</th>
+                            <th style="border-bottom: none;" scope="col">Treatment</th>
                             <th style="border-bottom: none;" scope="col"></th>
                         </tr>
                     </thead>
@@ -175,17 +154,17 @@
                         {% endfor %}
                     </tbody>
                 </table>
-            </form>
-            {% endif %}
-
-            <script type="text/javascript" src="{% static 'script/booking.js' %}"></script>
-        </div>
-
+            </div>
 </div>
+
+
+
+
 
 <!-- Footer goes here-->
 {% include 'includes/footer.html' %}
 
+<script type="text/javascript" src="{% static 'script/booking.js' %}"></script>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 

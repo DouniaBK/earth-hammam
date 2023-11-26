@@ -134,6 +134,7 @@ def booking(request):
         # Get treatment possibilites
         treatments = Item.objects.filter(category=1)
         all_treatments = []
+        treatment_ids_vec = []
         for treatment in treatments:
             trtm = {}
             trtm["id"] = treatment.id
@@ -141,6 +142,7 @@ def booking(request):
             trtm["description"] = treatment.description
             trtm["image"] = treatment.image.url
 
+            treatment_ids_vec.append(str(treatment.id))
             all_treatments.append(trtm)
 
         # if this is a POST request, handle saving the session
@@ -182,7 +184,8 @@ def booking(request):
                                 'isThisWeek': week_current == week_now,  # noqa
                                 'register_to_book': register_to_book,  # noqa
                                 'register_book_success': success,  # noqa
-                                'scheduleHours_json': json.dumps(hours_vec), # noqa
+                                'scheduleHours_json': json.dumps(hours_vec),# noqa
+                                'treatment_ids_json': json.dumps(treatment_ids_vec), # noqa
                                 'treatments': all_treatments,})  # noqa
     except Exception as e:
         print(str(e), e.args)
