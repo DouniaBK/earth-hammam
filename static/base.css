@@ -4,7 +4,7 @@ html {
 
 body {
     /*background-color: #fff4eb;*/
-    color: #555;
+    color: #111111;
     font-family: 'Montserrat';
 }
 
@@ -22,6 +22,12 @@ body {
 
 .topnav {
 
+}
+
+.delivery-banner {
+    height: 2rem;
+    width: 100%;
+    background-color: #4d2d2d;
 }
 
 /* from Bulma to keep all icons centered with correct size */
@@ -265,6 +271,10 @@ body {
     width: 100%;
 }
 
+.card-title{    
+    font-size: 1.25rem;
+}
+
 .hammam-offer {
     flex: 1;
     margin: 1rem;
@@ -359,12 +369,20 @@ a.category-badge > span.badge:hover {
     height: 2px;
 }
 
+.bg-offwhite{
+    /* background-color: #fffcfa!important;*/
+}
+
+.text-muted{
+    /* background-color: #fffcfa!important;*/
+    color: #111111 !important; /* text-secondary */
+}
 
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    color: #111111; /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -804,8 +822,9 @@ footer {
         font-size: 1rem;
     }
 
-    #delivery-banner h4 {
-        font-size: .9rem;
+    .delivery-banner {
+        height: 2rem;
+        width: 100%;
     }
 
     .btn.btn-outline-black.rounded-0,

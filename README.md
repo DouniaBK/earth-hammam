@@ -215,11 +215,21 @@ The admin ability to post articles, meditation guides, journals and workbooks.
 Allowing the user to book a stay or a retreat for multiple days with the booking system will be incorporated in the future.
 
 # User Stories:
-
-
-///////////////////////////////
-
-
+The following User Stories have all met the acceptance criteria. User Story number 14, will be implemented in the future.
+- #1 Read Testimonials: As a User, I can view testimonials so that I can have an impression of the facility and services offered.
+- #2 Manage Testimonials: As an Admin I can add, update, publish, draft, and delete testimonials so that I can manage the facility image
+- #3 Default Admin Account: As an Admin, I can have a superuser account so that I can manage merchandise, customers, and site settings.
+- #4 Register Customer Account: As a user, I can register an account so that I can manage my appointments and paid services
+- #5 User Profile: As a User, I can create/read/edit/delete my profile so that I can manage the given information
+- #6 Purchasing Products: As a Shopper, I can buy products via the site so that I always have my favorite Earth Hammam products delivered home without going to the spa.
+- #7 Booked Services: As an Admin, I can see and reschedule booked services online so that I can manage staff schedules
+- #8 Book a Treatment: As a ** Client**, I can book and/or reschedule a treatment appointment online so that I can reserve a spot and manage my appointments
+- #9 Purchasing Tickets: As a Shopper, I can buy Thermal Bath Entrance tickets via the site so that I guarantee my entrance before the tickets are sold out.
+- #10 Site Admin Page: As an Admin, I can log in to my account from the site so that I can easily add, edit, and delete merchandise to/from the online store.
+- #11 View Shopping Cart Items: As a Shopper, I can view the total of items I added to the cart so that I can properly review my total.
+- #12 View Purchasable Items: As a Shopper, I can view and read about the different items sold on the site so that I can make an informed purchase.
+- #13 Purchase a Treatment Package: As a Shopper, I can buy a voucher for a treatment package on the website so that I can redeem it or gift it.
+- #14 Book Overnight Stay Package: As a Shopper, I can book a luxury overnight stay at the EarthHammam VIP Suit so that I can benefit from everything the spa has to offer
 
 
 
@@ -419,13 +429,12 @@ The project should now be connected and deployed to Heroku!
 
 ### Local Deployment
 
-This project can be cloned or forked in order to make a local copy on your own system.
+This project can be cloned or forked to make a local copy on your system.
 
 For either method, you will need to install any applicable packages found within the *requirements.txt* file.
 - `pip3 install -r requirements.txt`.
 
-You will need to create a new file called `env.py` at the root-level,
-and include the same environment variables listed above from the Heroku deployment steps, plus a few extras.
+You will need to create a new file called `env.py` at the root level and include the same environment variables listed above from the Heroku deployment steps, plus a few extras.
 
 Sample `env.py` file:
 
@@ -447,7 +456,6 @@ os.environ["STRIPE_WH_SECRET"] = "user's own value"
 ```
 
 
-
 ## Credit
 
 ### Content
@@ -459,7 +467,7 @@ os.environ["STRIPE_WH_SECRET"] = "user's own value"
 | [StackOverflow](https://stackoverflow.com/questions/37259740/passing-variables-from-flask-to-javascript) | feature-details page | How to pass variable data to JS from the backend |
 | [pylessons](https://pylessons.com/django-subscribe) | lessons | Subscribe to Newsletter in Django |
 | [django Documentation](https://docs.djangoproject.com/en/4.2/) | Entire site | code has been created following the Django documentation |
-| [Aman](https://www.aman.com/) | Home page | was used for the main site text content |
+| [Aman](https://www.aman.com/) | Home page | was used for the main site text content and inspiration |
 
 ### Media
 
@@ -471,14 +479,11 @@ os.environ["STRIPE_WH_SECRET"] = "user's own value"
 | [Canvas](https://www.canva.com/) | home page | Projects | WEbsite design |
 
 
+# Acknowledgement
 
+- I would like to thank my Code Institute mentor, [Rory Patrick Sheridan](https://github.com/Ri-Dearg) for his amazing support throughout the development of this project and studies at CI.
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
 
-
-
-
-## Content
-
-The content of the Website has been used and developed with the consent of a certified Life Coach whose name has been changed for privacy reasons. The content can be seen [here](https://drive.google.com/drive/folders/1_awslZHQsQfMlFC5cb1gW_YfR_6Asccn?usp=sharing).
 
 
 
