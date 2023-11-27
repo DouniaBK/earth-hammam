@@ -75,25 +75,6 @@ a two-hours treatment package including access to the Hammam">
                     </div>
                 </div>
             {% endfor %}
-
-                
-            {% if user.is_authenticated %}
-            <div class="container-fluid mt-2 ">
-                <div class="row">
-                    <div class="col text-center mt-3">
-                        <div class="container col-6">
-                            <h5 class="text-center pt-4"><strong>Book an Appointment for you Treatment</strong></h5>
-                            <div class="d-flex justify-content-center">
-                                <a href="{% url 'booking' %}" id="booking">
-                                    <button class="btn btn-reddirt me-md-2"> Booking </button>
-                                </a>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-        
         </div>
 </div>
 <!-- Footer goes here -->

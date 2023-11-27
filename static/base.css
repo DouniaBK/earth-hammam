@@ -140,7 +140,6 @@ body {
     width: 100%;
 }
 
-
 .form-btn-to-right {
     display: flex;
     justify-content: flex-end;
@@ -248,6 +247,10 @@ body {
     padding-bottom: 4rem;
     flex-direction: row;
   }
+
+.border-hammam {
+    border: 1px solid rgba(0,0,0,.125);
+}
 
 .testimonial-card .card-up {
     height: 22px;
@@ -842,3 +845,66 @@ footer {
         padding: .25rem .5rem !important;
     }
 }
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 600px) {
+    .main-content {
+        width: 90%;
+    }
+
+    .appointment_type_button {
+        margin: 0.2rem;
+    }
+
+    h1 {
+        font-size: 2rem !important;
+    }
+    h2 {
+        font-size: 1.75rem !important;
+    }
+    h3 {
+        font-size: 1.5rem !important;
+    }
+    h4 {
+        font-size: 1.25rem !important;
+    }
+    h5 {
+        font-size: 1rem !important;
+    }
+    h6 {
+        font-size: 0.75rem !important;
+    }
+
+    .table {
+        font-size: 15px;
+    }
+    .table-session-overview {
+        font-size: 15px;
+    }
+    .lead {
+        font-size: 1.1rem !important;
+    }
+    .profile-table-row {
+        padding: 10px;
+        margin: 10px;
+        flex-direction: column;
+    }
+    .profile-table-element {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .hide-on-mobile {
+        visibility: hidden;
+        height: 0px !important;
+        width: 0px !important;
+        padding: 0px !important;
+        margin: 0px !important;
+    }
+    .margin-on-mobile {
+        margin-top: 10px;
+    }
+}
+
+

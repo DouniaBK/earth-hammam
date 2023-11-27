@@ -48,7 +48,7 @@
 
         <div class="general-container">
             <div class="order-history table-responsive">
-                <div class="profile-table-row bg-olive text-white">
+                <div class="profile-table-row bg-olive text-white hide-on-mobile">
                     <div class="profile-table-element">
                         <strong>Date</strong>
                     </div>
@@ -79,7 +79,7 @@
                     <div class="profile-table-element">
                         ${{ order.grand_total }}
                     </div>
-                    <div class="profile-table-element">
+                    <div class="profile-table-element margin-on-mobile">
                         <form action="{% url 'order_history' order.order_number %}">
                             <input type="submit" value="View Order" class="btn btn-wetsand rounded-0 text-uppercase float-right"/>
                         </form>
@@ -90,6 +90,8 @@
         </div>
 
     </div>
+    <!------------------------------------- Footer goes here-->
+    {% include 'includes/footer.html' %}
 {% endblock %}
 
 {% block postloadjs %}
