@@ -43,29 +43,29 @@ Manual testing was conducted for scenarios, that can not easily be tested via au
 
 | Page | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
-| Apppointment Booking| | | | |
+| **Apppointment Booking**| | | | |
 | | book an appointment once registered | appointment booked | Pass | |
 | | Select a treatment from the services provided| treatment selected | Pass | |
 | | select an available time slot and submit it| appointment selected | Pass |see the booked sessions|
 | | cancel a booked appointment| appointment cancelled | Pass | time slot available for booking again|
-| User Registration| | | | |
+| **User Registration**| | | | |
 | | register a new account  | confirmation email sent | Pass | email confirmed and new user account is visible in the admin|
 | | can log in if already registered from the navbar| login successful message | Pass | user logged in|
 | | user can log out if already logged in| redirect to logout page | Pass | click logout and logged out|
 | | Enter valid but artificial information into all fields, while using a single-letter password. Click the “register” button| password not strong enough message| Pass | |
-| Edit Profile and Delete Account| | | | |
+| **Edit Profile and Delete Account**| | | | |
 | | user can access Profile from navbar  | redirect to profile| Pass | user can see their default information filled in form and order history|
 | | user can not edit their profile until they click on the button update profile| Edit profile fields are then allowed | Pass | can edit the fields, update and see edited fields|
 | | user can cancel editing| editing cancelled | Pass | |
 | | user can delete profile| click on delete  | Pass | user can delete the account after confirming the action|
-| Bag| | | | |
+| **Bag**| | | | |
 | | user can add any aticket to  bag by clicking add to bag button | default one item added to bag| Pass | success message appears with bag details|
 | | user can add any treatment to  bag by clicking add gift card to bag button | default one item added to bag| Pass | success message appears with bag details|
 | | user can add any product to  bag by clicking add to bag button | default one item added to bag| Pass | success message appears with bag details|
-| merchandizing for admin| | | | |
-| | admin add new ticket to store | fill the form and image| Pass | ticket added to ticket page|
-| | admin add new treatment to store | fill the form and image| Pass | ticket added to treatment page|
-| | admin add new product to store | fill the form and image| Pass | product added to ticket page|
+| **Merchandizing**| | | | |
+| | accessible from navbar drop-down menu - admin add new ticket to store | fill the form and image| Pass | ticket added to ticket page|
+| | accessible from navbar drop-down menu - admin add new treatment to store | fill the form and image| Pass | ticket added to treatment page|
+| | accessible from navbar drop-down menu - admin add new product to store | fill the form and image| Pass | product added to ticket page|
 | | admin edit an already existing item in store | fill the form and image and submit| Pass | item edited in proper page|
 | | admin deletes an already existing item in store | click delete| Pass | delete message appear and item is deleted|
 
