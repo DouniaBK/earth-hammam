@@ -8,8 +8,9 @@ The site brings the serene Earth Hammam experience to the world, inviting visito
 # Table of Contents
 ## Goals
 * Target Users
+* Business Model
+* Marketing Strategies
 * Visual Design
-
 ## Features
 * Page Elements
 * Additional Features
@@ -32,21 +33,38 @@ The site brings the serene Earth Hammam experience to the world, inviting visito
 * Local Deployment
 * Heroku Deployment
 ## Credit
-* Code
+* Media
 * Content
 
 # Business Goals
+
 ## Target Audience :
 
 The site is designed for Earth Hammam tourists, influencers and business travelers who would like to visit the facility during their trip to Marrakech, it is designed to attract tourists, influencers and business travelers from around the world who are tempted by this luxury yet authentic experience to indulge, be pampered and promote the facility.
 The treatments can be bought in the form of a gift card which makes an ideal corporate incentive targeting corporate individuals as well as influencers. The gift card option incites individuals to go to the facility and spend more benefitting the business.
 
-## Gift Card Business Model:
+## Business Model:
 
+Items sold on the site:
+**Treatment Gift Card**
 The Earth Hammam profits when individuals buy their gift cards online whether for personal use or as a gift. Earth Hammam profits as well when the gift card has not been redeemed. The booking system gives the sense that the gift card can be redeemed whenever the client wants and thus encourages clients to buy gift cards online as long as they have the freedom of booking within the next five years.
+
+**Products**
+The products sold on the site are inspired by the scent, mood and atmosphere of Earth Hammam, they are sold for returning customers who want to take Earth Hammam home. The client can add the default amount to their bag, adjust the quantity and proceed to check out to purchase the product which includes delivery information and an order confirmation email
+
+**Tickets**
+The tickets sold on the site are for returning customers who want to experience Earth Hammam. The client can add the default amount to their bag, adjust the quantity and proceed to check out to purchase the ticket then receive an order confirmation email. The client can then show their confirmation email at the entrance where they will be given an armband to access the facility
+
+## Marketing Strategies:
+
+The site aims at targeting customers via social media with a Facebook Business Page as well as other social media platforms such as Instagram via the influencers who are invited or visiting the site as well through corporate incentives. The Earth Hammam establishment is an exclusive wellness experience 
+
+
+
 
 ## Visual Design:
 A folder with further design elements can be accessed [here](ADD LINK) as well as the [flowchart](ADD LINK).
+
 ### Site Design:
 
 This particular site is dedicated to wellness and relaxation transporting the user to a serene space inspired by the rose-hued architecture and landscape of North Africa. The site has an earthy North African color pallet, aiming at embracing healing, rejuvenation and indulging in a promise of luxury and pampering. The site has a minimal aesthetic and color palette to avoid sensory overstimulation often and offers an intuitive workflow leading to, buying, an entrance ticket, a product or even better a treatment gift card and then if logged in, booking a session and starting a journey of mental repair and pampering. Furthermore, the site contains key information about the facility in the section dedicated to the Hammam, accessible from the navigation, such as a carousel with images inspiring luxurious wellness with unique architecture, authentic ancient healing treatments and beauty rituals. Moreover, a section describing the exclusive offers Earth Hammam provides with links leading the user to shop. Finally, a Testimonial section is added to provide a sense of trust and professionalism.
@@ -56,26 +74,23 @@ The font family and style used are:
 
    * font-family: 'Montserrat'
    * Lead feature from Bootstrap
-### Favicon:
-A minimalistic favicon with the word 'Hammam" has been added giving the site a professional look. The favicon has been generated using [Hoststar](https://www.hoststar.ch/de).
+
+### Typography
+
+- [Montserrat](https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap) was used for the primary headers and titles.
+
+- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
+
+- [Hoststar](https://www.hoststar.ch/de) a minimalistic favicon with the word 'Hammam" has been added giving the site a professional look, this was generated using this site.
 
 ### Colour Schemes:
 ///////////////image of the color pallet
  Earth Hammam project is inspired by the rose-hued landscape and architecture of North Africa. The color of limestone, wet sand, olive tree leaves, and desert sand make the tones of the site, installing a sense of peace, relaxation and luxury and ensuring a calm user experience.
 
-
 # Features
 
 ## Page Elements:
-The site contains various pages to introduce the user to the services and approaches Earth Hammam offers. The following pages are accessible from the extendable navbar on top:
-
-### Navigation:
-The navbar is centered above the main content of the site where the user can navigate to the Hammam, tickets, treatments,  products or the booking page. The navbar collapses for small and medium screens allowing better user experience and optics.
-### Logo: 
-Simple clean logo featuring the name of the establishment written in uppercase and bold, placed in the top left corner of the site including the only link that redirects to the welcome page.
-### Footer:
-The footer includes multiple Social media links for the user to find out more about the establishment. These will open in a new tab. Furthermore, it includes a subscription section allowing the users to receive the newsletter. Underneath the Unsubscribe link, redirect the returning to an unsubscribe page, where the user is prompted to enter their email address and press unsubscribe if they no longer want to receive the newsletter.
-### Toast Messages:
+The site contains various pages to introduce the user to the services and offers Earth Hammam has. The following pages are accessible from the extendable navbar on top:
 
 
 ### Welcome page:
@@ -137,8 +152,23 @@ This page is accessible from the navbar once registered or logged in. This secti
 - Orders: The admin is able to see all the orders made by the clients thus they can complete the shipment procedure.
 - Manage subscribers: the admin can view and manage subscribers to the newsletter allowing them to manage all marketing aspects as well as further market estimations.
 
+## More features:
 
+### Navigation:
+The navbar is centered above the main content of the site where the user can navigate to the Hammam, tickets, treatments,  products or the booking page. The navbar collapses for small and medium screens allowing better user experience and optics.
 
+### Logo: 
+Simple clean logo featuring the name of the establishment written in uppercase and bold, placed in the top left corner of the site including the only link that redirects to the welcome page.
+
+### Footer:
+The footer includes multiple Social media links for the user to find out more about the establishment. These will open in a new tab. Furthermore, it includes a subscription section allowing the users to receive the newsletter. Underneath the Unsubscribe link, redirect the returning to an unsubscribe page, where the user is prompted to enter their email address and press unsubscribe if they no longer want to receive the newsletter.
+
+### Toast Messages:
+Various messages notify the user of successful actions, errors and warnings as well as inform the user of the proper steps to take to solve issues.
+**Success**: informs the user they have for example successfully added an item to their bag.
+**Info**: informs the user that they have for example received a confirmation email validating the last step they have taken.
+**Warning**: warns the user if they for example need to fill in the form properly.
+**Error**: let the user know that an error has happened for example removing an item from the bag.
 
 ### Error Pages:
 * 400 Error page appears when the server can not or will not process the request due to something that is perceived to be a client error 
@@ -168,7 +198,7 @@ Allowing the user to book a stay or a retreat for multiple days with the booking
 # Information Architecture
 ## Database:
 
-ElephantSQL is hosted by PostgreSQL has been used as a database.
+ElephantSQL, hosted by PostgreSQL, has been used as a database.
 
 ## Data Models:
 
@@ -177,25 +207,30 @@ ElephantSQL is hosted by PostgreSQL has been used as a database.
 * Booking: CoachingSession() has been created and migrated to book a session with the coach as well as manage booked sessions such as canceling a session.
 
 # Technologies Used
-## Languages:
 
-* Logic:
-    - Python
+## Tools & Technologies Used
 
-* Template:
-    - HTML
-    - CSS
-    - Javascript
+- [HTML](https://en.wikipedia.org/wiki/HTML) was used for the main site content.
+- [CSS](https://en.wikipedia.org/wiki/CSS) was used for the main site design and layout.
+- [JavaScript](https://www.javascript.com) was used for user interaction on the site.
+- [Python](https://www.python.org) was used as the back-end programming language.
+- [Git](https://git-scm.com) was used for version control. (`git add`, `git commit`, `git push`)
+- [GitHub](https://github.com) was used for secure online code storage.
+- [Gitpod](https://gitpod.io) was used as a cloud-based IDE for development.
+- [Bootstrap](https://getbootstrap.com/) was used as the front-end CSS framework for modern responsiveness and pre-built components.
+- [ElephantSQL](https://www.elephantsql.com/) was used as the non-relational database.
+- [Cloudinary](https://cloudinary.com/) was used to store, transform, optimize, and deliver media assets with APIs.
+- [Heroku](https://www.heroku.com) was used for hosting the deployed back-end site.
+- [Stripe](https://www.stripe.com) was used to power online payment processing.
+- [Canvas](https://balsamiq.com/) was used to create the project wireframes.
+- [Hoststar](https://www.hoststar.ch/de) was used to generate the favicon used on all pages.
 
-* Database:
-    - Structured Query Language
 
-## Libraries:
-    1. dj_database_url==0.5.0 psycopg2
-    2. os library
-    3. Cloudinary
 
-## Tools:
+## Testing
+
+For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
 Code validation was done using the following tools:
 
 | **Tools**     | **Language**   |**Validation Result** |
@@ -280,11 +315,131 @@ Manual testing was conducted for scenarios, that can not easily be tested via au
     2. Create the Heroku app: Create the app, add the Config Vars then attach the database.
     3. Prepare the environment and settings.py file: Create a new env.py file, import the Os library, set environment variables including the secret key, add the links to the DATATBASE_URL variable on Heroku and finally add Heroku Hostname to ALLOWED_HOSTS and deploy through Heroku.
 
+
+## Deployment
+
+The live deployed application can be found deployed on [Heroku](https://earth-hammam-e2008fb66bd6.herokuapp.com/).
+
+### ElephantSQL Database
+
+This project uses [ElephantSQL](https://www.elephantsql.com/) for the Database.
+
+To create a new PostgreSQL database instance this process was followed after account setup:
+
+1. Log in to ElephantSQL.com to access your dashboard
+2. Click “Create New Instance”
+3. Set up the plan for Earth Hammam
+4. Select the Tiny Turtle (Free) plan
+5. Select “EU Region”
+6. Select EU-West as data center
+
+### Heroku Deployment
+
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+Deployment steps are as follows, after account setup:
+
+- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select **Create App**.
+- From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables.
+
+| Key | Value |
+| --- | --- |
+| `DATABASE_URL` | user's own value |
+| `SECRET_KEY` | user's own value|
+| `CLOUDINARY_URL` | user's own value |
+| `CLOUDINARY_CLOUD_NAME` | user's own value |
+| `CLOUDINARY_API_KEY` |user's own value |
+| `CLOUDINARY_API_SECRET` | user's own value |
+| `STRIPE_SECRET_KEY` | user's own value |
+| `STRIPE_PUBLIC_KEY` |user's own value |
+| `STRIPE_WH_SECRET` | user's own value |
+
+Heroku needs two additional files in order to deploy properly.
+- requirements.txt
+- Procfile
+
+You can install this project's **requirements** (where applicable) using:
+- `pip3 install -r requirements.txt`
+
+If you have your own packages that have been installed, then the requirements file needs updated using:
+- `pip3 freeze --local > requirements.txt`
+
+The **Procfile** can be created with the following command:
+- `echo web: python app.py > Procfile`
+- *replace **app.py** with the name of your primary Flask app name; the one at the root-level*
+
+For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
+
+Either:
+- Select **Automatic Deployment** from the Heroku app.
+
+Or:
+- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
+- Set the remote for Heroku: `heroku git:remote -a app_name` (replace *app_name* with your app name)
+- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
+	- `git push heroku main`
+
+The project should now be connected and deployed to Heroku!
+
+### Local Deployment
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+For either method, you will need to install any applicable packages found within the *requirements.txt* file.
+- `pip3 install -r requirements.txt`.
+
+You will need to create a new file called `env.py` at the root-level,
+and include the same environment variables listed above from the Heroku deployment steps, plus a few extras.
+
+Sample `env.py` file:
+
+```python
+import os
+
+# local environment only (do not include these in production/deployment!)
+
+os.environ["DATABASE_URL"] = "user's own value"
+os.environ["SECRET_KEY"] = "user's own value"
+os.environ["CLOUDINARY_URL"] = "user's own value"
+os.environ["CLOUDINARY_CLOUD_NAME"] = "user's own value"
+os.environ["CLOUDINARY_API_KEY"] = "user's own value"
+os.environ["CLOUDINARY_API_SECRET"] = "user's own value"
+
+os.environ["STRIPE_SECRET_KEY"] = "user's own value"
+os.environ["STRIPE_PUBLIC_KEY"] = "user's own value"
+os.environ["STRIPE_WH_SECRET"] = "user's own value"
+```
+
+
+
 ## Credit
-* The code has been created following the Django and Bootstrap official documentation as well as the courses provided by the Code Institute. 
-* Testing code used in test_create_user() and test_create_superuser() have been done following the guide "Create a Custom User Model in Django" by Michael Herman published in [testdriven. io](https://testdriven.io/blog/django-custom-user-model/ 
-    #settings).
-* The RegisterUserForm() has been adapted from courses taken on [Codemy.com](https://codemy.com/).
+
+### Content
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [StackOverflow](https://stackoverflow.com/) | feature-details and search-results pages | how to solve various |
+| [Codepen](https://codepen.io/recodenow/pen/YZqgZW) | feature-details page | Five star rating checkbox |
+| [StackOverflow](https://stackoverflow.com/questions/37259740/passing-variables-from-flask-to-javascript) | feature-details page | How to pass variable data to JS from the backend |
+| [pylessons](https://pylessons.com/django-subscribe) | lessons | Subscribe to Newsletter in Django |
+| [django Documentation](https://docs.djangoproject.com/en/4.2/) | Entire site | code has been created following the Django documentation |
+| [Aman](https://www.aman.com/) | Home page | was used for the main site text content |
+
+### Media
+
+| Source | Location | Type | Notes |
+| --- | --- | --- | --- |
+| [Wikimedia](https://commons.wikimedia.org/wiki/File:No-Image-Placeholder.svg) | entire site | image | Placeholder image if no poster is found |
+| [FlowChart](https://lucid.app/lucidchart/30fddd8a-f5ab-467e-be3b-b210c1bb60cd/edit?viewport_loc=372%2C29%2C1373%2C1547%2C0_0&invitationId=inv_c6d1929d-13d4-4370-8bda-73e9c5664d07) | home page | flowchart | flowchart maker |
+| [Miro Board](https://miro.com/app/board/uXjVNcqnHL8=/?share_link_id=999954555341) | home page | Business Model | Business Model maker |
+| [Canvas](https://www.canva.com/) | home page | Projects | WEbsite design |
+
+
+
+
+
+
 
 ## Content
 
