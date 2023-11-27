@@ -44,8 +44,8 @@ The site is designed for Earth Hammam tourists, influencers and business travele
 The treatments can be bought in the form of a gift card which makes an ideal corporate incentive targeting corporate individuals as well as influencers. The gift card option incites individuals to go to the facility and spend more benefitting the business.
 
 ## Business Model:
-
-Items sold on the site:
+A detailed business model can be found [here](//////////).
+Items sold on the site include:
 **Treatment Gift Card**
 The Earth Hammam profits when individuals buy their gift cards online whether for personal use or as a gift. Earth Hammam profits as well when the gift card has not been redeemed. The booking system gives the sense that the gift card can be redeemed whenever the client wants and thus encourages clients to buy gift cards online as long as they have the freedom of booking within the next five years.
 
@@ -57,10 +57,26 @@ The tickets sold on the site are for returning customers who want to experience 
 
 ## Marketing Strategies:
 
-The site aims at targeting customers via social media with a Facebook Business Page as well as other social media platforms such as Instagram via the influencers who are invited or visiting the site as well through corporate incentives. The Earth Hammam establishment is an exclusive wellness experience 
+1. Social Media Platforms:
+The site aims at targeting customers via social media with a Facebook Business Page as well as other social media platforms such as Instagram via the influencers who are invited or visiting the site as well through corporate incentives. The Earth Hammam establishment is an exclusive wellness experience that influencers follow to increase their own brand visibility.
 
+2. SEO Techniques used:
+- Well-crafted technical SEO to ensure sites are crawled properly.
+- Keyword research and use.
+- Optimized content.
+- SEO-friendly meta tags and titles are placed on each page.
 
+3.  Prioritize Website Speed And Mobile-First Design:
+As most customers reach the site via their mobile phones, whether by Google It or via Instagram tags and other platforms, the design of the site prioritizes small screens with responsive design to enhance user experience and behavior increasing the likelihood to purchase the items on the site. Furthermore,  the role that the speed of the page plays in search engine rankings and thus the speed has been rigorously observed and enhanced for better ranking.
 
+4. Email Marketing via Newsletter:
+ Email marketing is used to get to those who abandoned their cart, potential customers who signed up for our newsletters from Facebook or the shop, and reach out to existing clients who have not purchased in a while to get them coming back. The newsletter is optimized for front-end formatting to allow better crafting of the newsletter, reaching out to luxury-seeking clients.
+
+5. Blog Postings via Facebook:
+The Facebook business page for Earth Hammam is meant to include exclusive offers and a peek into what awaits the new customers as well as reaching out to facebook users who might know about the facility.
+
+6. Referral Marketing via Testimonials and Tags:
+The Earth Hammam site includes testimonials from visitors referring the facility to other customers.
 
 ## Visual Design:
 A folder with further design elements can be accessed [here](ADD LINK) as well as the [flowchart](ADD LINK).
@@ -86,6 +102,15 @@ The font family and style used are:
 ### Colour Schemes:
 ///////////////image of the color pallet
  Earth Hammam project is inspired by the rose-hued landscape and architecture of North Africa. The color of limestone, wet sand, olive tree leaves, and desert sand make the tones of the site, installing a sense of peace, relaxation and luxury and ensuring a calm user experience.
+
+ ## Color Reference
+
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Example Color | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
+| Example Color | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
+| Example Color | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
+| Example Color | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
 
 # Features
 
@@ -128,9 +153,12 @@ The Categories of Items are:
 
 ### Booking:
 
-![Booking](static/images/booking-screenshot.png)
+![Booking](////////)
 
-This page is accessible from the navbar once registered or logged in. This section allows the user to select a service and then book one of the Treatments offered with a handy calendar that shows which days and times are still available and the slots that are not available are grayed out. Once the user selects an appropriate time and a service and submits it that appointment then appears in their personal list of booked treatments which in turn can be cancelled. The design of the booking system is coherent with the serene, minimal and earth tones of the site for seamless user experience.
+
+This section allows the user to first select a treatment and then book one of the Treatments offered with a handy calendar that shows which days and times are still available and the slots that are not available are grayed out. Once the user selects an appropriate time and a service and submits it that appointment then appears in their list of booked treatments which in turn can be cancelled by clicking the cancel button adjacent to the appointment date they booked. The design of the booking system is coherent with the serene, minimal and earthy tones of the site for seamless user experience.
+
+This page is accessible from the navbar for registered or logged-in users. If the user is not logged in or registered the booking features are blurred out and inaccessible.
 
 ### Accounts:
 
@@ -198,13 +226,20 @@ Allowing the user to book a stay or a retreat for multiple days with the booking
 # Information Architecture
 ## Database:
 
-ElephantSQL, hosted by PostgreSQL, has been used as a database.
+ElephantSQL, hosted by PostgreSQL, has been used as a database. The database is called *earth-hammam*.
 
 ## Data Models:
 
-* Custom User: CustomUser() has been created and migrated to create a user account to access the booking system to book a session with the coach and manage the bookings.
-* Testimonials: Testimonial() has been created and migrated to publish testimonials from the admin panel as a marketing tool
-* Booking: CoachingSession() has been created and migrated to book a session with the coach as well as manage booked sessions such as canceling a session.
+| **App**     | **Model**   |**Description** |
+| -----         | ----------     | -----------------    |
+| Home| Testimonial()|has been created and migrated to publish testimonials from the admin panel as a marketing tool|
+| Booking| Appointment()| has been created and migrated to book a treatment at the facility as well as manage booked sessions such as canceling a session.|
+| Marketing| SubscribedUser()|has been created to allow subscribers to receive the newsletter as well as manage subscription cancelation.|
+| Profile|create_or_update_user_profile()| has been created to creqate and update users' profile|
+| Products |Category| has been created to categories the items sold on the site into three categories|
+| Products |Item| to register the items sold on the site|
+| Checkout |Order()| has been created to register the users orders, update orders and set the order number|
+| Checkout|OrderLineItem()| has been created tOverride the original save method to set the lineitem total and update the order total|
 
 # Technologies Used
 

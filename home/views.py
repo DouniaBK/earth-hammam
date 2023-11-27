@@ -13,3 +13,8 @@ def index(request):
 def hammam(request):
     all_testimonials = Testimonial.objects.filter(status='1')
     return render(request, 'home/hammam.html', {'all_testimonials': all_testimonials})  # noqa
+
+
+def privacypolicy(request):
+    return render(request, 'home/privacy_policy.html')  # noqa
+
