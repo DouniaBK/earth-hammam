@@ -290,63 +290,6 @@ Responsiveness has been tested using:
   * [BrowserStack](https://www.browserstack.com/)
   * Screenshots of responsiveness have been added to this drive [file](https://www.browserstack.com/).
 
-# Testing
-Testing was conducted automatically as well as manually. Automatic testing was used for backend functions, with an easily testable input-output relationship. Manual testing was added to account for interactive scenarios, that are not easily testable with automation. 
-
-## Automated Testing:
-### Why use Automated Unit Testing?
-Automated testing was used to efficiently test the core functionality, such as database object creation as well as middleware functionality with a clear input-output relationship. These test cases can then be repeated during the development process, to ensure continuous functionality, thus eliminating human error.
-
-### The features tested with automated unit testing are:
-    Database object creation:
-        - User
-        - Super-user
-        - Session
-        - Testimonial
-
-    Middleware:
-        - Calendar date and session processing functions, which are vital for the correct visualization of the calendar
-
-The result of the automated testing is as follows:
-
-Debug mode is on.
-Creating test database for alias 'default'...
-System check identified no issues (0 silenced).
-normal@user.de | service: Freedom and Thrive
-..Test super user
-create_superuser
-..Test normal user
-.
-----------------------------------------------------------------------
-Ran 5 tests in 0.481s
-
-OK
-Destroying test database for alias 'default'...
-##  Manual Testing:
-A detailed Manual Test Protocol has been created to document the steps taken for testing including responsiveness, Please, see the document for further details. The Manual Test Protocol is accessible through this [drive link](https://drive.google.com/drive/folders/1L4WP4BcJh_ixJev1f9W-9LHCpFTmigTt?usp=sharing)
-### Why Use Manual Testing?
-Manual testing was conducted for scenarios, that can not easily be tested via automation and thus involve a system-level interaction across several components. Regardless, the manual tests are written in a strictly repeatable manner, to ensure consistency across testers and time.
-
-### The features tested manually are:
-
-1. User registration: Test if the can user enter the required information such as name, email address, password, and address and subsequently register. Test error messages are displayed to the user. 
-2. Account management: Test if the user can edit their profile information and view their newly edited saved profile. Test profile deletion and robustness to incorrect entries.
-3. Accessibility: Test if the website's features and functions are accessible to users with disabilities, such as screen readers or keyboard-only users.
-4. Booking process: Test booking page navigation and session booking, as well as session cancelation.
-
-## Accessibility
-
-![Site Performance Score](static/images/lighthouse-performance-test.png)
-  * The overall performance of the site has been tested on desktop and mobile using Lighthouse and the site has passed the accessibility test
-## Bugs:
-1) Issue:       The user was able to book a session in the past.
-   Resolution:  The user is now prevented from booking past sessions, by disabling the possible user interaction for the present day and all previous days.
-
-2) Issue:       Regardless of the error, the user always received the same "Passwords do not match" error when making a mistake in the registration form.
-   Resolution:  A custom routine was added to the user registration routines to extract the exact error from the available information.
-
-3) Issue:       Although for the current week, no "Previous week" button is shown, the user was able to manipulate the URL parameters manually to change the calendar to any previous week.
-   Resolution:  Negative URL parameters for the week offset are now blocked.
 
 ## Deployment
 

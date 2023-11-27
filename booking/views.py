@@ -11,7 +11,6 @@ from .models import Appointment
 import json
 
 
-
 # Returns the days of the week for a specific day
 def getDaysOfWeekForDay(t_current):
     # Get day of week as an integer
@@ -103,7 +102,7 @@ def booking(request):
                     for i in range(h_min, h_max):
                         if not str(i) in sessions_of_the_week[d] and not (str(i) + "me") in sessions_of_the_week[d]:   # noqa
                             sessions_of_the_week[d].append(str(i))
-        
+
         user = None
         is_authenticated = False
         try:
@@ -174,7 +173,7 @@ def booking(request):
                     return HttpResponseRedirect("/booking?offset=" + str(offset_param))   # noqa
             else:
                 print("Error", form.errors)
-                
+
         # if a GET (or any other method) we'll create a blank form
         form = AppointmentInputFormFrontEnd()
         return render(request,  'booking/booking.html', {'form': form,   # noqa
