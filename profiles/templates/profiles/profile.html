@@ -19,57 +19,78 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col container col-8 text-center mt-2 pb-4 pt-4">
-                <h2 class="text-uppercase">My Profile</h2>
-            </div>
-        </div>
-        <div class="row bg-offwhite pb-3" style="border:solid; border-color: #d39e00; border-radius: 10px;">
-            <div class="col-12 col-lg-6 mb-5 text-center pt-4">
-                <h3 class="text-uppercase lead bg-olive text-white p-1">Delivery Information</h3>
-                <form class="mt-4" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button class="btn btn-wetsand rounded-0 text-uppercase float-right">Update Information</button>
-                </form>
-                
-                <form class="mt-4" action="{% url 'delete' %}" method="POST" id="profile-delete">
-                    {% csrf_token %}
-                    <button class="btn btn-wetsand rounded-0 text-uppercase float-right">Delete</button>
-                </form>
 
-            </div>
-            <div class="col-12 col-lg-6 pt-4">
-                <h3 class="text-uppercase lead bg-olive text-white text-center p-1">Order History</h3>
-                <div class="order-history table-responsive">
-                    <table class="table table-sm table-borderless">
-                        <thead>
-                            <tr>
-                                <th>Order Number</th>
-                                <th>Date</th>
-                                <th>Order Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for order in orders %}
-                                <tr>
-                                    <td>
-                                        <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}">
-                                            {{ order.order_number|truncatechars:6 }}
-                                        </a>
-                                    </td>
-                                    <td>{{ order.date }}</td>
-                                    <td>${{ order.grand_total }}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+
+    <div class="main-content" style="display: flex; flex-direction: column; align-items: center;">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">My Profile</h2>
+            <hr>
+        </div>
+
+        <div class="general-container">
+            <h3 class="text-uppercase lead bg-olive text-white p-1">General Information</h3>
+            <form class="mt-4" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-wetsand rounded-0 text-uppercase float-right">Update Information</button>
+            </form>
+            
+            <form class="mt-4" action="{% url 'delete' %}" method="POST" id="profile-delete">
+                {% csrf_token %}
+                <button class="btn btn-wetsand rounded-0 text-uppercase float-right">Delete</button>
+            </form>
+        </div>
+
+
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Order History</h2>
+            <hr>
+        </div>
+
+        <div class="general-container">
+            <div class="order-history table-responsive">
+                <div class="profile-table-row bg-olive text-white">
+                    <div class="profile-table-element">
+                        <strong>Date</strong>
+                    </div>
+                    <div class="profile-table-element">
+                        <strong>Products</strong>
+                    </div>
+                    <div class="profile-table-element">
+                        <strong>Order Total</strong>
+                    </div>
+                    <div class="profile-table-element">
+                    </div>
                 </div>
+
+                {% for order in orders %}
+                <div class="profile-table-row clickable">
+                    <div class="profile-table-element">
+                        {{ order.date }}
+                    </div>
+                    <div class="profile-table-element">
+                        <div class="d-flex flex-column">
+                            {% for product in order.lineitems.all %}
+                            <a>
+                                {{ product.item.name }}
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="profile-table-element">
+                        ${{ order.grand_total }}
+                    </div>
+                    <div class="profile-table-element">
+                        <form action="{% url 'order_history' order.order_number %}">
+                            <input type="submit" value="View Order" class="btn btn-wetsand rounded-0 text-uppercase float-right"/>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
+
+    </div>
 {% endblock %}
 
 {% block postloadjs %}

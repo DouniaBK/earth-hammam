@@ -4,7 +4,6 @@ var selectedDate = null
 var selectedTime = null
 
 function onClickCallback(d, t, id, hours_str) {
-    console.log("onClickCallback", id, hours_str)
     const date = document.getElementById("id_time_0")
     const time = document.getElementById("id_time_1")
     
@@ -16,8 +15,6 @@ function onClickCallback(d, t, id, hours_str) {
 
     // Color in the clicked element
     // Uncolor all others
-
-    console.log("onClickCallback", date.value, time.value)
     
     var hours = JSON.parse(hours_str)
     
@@ -61,15 +58,12 @@ function onTypeClickCallback(type, treatment_ids) {
 }
 
 function updatePage() {
-    
-    console.log("updatePage", 1)
     var paragraph = document.getElementById("booking_feedback");
 
     if (selectedService !== null && selectedDate !== null && selectedTime !== null) {
         paragraph.innerHTML = `You selected the ${selectedService} treatment at ${selectedTime} on ${selectedDate}`;
     }
 
-    console.log("updatePage", 2)
     if (selectedService !== null) {
         var time_blur = document.getElementById("selectTimeWrapperBlur");
         time_blur.style.visibility = 'hidden';

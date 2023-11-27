@@ -125,6 +125,16 @@ body {
     /* z-index: -1;*/
     overflow: scroll!important;
 }
+
+.general-container {
+    background: #f3e9e0!important;
+    box-sizing: border-box;
+    padding: 2rem;
+    border: 1px solid #0000001c;
+    width: 100%;
+}
+
+
 /* Hammam page */
 
 .hammam-section {
@@ -254,6 +264,56 @@ body {
     margin: 1rem;
     min-width: 300px;
 }
+
+
+/*Profile*/
+
+.orders-table {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+
+.orders-table td {
+    border: none !important;
+    vertical-align: middle;
+}
+
+.orders-table td:hover {
+    background: none !important;
+}
+
+.orders-table  tr {
+    background: #ffffff61;
+}
+
+.profile-table-row {
+    display: flex;
+    width: 97%;
+    margin: 1.5%;
+    background-color: #ffffffb0;
+    padding: 1%;
+}
+
+.profile-table-element {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+}
+
+.text-white{
+    color: white;
+}
+
+.clickable:hover {
+    background-color: #ffffff;
+}
+
+.clickable{
+}
+
+
+
 
 /* the scroll to the top button*/
 .btt-button {
