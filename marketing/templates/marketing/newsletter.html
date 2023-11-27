@@ -7,26 +7,17 @@
 <title> Newsletter Management</title>
 {% endblock %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container-fluid mt-3 ">
+    <div class="main-content">
 
-        <section class="row">
-            <div class="container col-8 text-center mt-3">
-                <h2 class="text-uppercase">Newsletter Management</h2>
-            </div>
-        </section>
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">Newsletter Management</h2>
+            <hr>
+        </div>
 
         <section class="row ">
-            <div class="container pb-5 col-lg-6 mb-5 pt-4 bg-offwhite" style="border:solid; border-color: #d39e00; border-radius: 10px;">
+            <div class="general-container">
                 <form method="POST" action="" class="form mb-2 text-uppercase" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form|crispy  }}
