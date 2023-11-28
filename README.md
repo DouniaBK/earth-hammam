@@ -232,9 +232,11 @@ Various messages notify the user of successful actions, errors and warnings as w
 **Warning**: warns the user if they for example need to fill in the form properly.
 **Error**: let the user know that an error has happened for example removing an item from the bag.
 
-### Emails:
-1. Order Confirmation Emails: once an order has been submitted, the user receives an email with the order history.
-2. Treatment Gift Card Emails: If the shopper has ordered a Treatment Gift Card, an email with the treatment order is generated and sent.
+### Earth Hammam Custome Emails:
+![Gift Card](static/images/treatment-gift-card.png)
+
+1. Treatment Gift Card Emails: If the shopper has ordered a Treatment Gift Card, an email with the treatment order is generated and sent.
+2. Order Confirmation Emails: once an order has been submitted, the user receives an email with the order history.
 3. Newsletter Emails: The admin sends an email to all active subscribers.
 4. Email Confirmation: with Django-Allauth package, the user receives an email to confirm account registrations.
 

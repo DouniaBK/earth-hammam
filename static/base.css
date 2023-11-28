@@ -862,6 +862,9 @@ footer {
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
     }
+    .main-content {
+        width: 90%;
+    }
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
@@ -907,12 +910,14 @@ footer {
         margin: 10px;
         flex-direction: column;
     }
+
     .profile-table-element {
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
     }
+    
     .hide-on-mobile {
         visibility: hidden;
         height: 0px !important;
