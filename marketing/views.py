@@ -6,6 +6,7 @@ from django.core.mail import EmailMessage
 from .forms import NewsletterForm
 from .models import SubscribedUser
 from .decorators import user_is_superuser
+from django.core.mail import EmailMultiAlternatives
 
 
 def subscribe(request):
@@ -50,6 +51,19 @@ def newsletter(request):
     if request.method == 'POST':
         form = NewsletterForm(request.POST)
         if form.is_valid():
+
+            # TEST 
+            subject, from_email, to = 'hello', 'douniazedbacha@gmail.com', 'peripi2889@dpsols.com'
+            text_content = 'This is an important message.'
+            html_content = '<p>This is an <strong>important</strong> message.</p>'
+            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+            msg.attach_alternative(html_content, "text/html")
+            msg.send()
+            print('TEST MAIL SENT')
+            # TEST
+
+
+
             subject = form.cleaned_data.get('subject')
             subscribers = form.cleaned_data.get('subscribers').split(',')
             email_message = form.cleaned_data.get('message')

@@ -109,6 +109,55 @@ Manual testing was conducted for scenarios, that can not easily be tested via au
 | | user clicks on the link to treatments| User is redirected to the treatments page | Pass | User can see treatments page|
 
 
+## Code Validation
+
+### HTML
+
+I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
+
+| Page | W3C URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmtdb-movie-television-database-ff116cae015a.herokuapp.com%2Fhome) | ![screenshot](documentation/validation/html-validation-home.png) | Pass - No Errors |
+| Home (logged in)| n/a | ![screenshot](documentation/validation/html-validation-home-logged-in.png) | Pass - No Errors |
+| search-results | n/a | ![screenshot](documentation/validation/html-validation-search-results.png) | Pass - No Errors |
+| search-results (logged in)| n/a | ![screenshot](documentation/validation/html-validation-search-results-logged-in.png) | Pass - No Errors |
+| Library | n/a | ![screenshot](documentation/validation/html-validation-library.png) | Pass - No Errors |
+| Feature-details | n/a | ![screenshot](documentation/validation/html-validation-feature-details.png) | Pass - No Errors |
+| lists | n/a | ![screenshot](documentation/validation/html-validation-lists.png) | Pass - No Errors |
+| 404 | n/a | ![screenshot](documentation/validation/html-validation-404.png) | Pass - No Errors |
+
+### CSS
+
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+
+| File | Jigsaw URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmtdb-movie-television-database-ff116cae015a.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) | ![screenshot](documentation/validation/css-validation-style.png) | Pass: Errors only from external sources |
+
+
+### JavaScript
+
+I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
+
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| script.js | ![screenshot](documentation/validation/js-validation-script.png) | Pass: No Errors |
+
+### Python
+
+I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+
+| File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| app.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/dougyb83/MTDb-Movie-Television-Database/main/app.py) | ![screenshot](documentation/validation/py-validation-app.png) | Pass: No Errors |
+
+
+
+
+
+
+
+
 
 ## Accessibility
 
