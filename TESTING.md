@@ -10,22 +10,7 @@ Automated testing was used to efficiently test the core functionality, such as d
 - Booking:
 Middleware: Calendar date and session processing functions, which are vital for the correct visualization of the calendar
 
-The result of the automated testing is as follows:
-
-Debug mode is on.
-Creating test database for alias 'default'...
-System check identified no issues (0 silenced).
-normal@user.de | service: Freedom and Thrive
-..Test super user
-create_superuser
-..Test normal user
-.
-----------------------------------------------------------------------
-Ran 5 tests in 0.481s
-
-OK
-Destroying test database for alias 'default'...
-
+![Automated Testing Result ](static/images/automated-testing.jpg)
 
 ##  Manual Testing:
 

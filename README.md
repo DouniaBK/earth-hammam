@@ -38,7 +38,7 @@ The site brings the serene Earth Hammam experience to the world, inviting visito
 
 # Business Goals
 
-## Target Audience :
+## Target Customer :
 
 The site is designed for Earth Hammam tourists, influencers and business travelers who would like to visit the facility during their trip to Marrakech, it is designed to attract tourists, influencers and business travelers from around the world who are tempted by this luxury yet authentic experience to indulge, be pampered and promote the facility.
 The treatments can be bought in the form of a gift card which makes an ideal corporate incentive targeting corporate individuals as well as influencers. The gift card option incites individuals to go to the facility and spend more benefitting the business.
@@ -46,6 +46,7 @@ The treatments can be bought in the form of a gift card which makes an ideal cor
 ## Business Model:
 A detailed business model can be found [here](https://drive.google.com/file/d/15dDofCW6yGCvrLbS9JmnXTW-W9fffoZN/view?usp=drive_link).
 Items sold on the site include:
+
 **Treatment Gift Card**
 The Earth Hammam profits when individuals buy their gift cards online whether for personal use or as a gift. Earth Hammam profits as well when the gift card has not been redeemed. The booking system gives the sense that the gift card can be redeemed whenever the client wants and thus encourages clients to buy gift cards online as long as they have the freedom of booking within the next five years.
 
@@ -147,8 +148,10 @@ Earth Hammam has three categories of items sold online, Entrance tickets, Treatm
 Once the shopper adds the items to their shopping bag, they can proceed with the payment by filing out proper information, approving and then they will receive a confirmation of their order.
 
 The admin, when logged in as a superuser, will have an extra section to manage Merchandising appearing under the add-to-bag button.
-///////////////////////////////add Update store Merchandise image///////////////////
-This section allows the admin to delete the item or editing it. If the admin chooses to edit the item, they will be redirected to the Merchandising page, with the item they want to edit information already prefilled, once they undergo the necessary changes, a submit button will then update the information of the item in the proper category. Furthermore, the admin can also simply add another item including an image from the merchandising drop-down menu.
+
+![Edit Merchandize](static/images/merchandizing.png)
+
+This section allows the admin to delete the item or edit it. If the admin chooses to edit the item, they will be redirected to the Merchandising page, with the item they want to edit information already prefilled, once they undergo the necessary changes, a submit button will then update the information of the item in the proper category. Furthermore, the admin can also simply add another item including an image from the merchandising drop-down menu.
 
 The design of the category pages has a balanced serene and minimalistic aesthetic with an earthy color palette that aims at not overwhelming the shopper with too much information. The design is balanced between a promise of luxury, pampering and relaxation.
 
@@ -233,6 +236,7 @@ Various messages notify the user of successful actions, errors and warnings as w
 **Error**: let the user know that an error has happened for example removing an item from the bag.
 
 ### Earth Hammam Custome Emails:
+
 ![Gift Card](static/images/treatment-gift-card.png)
 
 1. Treatment Gift Card Emails: If the shopper has ordered a Treatment Gift Card, an email with the treatment order is generated and sent.
@@ -245,8 +249,6 @@ Various messages notify the user of successful actions, errors and warnings as w
 * 403 Error page appears when the user does not have the necessary permissions to access the wanted page
 * 404 Error page appears when the server can not find the page requested
 * 500 Error page appears when the server encounters a problem, and can not complete a request
-
-
 
 ## Features Not Yet Implemented
 
@@ -316,7 +318,7 @@ ElephantSQL, hosted by PostgreSQL, has been used as a database. The database is 
 
 ## Testing
 
-For all testing, please refer to the [TESTING.md](TESTING.md) file.
+For all testing, please refer to the [TESTING.md](/TESTING.md) file.
 
 Code validation was done using the following tools:
 
@@ -324,7 +326,7 @@ Code validation was done using the following tools:
 | -----         | ----------     | -----------------    |
 | W3C           | HTML           | Valid                |
 | CSS Portal    | CSS            | Valid                |
-| esprima.org   | Javascript     | Valid                |
+| https://jshint.com   | Javascript     | Valid                |
 | PEP8          | Python         | Valid                |
 
 Responsiveness has been tested using:
