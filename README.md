@@ -84,6 +84,9 @@ To win the visitors' trust and better SEO ranking, a privacy policy has been add
 8. Rewards and Certificate of Excellency:
 To instill trust and a sense of exclusivity, a link to the certificates has been added to the footer via a link.
 
+9. rel="noopener" on external links:
+To improve SEO results and site security, rel="noopener" has been added to all external sites such as partners on the footer or social media links.
+
 ## Visual Design:
 A folder with further design elements can be accessed [here](ADD LINK) as well as the [flowchart](ADD LINK).
 
