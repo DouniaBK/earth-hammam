@@ -14,14 +14,21 @@ body {
     height: 100vh;
 }
 
+#main-body-wrapper {
+    width:100vw;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .index-content {
     padding-top: 35vh;
     padding-left: 10vw;
     padding-right: 20vw;
 }
 
-.topnav {
-
+#mainnav ul {
+    margin-bottom: 0;
 }
 
 .delivery-banner {
@@ -166,7 +173,7 @@ body {
     padding-top: 200px;
     max-width: 1200px;
     min-width: 300px;
-    min-height: 100vh;
+    flex: 1;
 }
 
 .main-content-narrow {
@@ -391,6 +398,7 @@ a.category-badge > span.badge:hover {
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
     color: #111111; /* text-secondary */
+    flex:1;
 }
 
 .allauth-form-inner-content input {
@@ -828,6 +836,11 @@ footer {
     .navbar-toggler {
         padding: .6rem .6rem;
         font-size: 1rem;
+        margin-left: 1rem;
+    }
+
+    .navbar-collapse {
+        margin-left: 1rem;
     }
 
     .delivery-banner {

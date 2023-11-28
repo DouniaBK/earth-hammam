@@ -188,21 +188,99 @@ Error E501 *line too long* flagged by *pycodestle* concerning API addresses, key
 |products| no errors| Pass|
 |profile| no errors| Pass|
 
+# Site Lighthouse Score:
 
+![Site Performance Score](static/images/lighthouse-score.png)
 ## Accessibility
 
-![Site Performance Score](static/images/lighthouse-performance-test.png)
   * The overall performance of the site has been tested on desktop and mobile using Lighthouse and the site has passed the accessibility test
 
 ## Best Practices
 
-![Site Performance Score](static/images/lighthouse-performance-test.png)
   * The overall site follows best practices on desktop and mobile using Lighthouse.
 
 ## SEO
 
-![Site Performance Score](static/images/lighthouse-performance-test.png)
   * The overall SEO  of the site is following basic search engine optimization advice using lighthouse.
+
+## Performance
+
+ * The overal site perfoamce has been tested using the lighthouse. Page performing under 90 have all been improved. Major performance issues were due to image sizes and thus images have been compressed or resized where necissary.
+
+### Lighthouse score:
+Pass: 90 + green score
+
+Fail: ≤ 89 red score
+
+|Page |Accessibility|Best Practices|SEO|Performance|
+|---	|---	|---	|---	|---	|
+|Welcome Page| Pass |Pass|Pass|Pass|
+|Hammam| Pass|Pass|Pass|Pass|
+|Products|Pass|Pass|Pass|Pass|
+|Treatments|Pass|Pass|Pass|Pass|
+|Booking|Pass|Pass|Pass|Pass|
+|Bag|Pass|Pass|Pass|Pass|
+|Checkout|Pass|Pass|Pass|Pass|
+|Checkout success|Pass|Pass|Pass|Pass|
+|Register|Pass|Pass|Pass|Pass|
+|Log in|Pass|Pass|Pass|Pass|
+|Newsletter|Pass|Pass|Pass|Pass|
+|Profile|Pass|Pass|Pass|Pass|
+
+
+## Responsiveness:
+
+This section tests the responsiveness of all page elements displayed on different screen sizes. Furthermore, this test makes sure that the design fully meets the needs of users and is displayed without any problems on any type of device or browser. The layout should automatically adapt to different sizes and capabilities of various devices while taking into account that the user uses not a "click" but a "touch."
+
+The responsiveness has been tested using a testing tool called [BrowserStack](https://www.browserstack.com/) to test the site on dominantly used browsers (screenshots available) and devices.
+
+1. Browsers: 
+
+- Chrome
+- Edge
+- Safari
+- Opera
+- Firefox
+
+2. Devices:
+
+- Android
+- IOS
+- Mac
+- Windows
+
+3. Design:
+
+- Contrast
+- Image
+- Buttons
+- Forms
+- Navbar
+- Icons
+- Footer
+- Dropdown menu
+- Fonts
+
+### Test Assessment:
+Pass: meets UX and UI best practices
+Fail: needs further adjustments to meet UX and UI best practices
+
+|Page |Small Screen|Medium Screen|Large Screen|
+|---	|---	|---	|---	|
+|Welcome Page| Pass |Pass|Pass|
+|Hammam| Pass|Pass|Pass|
+|Products|Pass|Pass|Pass|
+|Treatments|Pass|Pass|Pass|
+|Booking|Pass|Pass|Pass|
+|Bag|Pass|Pass|Pass|
+|Checkout|Pass|Pass|Pass|
+|Checkout success|Pass|Pass|Pass|
+|Register|Pass|Pass|Pass|
+|Log in|Pass|Pass|Pass|
+|Newsletter|Pass|Pass|Pass|
+|Profile|Pass|Pass|Pass|
+
+
 ## Bugs:
 1) Issue: The user was able to book a session in the past.
 Resolution: The user is now prevented from booking past sessions, by disabling the possible user interaction for the present day and all previous days.

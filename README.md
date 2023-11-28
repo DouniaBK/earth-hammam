@@ -44,7 +44,7 @@ The site is designed for Earth Hammam tourists, influencers and business travele
 The treatments can be bought in the form of a gift card which makes an ideal corporate incentive targeting corporate individuals as well as influencers. The gift card option incites individuals to go to the facility and spend more benefitting the business.
 
 ## Business Model:
-A detailed business model can be found [here](//////////).
+A detailed business model can be found [here](https://drive.google.com/file/d/15dDofCW6yGCvrLbS9JmnXTW-W9fffoZN/view?usp=drive_link).
 Items sold on the site include:
 **Treatment Gift Card**
 The Earth Hammam profits when individuals buy their gift cards online whether for personal use or as a gift. Earth Hammam profits as well when the gift card has not been redeemed. The booking system gives the sense that the gift card can be redeemed whenever the client wants and thus encourages clients to buy gift cards online as long as they have the freedom of booking within the next five years.
@@ -79,7 +79,7 @@ The Facebook business page for Earth Hammam is meant to include exclusive offers
 The Earth Hammam site includes testimonials from visitors referring the facility to other customers.
 
 7. Privacy Policy for professionalism:
-To win the visitors' trust and better SEO ranking, a privacy policy has been added to the footer via a link. 
+To win the visitors' trust and better SEO ranking, a privacy policy has been added to the footer via a link.
 
 8. Rewards and Certificate of Excellency:
 To instill trust and a sense of exclusivity, a link to the certificates has been added to the footer via a link.
@@ -88,7 +88,7 @@ To instill trust and a sense of exclusivity, a link to the certificates has been
 To improve SEO results and site security, rel="noopener" has been added to all external sites such as partners on the footer or social media links.
 
 ## Visual Design:
-A folder with further design elements can be accessed [here](ADD LINK) as well as the [flowchart](ADD LINK).
+A folder with further design elements can be accessed [here](https://drive.google.com/file/d/18v09IpZtHExXk-VmWoz7yco60OIh8iU3/view?usp=sharing) as well as the [flowchart](https://drive.google.com/file/d/1kNh8oG1Bea50qopefDBaMDPdYIHumIFM/view?usp=sharing).
 
 ### Site Design:
 
@@ -161,13 +161,37 @@ The Categories of Items are:
     3. Products: The shopper often buys spa products at the facility after having experienced the spa and thus the products sold by Earth Hammam target clients that want to take the unique Earth Hammam products to recreate that experience at home.
 
 ### Booking:
+This section allows the user to first select a treatment and then book one of the Treatments offered with a handy calendar that shows which days and times are still available and the slots that are not available are grayed out. 
 
-![Booking](////////)
-
-
-This section allows the user to first select a treatment and then book one of the Treatments offered with a handy calendar that shows which days and times are still available and the slots that are not available are grayed out. Once the user selects an appropriate time and a service and submits it that appointment then appears in their list of booked treatments which in turn can be cancelled by clicking the cancel button adjacent to the appointment date they booked. The design of the booking system is coherent with the serene, minimal and earthy tones of the site for seamless user experience.
+The design of the booking system is coherent with the serene, minimal and earthy tones of the site for seamless user experience.
 
 This page is accessible from the navbar for registered or logged-in users. If the user is not logged in or registered the booking features are blurred out and inaccessible.
+
+**Booking Step One**
+
+ - Select a treatment: if the user is logged in and once the user selects a treatment the calendar becomes accessible and no longer blurred out. If the user is not logged in, the booking system is not available and they are prompted to log in to access it.
+
+![Booking](static/images/booking-step1.png)
+
+**Booking Step Two**
+
+- Select a time slot: The user can select only the available times which are not grayed out.
+
+![Booking](static/images/booking-step2.png)
+
+**Booking Submit**
+
+- Selected appointment and submit button: The user's selected time slot is written above the submit button to confirm the appointment before submission and avoid confusion.
+
+![Booking](static/images/book-treatment-button.png)
+
+
+**Booked Appointment**
+
+- Booked appointment list: this handy section confirm what the user has booked the appointment by displaying the time and date.
+Cancel appointment: the user can also cancel their appointment. Once they click cancel, the data is deleted from the database, making that time slot available again on the calendar.
+
+![Booking](static/images/booked-appointments.png)
 
 ### Accounts:
 
@@ -176,7 +200,7 @@ This page is accessible from the navbar for registered or logged-in users. If th
  1. **User Account**: the user can log in, log out and access their profile through the right end section of the navbar, login and drop-down menu list profile and logout. The authentification system has been done with the django-allauth package.
 
 - Register: New users are prompted to register in order to continue their purchase or book an appointment by filling out a registration form, confirming their account with a confirmation email and then logging in.
-- Log in: The flow is standard, provide a username or email and a password, check the *Remember Me* box if the user wants to stay logged in and a *forgot Password* link to reset their password redirecting to *Password Reset* page, login button to access their account
+- Log in: The flow is standard, provide a username or email and a password, check the *Remember Me* box if the user wants to stay logged in and a *forgot Password* link to reset their password redirecting to the *Password Reset* page, login button to access their account
 - My Profile: Allows them to see their profile information, update it and delete their account giving the user CRUD functionality for better usability and the right to privacy. This section also has all their order history.
 - Logout: Allows the user to log out by clicking logging out.
 
@@ -336,7 +360,7 @@ This project uses [Heroku](https://www.heroku.com), a platform as a service (Paa
 
 Deployment steps are as follows, after account setup:
 
-- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
+- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create New App** from the dropdown menu.
 - Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select **Create App**.
 - From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables.
 
@@ -420,6 +444,7 @@ os.environ["STRIPE_WH_SECRET"] = "user's own value"
 | [pylessons](https://pylessons.com/django-subscribe) | lessons | Subscribe to Newsletter in Django |
 | [django Documentation](https://docs.djangoproject.com/en/4.2/) | Entire site | code has been created following the Django documentation |
 | [Aman](https://www.aman.com/) | Home page | was used for the main site text content and inspiration |
+| [Privacy Policy Generator](https://www.privacypolicygenerator.info/) | Privacy Policy | was used to generate a free privacy policy for the site |
 
 ### Media
 
@@ -431,18 +456,7 @@ os.environ["STRIPE_WH_SECRET"] = "user's own value"
 | [Canvas](https://www.canva.com/) | home page | Projects | WEbsite design |
 
 
-# Acknowledgement
+# Acknowledgment
 
 - I would like to thank my Code Institute mentor, [Rory Patrick Sheridan](https://github.com/Ri-Dearg) for his amazing support throughout the development of this project and studies at CI.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
-
-
-
-
-
-notes from rory:
-mention cloudinary doubled all the images
-css file in its own css
-break down the long lines
-add comments for every function
-database browsers download database schema
