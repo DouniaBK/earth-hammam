@@ -42,11 +42,11 @@
             <section class="newsletter">
                 <form action="{% url 'subscribe' %}" method="post">
                 <!--Grid row-->
-                <div class="row d-flex justify-content-center">
+                <div class="row d-flex justify-content-center align-items-center m-2">
                     {% csrf_token %}
                     <!--Grid column-->
-                    <div class="col-md-5 col-12">
-                    <p class="pt-2">
+                    <div class="">
+                    <p class="p-0 m-2">
                         <strong>To receive updates about exclusive experiences, events, new destinations, sign up to our Newsletter.</strong>
                     </p>
                     </div>

@@ -114,25 +114,43 @@ Manual testing was conducted for scenarios, that can not easily be tested via au
 ### HTML
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
+The major errors flags that were deemed unresolvable such as ** Bad value {% url 'delete_item' item.id %} for attribute href on element a: Illegal character in path segment: { is not allowed.** are related to django Built-in template tags and other Django template system and thus ignored. Erros steming from HTML were all corrected until pass.
 
-| Page | W3C URL | Screenshot | Notes |
-| --- | --- | --- | --- |
-| Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmtdb-movie-television-database-ff116cae015a.herokuapp.com%2Fhome) | ![screenshot](documentation/validation/html-validation-home.png) | Pass - No Errors |
-| Home (logged in)| n/a | ![screenshot](documentation/validation/html-validation-home-logged-in.png) | Pass - No Errors |
-| search-results | n/a | ![screenshot](documentation/validation/html-validation-search-results.png) | Pass - No Errors |
-| search-results (logged in)| n/a | ![screenshot](documentation/validation/html-validation-search-results-logged-in.png) | Pass - No Errors |
-| Library | n/a | ![screenshot](documentation/validation/html-validation-library.png) | Pass - No Errors |
-| Feature-details | n/a | ![screenshot](documentation/validation/html-validation-feature-details.png) | Pass - No Errors |
-| lists | n/a | ![screenshot](documentation/validation/html-validation-lists.png) | Pass - No Errors |
-| 404 | n/a | ![screenshot](documentation/validation/html-validation-404.png) | Pass - No Errors |
+
+|Page | Errors|Notes|
+|---	|---	|---	|
+|Footer| no errors| Pass|
+|Home Page| no errors | Pass|
+|Hammam| no errors | Pass
+|Tickets| no errors | Pass|
+|Treatments| no errors | Pass|
+|Products| no errors | Pass|
+|Booking| no errors | Pass|
+|Checkout| no errors | Pass|
+|Bag| no errors | Pass|
+|Checkout success| no errors | Pass|
+|log in| no errors | Pass|
+|Register| no errors | Pass|
+|Logout| no errors | Pass|
+|Privacy Policy| no errors | Pass|
+|Certification| no errors | Pass|
+|Page 404|no errors|Pass|
+|Profile|no errors|Pass|
+|add_item|no errors|Pass|
+|edit_item|no errors|Pass|
+|unsubscribe|no errors|Pass|
+|newsletter|no errors|Pass|
+
 
 ### CSS
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
 
-| File | Jigsaw URL | Screenshot | Notes |
-| --- | --- | --- | --- |
-| style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmtdb-movie-television-database-ff116cae015a.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) | ![screenshot](documentation/validation/css-validation-style.png) | Pass: Errors only from external sources |
+|Page | Errors|Notes|
+|---	|---	|---	|
+|base.css| no errors| Pass|
+|profiles.css| no errors| Pass|
+|checkout.css| no errors| Pass|
 
 
 ### JavaScript
