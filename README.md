@@ -194,9 +194,9 @@ Cancel appointment: the user can also cancel their appointment. Once they click 
 ![Booking](static/images/booked-appointments.png)
 
 ### Accounts:
+![Logged in](static/images/login-dropdown.png)
 
 
-///////////////////////////////////////////////////add image of login
  1. **User Account**: the user can log in, log out and access their profile through the right end section of the navbar, login and drop-down menu list profile and logout. The authentification system has been done with the django-allauth package.
 
 - Register: New users are prompted to register in order to continue their purchase or book an appointment by filling out a registration form, confirming their account with a confirmation email and then logging in.
@@ -205,8 +205,9 @@ Cancel appointment: the user can also cancel their appointment. Once they click 
 - Logout: Allows the user to log out by clicking logging out.
 
  2. **Superuser/Admin Account**: this account is meant for the admin for site management such as merchandising, retailing, client assistance and personal management. The admin managing the site of Earth Hammam has access to a frontend and backend admin page allowing them to perform the following daily tasks:
-
+![Logged in](static/images/merchandizing.png)
 - Manage Merchandise: the admin can add, edit and delete items sold on the site.
+![Newsletter Management](static/images/newsletter-management.png)
 - Newsletter: The admin can send newsletters with a handy email function thanks to a package called "Django-TinyMCE", which allows the admin to format the newsletter content as they wish. 
 - Testimonials: The admin can manage testimonials from the backend, publishing, deleting and updating testimonials
 - Booked Appointments: The admin can view and edit all the appointments made by the clients, assisting them in managing personal as well as helping clients if assistance is needed
@@ -231,6 +232,12 @@ Various messages notify the user of successful actions, errors and warnings as w
 **Warning**: warns the user if they for example need to fill in the form properly.
 **Error**: let the user know that an error has happened for example removing an item from the bag.
 
+### Emails:
+1. Order Confirmation Emails: once an order has been submitted, the user receives an email with the order history.
+2. Treatment Gift Card Emails: If the shopper has ordered a Treatment Gift Card, an email with the treatment order is generated and sent.
+3. Newsletter Emails: The admin sends an email to all active subscribers.
+4. Email Confirmation: with Django-Allauth package, the user receives an email to confirm account registrations.
+
 ### Error Pages:
 * 400 Error page appears when the server can not or will not process the request due to something that is perceived to be a client error 
 * 403 Error page appears when the user does not have the necessary permissions to access the wanted page
@@ -244,8 +251,8 @@ Various messages notify the user of successful actions, errors and warnings as w
 - Post Content:
 The admin ability to post articles, meditation guides, journals and workbooks. 
 
-- Book Retreat Stay:
-Allowing the user to book a stay or a retreat for multiple days with the booking system will be incorporated in the future.
+- Book Retreat or a Stay:
+Allowing the user to book a stay or a retreat for multiple days with the booking system will be incorporated in the future. At the moment, the user can book a stay at a partner referenced on the footer with a link.
 
 # User Stories:
 The following User Stories have all met the acceptance criteria. User Story number 14, will be implemented in the future.

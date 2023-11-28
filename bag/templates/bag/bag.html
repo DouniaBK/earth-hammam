@@ -18,42 +18,56 @@
         <div class="general-container">
             {% if bag_items %}
                 <div class="table-responsive rounded pt-3">
-                    <table class="table table-sm table-borderless text-center pt-4">
-                        <thead class=" text-uppercase bg-olive p-1 lead text-white">
-                            <tr class="mb-4">
-                                <th scope="col">Product Info</th>
-                                <th scope="col"></th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Subtotal</th>
-                            </tr>
-                        </thead>
 
+                    <div class="order-history table-responsive">
+                        <div class="profile-table-row bg-olive text-white hide-on-mobile">
+                            <div class="profile-table-element">
+                                <strong>Product Info</strong>
+                            </div>
+                            <div class="profile-table-element">
+                            </div>
+                            <div class="profile-table-element">
+                                <strong>Price</strong>
+                            </div>
+                            <div class="profile-table-element">
+                                <strong>Quantity</strong>
+                            </div>
+                            <div class="profile-table-element">
+                                <strong>Subtotal</strong>
+                            </div>
+                        </div>
+        
                         {% for product in bag_items %}
-                            <tr>
-                                <td class="p-3 w-25 pt-3">
-                                    {% if product.item.image %}
-                                    <img class="img-fluid rounded" src="{{ product.item.image.url }}">
-                                    {% else %}
-                                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.item.name }}">
-                                    {% endif %}
-
-                                </td>
-                                <td class="py-3">
-                                    <p class="my-0"><strong>{{ product.item.name }}</strong></p>
-                                    <p class="my-0 small text-muted">SKU: {{ product.item.sku|upper }}</p>
-                                </td>
-                                <td class="py-3">
-                                    <p class="my-0">${{ product.item.price }}</p>
-                                </td>
-                                <td class="py-3 w-25">
-                                    {% include 'quantity.html' with product=product %}
-                                </td>
-                                <td class="py-3">
-                                    <p class="my-0">${{ product.item.price | calc_subtotal:product.quantity }}</p>
-                                </td>
-                            </tr>
+                        <div class="profile-table-row clickable">
+                            <div class="profile-table-element flex-column">
+                                {% if product.item.image %}
+                                <img class="img-fluid rounded" src="{{ product.item.image.url }}">
+                                {% else %}
+                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.item.name }}">
+                                {% endif %}
+                            </div>
+                            <div class="profile-table-element flex-column">
+                                <p class="my-0"><strong>{{ product.item.name }}</strong></p>
+                                <p class="my-0 small text-muted hide-on-mobile">SKU: {{ product.item.sku|upper }}</p>
+                            </div>
+                            <div class="profile-table-element flex-column">
+                                <p class="my-0">${{ product.item.price }}</p>
+                            </div>
+                            <div class="profile-table-element flex-column margin-on-mobile">
+                                {% include 'bag/quantity.html' with product=product %}
+                            </div>
+                            <div class="profile-table-element flex-column hide-on-mobile">
+                                <p class="my-0">${{ product.item.price | calc_subtotal:product.quantity }}</p>
+                            </div>
+                        </div>
                         {% endfor %}
+                    </div>
+
+
+
+
+
+                    <table class="table-borderless table table-sm text-center pt-4">
                         <tr>
                             <td colspan="5" class="pt-5 text-right">
                                 <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
