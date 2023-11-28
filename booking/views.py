@@ -185,8 +185,8 @@ def booking(request):
                                 'isThisWeek': week_current == week_now,  # noqa
                                 'register_to_book': register_to_book,  # noqa
                                 'register_book_success': success,  # noqa
-                                'scheduleHours_json': json.dumps(hours_vec),# noqa
-                                'treatment_ids_json': json.dumps(treatment_ids_vec), # noqa
+                                'scheduleHours_json': json.dumps(hours_vec),  # noqa
+                                'treatment_ids_json': json.dumps(treatment_ids_vec),  # noqa
                                 'treatments': all_treatments,
                                 'is_authenticated': is_authenticated})  # noqa
     except Exception as e:

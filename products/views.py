@@ -18,7 +18,8 @@ def all_treatments(request):
     """ A view to show all items in category treatments """
 
     treatments = Item.objects.filter(category_id='1')
-    return render(request, 'products/treatments.html', {'treatments': treatments})
+    return render(
+        request, 'products/treatments.html', {'treatments': treatments})
 
 
 def all_tickets(request):
@@ -72,7 +73,7 @@ def edit_item(request, item_id):
             return redirect(reverse('edit_item', args=[item.id]))
         else:
             messages.error(
-                request, 'Failed to update this Item. Check if the form is valid.')
+                request, 'Failed to update bag. Check if the form is valid.')
     else:
         form = ItemForm(instance=item)
         messages.info(request, f'You are editing {item.name}')

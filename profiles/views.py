@@ -34,17 +34,18 @@ def profile(request):
 
     return render(request, template, context)
 
+
 def delete(request):
-    
+
     try:
         user = request.user
         if not user.is_superuser:
             user.delete()
             messages.success(request, 'Your account was successfully deleted.')
         else:
-            messages.success(request, 'You are a superuser. So you can not delete yourself. Sorry ;)')
+            messages.success(request, 'Superuser account cannot be deleted')
 
-    except Exception as e: 
+    except Exception as e:
         return render(request, 'home/index.html')
 
     return render(request, 'home/index.html')
@@ -65,4 +66,3 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
-

@@ -1,26 +1,26 @@
 
-var selectedService = null
-var selectedDate = null
-var selectedTime = null
+var selectedService = null;
+var selectedDate = null;
+var selectedTime = null;
 
 function onClickCallback(d, t, id, hours_str) {
-    const date = document.getElementById("id_time_0")
-    const time = document.getElementById("id_time_1")
+    const date = document.getElementById("id_time_0");
+    const time = document.getElementById("id_time_1");
     
-    date.value = d
-    time.value = `${t}:00:00`
+    date.value = d;
+    time.value = `${t}:00:00`;
 
-    selectedDate = date.value
-    selectedTime = `${t}:00`
+    selectedDate = date.value;
+    selectedTime = `${t}:00`;
 
     // Color in the clicked element
     // Uncolor all others
     
-    var hours = JSON.parse(hours_str)
+    var hours = JSON.parse(hours_str);
     
     for (let i_d = 0; i_d < 7; i_d++) {
         for (i_h in hours) {
-            i_id = `${i_d}_${hours[i_h]}`
+            i_id = `${i_d}_${hours[i_h]}`;
 
             const elem = document.getElementById(i_id);
             elem.style.backgroundColor = '';
@@ -34,9 +34,9 @@ function onClickCallback(d, t, id, hours_str) {
 }
 
 function onTypeClickCallback(type, treatment_ids) {
-    const service_selector = document.getElementById("id_service")
+    const service_selector = document.getElementById("id_service");
     
-    service_selector.value = type
+    service_selector.value = type;
 
     for (idx in treatment_ids) {
         const elem1 = document.getElementById(`hover_mask_${treatment_ids[idx]}`);

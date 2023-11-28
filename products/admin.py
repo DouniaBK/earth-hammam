@@ -5,7 +5,7 @@ from .models import Item, Category
 
 
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'price','sku',)
+    list_display = ('name', 'category', 'price', 'sku',)
     list_filter = ("sku", "name", "category", "price",)
     search_fields = ("sku", "name", "category", "price",)
     ordering = ('name',)

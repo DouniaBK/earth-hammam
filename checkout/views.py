@@ -72,7 +72,7 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['items_by_size'].items():
+                        for size, quantity in item_data['items_by_size'].items():   # noqa
                             order_line_item = OrderLineItem(
                                 order=order,
                                 item=item,
@@ -111,7 +111,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # Attempt to prefill the form for profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -156,7 +156,7 @@ def checkout_success(request, order_number):
     total = float(current_bag['total'])
     grand_total = float(current_bag['grand_total'])
     delivery = float(current_bag['delivery'])
-    
+
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order

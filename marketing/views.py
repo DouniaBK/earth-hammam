@@ -17,13 +17,7 @@ def subscribe(request):
             messages.error(
                 request, "You must enter a valid email to subscribe.")
             return redirect("/")
-        '''
-        if django.contrib.auth.get_user_model().objects.filter(email=email).first():
-            messages.error(
-                request, f"A registered user with associated {email} found, login to proceed."
-            )
-            return redirect(request.META.get("HTTP_REFERER", "/"))
-        '''
+
         subscribe_user = SubscribedUser.objects.filter(email=email).first()
         if subscribe_user:
             messages.error(
@@ -56,7 +50,8 @@ def newsletter(request):
             email_message = form.cleaned_data.get('message')
 
             mail = EmailMessage(
-                subject, email_message, f"Earth Hammam <{request.user.email}>", bcc=subscribers)
+                subject, email_message, f"Earth Hammam <{request.user.email}>",
+                bcc=subscribers)
             mail.content_subtype = 'html'
 
             if mail.send():

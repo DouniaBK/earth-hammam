@@ -32,7 +32,7 @@ class StripeWH_Handler:
         body = render_to_string(
             'checkout/email_template.html',
             {'content': content})
-        
+
         # Test HTML email
         from_email = settings.DEFAULT_FROM_EMAIL
         to = cust_email
@@ -53,7 +53,7 @@ class StripeWH_Handler:
         content = render_to_string(
             'checkout/confirmation_emails/treatment_email_body.txt',
             {
-                'order': order, 
+                'order': order,
                 'contact_email': settings.DEFAULT_FROM_EMAIL,
                 'treatment_type': treatment_name
             })
@@ -61,7 +61,7 @@ class StripeWH_Handler:
         body = render_to_string(
             'checkout/email_template.html',
             {'content': content})
-        
+
         # Test HTML email
         from_email = settings.DEFAULT_FROM_EMAIL
         to = cust_email
@@ -81,7 +81,7 @@ class StripeWH_Handler:
                 if l_item.item.name == 'Signature':
                     self._send_treatment_card_email(order, 'Signature')
                     print("Signature")
-        
+
                 if l_item.item.name == 'Essential':
                     self._send_treatment_card_email(order, 'Essential')
                     print("Essential")
@@ -116,7 +116,6 @@ class StripeWH_Handler:
         shipping_details = intent.shipping
         grand_total = round(stripe_charge.amount / 100, 2)  # updated
 
-
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
             if value == "":
@@ -132,8 +131,8 @@ class StripeWH_Handler:
                 profile.default_country = shipping_details.address.country
                 profile.default_postcode = shipping_details.address.postal_code
                 profile.default_town_or_city = shipping_details.address.city
-                profile.default_street_address1 = shipping_details.address.line1
-                profile.default_street_address2 = shipping_details.address.line2
+                profile.default_street_address1 = shipping_details.address.line1   # noqa
+                profile.default_street_address2 = shipping_details.address.line2     # noqa
                 profile.default_county = shipping_details.address.state
                 profile.save()
 
@@ -165,7 +164,7 @@ class StripeWH_Handler:
             self._send_confirmation_email(order)
             self._process_treatment_emails(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
+                content=f'Webhook received: {event["type"]} | SUCCESS: order already in database',   # noqa
                 status=200)
         else:
             order = None
@@ -193,7 +192,7 @@ class StripeWH_Handler:
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['items_by_size'].items():
+                        for size, quantity in item_data['items_by_size'].items():   # noqa
                             order_line_item = OrderLineItem(
                                 order=order,
                                 item=item,
@@ -209,9 +208,9 @@ class StripeWH_Handler:
                     status=500)
         self._send_confirmation_email(order)
         self._process_treatment_emails(order)
-        
+
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',    # noqa
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):

@@ -107,17 +107,22 @@ Manual testing was conducted for scenarios, that can not easily be tested via au
 | | Bottom of the footer, the user clicks on the Awards link| User is redirected to the certification page where they can see the certificates of Excellence | Pass | User can see links to the treatments and tickets page|
 | | user clicks on the link to tickets| User is redirected to the tickets page | Pass | User can see tickets page|
 | | user clicks on the link to treatments| User is redirected to the treatments page | Pass | User can see treatments page|
+| **logo**| | | | |
+| | click on logo entitled EARTH HAMMAM| User is redirected to home page | Pass | User can see main image and button|
+| **Home**| | | | |
+| | click on explore Earth Hammam button| User is redirected to Hammam page | Pass | User can see hammam details
+|
 
 
 ## Code Validation
 
 ### HTML
 
-I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
+The recommended [HTML W3C Validator](https://validator.w3.org) was used to validate all the HTML files.
 The major errors flags that were deemed unresolvable such as ** Bad value {% url 'delete_item' item.id %} for attribute href on element a: Illegal character in path segment: { is not allowed.** are related to django Built-in template tags and other Django template system and thus ignored. Erros steming from HTML were all corrected until pass.
 
 
-|Page | Errors|Notes|
+|html file | Errors|Notes|
 |---	|---	|---	|
 |Footer| no errors| Pass|
 |Home Page| no errors | Pass|
@@ -144,9 +149,9 @@ The major errors flags that were deemed unresolvable such as ** Bad value {% url
 
 ### CSS
 
-I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+The recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) was used to validate all the CSS files.
 
-|Page | Errors|Notes|
+|css file | Errors|Notes|
 |---	|---	|---	|
 |base.css| no errors| Pass|
 |profiles.css| no errors| Pass|
@@ -155,26 +160,31 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 ### JavaScript
 
-I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
+I have used the recommended [JShint Validator](https://jshint.com) to validate all the JS files.
 
-| File | Screenshot | Notes |
-| --- | --- | --- |
-| script.js | ![screenshot](documentation/validation/js-validation-script.png) | Pass: No Errors |
+
+|Js file | Errors|Notes|
+|---	|---	|---	|
+|countryfield.js| no errors| Pass|
+|stripe_elements.js| no errors| Pass|
+|booking.js| no errors| Pass|
 
 ### Python
 
-I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+The recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all the Python files.
 
-| File | CI URL | Screenshot | Notes |
-| --- | --- | --- | --- |
-| app.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/dougyb83/MTDb-Movie-Television-Database/main/app.py) | ![screenshot](documentation/validation/py-validation-app.png) | Pass: No Errors |
+Error E501 *line too long* flagged by *pycodestle* concerning API addresses, keys and other fragile code lines, have been silenced using *#noqa*, as issues resulting from modifying these lines would result in errors and bugs far more complex than PEP8 regulations would. Thus, I chose to not modify these lines.
 
-
-
-
-
-
-
+|Py Files in App | Errors|Notes|
+|---	|---	|---	|
+|bag app| no errors| Pass|
+|booking| no errors| Pass|
+|checkout| no errors| Pass|
+|earth_hammam| no errors| Pass|
+|home| no errors| Pass|
+|marketing| no errors| Pass|
+|products| no errors| Pass|
+|profile| no errors| Pass|
 
 
 ## Accessibility

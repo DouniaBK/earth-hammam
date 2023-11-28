@@ -19,7 +19,6 @@ class BookingTests(TestCase):
     def test_create_appointment(self):
 
         # Create a user for the appointment
-        #User = get_user_model()
         user = User.objects.create(email="normal@user.de", username="test", password="dodo")   # noqa
         user.save()
 
@@ -27,13 +26,13 @@ class BookingTests(TestCase):
 
         category = Category.objects.create(name="testcategory", friendly_name="testcategory")   # noqa
         category.save()
-        
+
         item = Item.objects.create(
-            category= category,
-            name="name", 
-            sku="sku", 
-            price=10, 
-            discount_price=1, 
+            category=category,
+            name="name",
+            sku="sku",
+            price=10,
+            discount_price=1,
             description="description",
             )   # noqa
         item.save()
@@ -78,9 +77,9 @@ class BookingTests(TestCase):
             self.assertEqual(s.order, order)
             self.assertEqual(s.time, t)
             self.assertEqual(s.duration, timedelta(minutes=60))
-    
+
     def test_subfunctions(self):
-        
+
         user = User.objects.create(email="normal@user.de", username="test", password="dodo")   # noqa
         user.save()
 
@@ -88,13 +87,13 @@ class BookingTests(TestCase):
 
         category = Category.objects.create(name="testcategory", friendly_name="testcategory")   # noqa
         category.save()
-        
+
         item = Item.objects.create(
-            category= category,
-            name="name", 
-            sku="sku", 
-            price=10, 
-            discount_price=1, 
+            category=category,
+            name="name",
+            sku="sku",
+            price=10,
+            discount_price=1,
             description="description",
             )   # noqa
         item.save()
