@@ -91,7 +91,9 @@ To improve SEO results and site security, rel="noopener" has been added to all e
 ## Visual Design:
 A folder with further design elements can be accessed [here](https://drive.google.com/file/d/18v09IpZtHExXk-VmWoz7yco60OIh8iU3/view?usp=sharing) as well as the [flowchart](https://drive.google.com/file/d/1kNh8oG1Bea50qopefDBaMDPdYIHumIFM/view?usp=sharing).
 
-### Site Design:
+### Site Design and Inspiration:
+
+![Color Inspiration](static/images/color-inspiration.png)
 
 This particular site is dedicated to wellness and relaxation transporting the user to a serene space inspired by the rose-hued architecture and landscape of North Africa. The site has an earthy North African color pallet, aiming at embracing healing, rejuvenation and indulging in a promise of luxury and pampering. The site has a minimal aesthetic and color palette to avoid sensory overstimulation often and offers an intuitive workflow leading to, buying, an entrance ticket, a product or even better a treatment gift card and then if logged in, booking a session and starting a journey of mental repair and pampering. Furthermore, the site contains key information about the facility in the section dedicated to the Hammam, accessible from the navigation, such as a carousel with images inspiring luxurious wellness with unique architecture, authentic ancient healing treatments and beauty rituals. Moreover, a section describing the exclusive offers Earth Hammam provides with links leading the user to shop. Finally, a Testimonial section is added to provide a sense of trust and professionalism.
 
@@ -110,17 +112,19 @@ The font family and style used are:
 - [Hoststar](https://www.hoststar.ch/de) a minimalistic favicon with the word 'Hammam" has been added giving the site a professional look, this was generated using this site.
 
 ### Colour Schemes:
-///////////////image of the color pallet
+![Color Palette](static/images/color-palette.png)
+
+
  Earth Hammam project is inspired by the rose-hued landscape and architecture of North Africa. The color of limestone, wet sand, olive tree leaves, and desert sand make the tones of the site, installing a sense of peace, relaxation and luxury and ensuring a calm user experience.
 
  ## Color Reference
 
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Example Color | ![#fff4eb](https://via.placeholder.com/10/0a192f?text=+) #fff4eb |
-| Example Color | ![#4d2d2d](https://via.placeholder.com/10/f8f8f8?text=+) #4d2d2d |
-| Example Color | ![#d39e00](https://via.placeholder.com/10/00b48a?text=+) #d39e00 |
-| Example Color | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
+| Color             | Hex |
+| ----------------- | ----|
+| Example Color |#fff4eb |
+| Example Color |#4d2d2d |
+| Example Color |#d39e00 |
+| Example Color | #EBCCAC|
 
 # Features
 
@@ -208,9 +212,13 @@ Cancel appointment: the user can also cancel their appointment. Once they click 
 - Logout: Allows the user to log out by clicking logging out.
 
  2. **Superuser/Admin Account**: this account is meant for the admin for site management such as merchandising, retailing, client assistance and personal management. The admin managing the site of Earth Hammam has access to a frontend and backend admin page allowing them to perform the following daily tasks:
+
 ![Logged in](static/images/merchandizing.png)
+
 - Manage Merchandise: the admin can add, edit and delete items sold on the site.
+
 ![Newsletter Management](static/images/newsletter-management.png)
+
 - Newsletter: The admin can send newsletters with a handy email function thanks to a package called "Django-TinyMCE", which allows the admin to format the newsletter content as they wish. 
 - Testimonials: The admin can manage testimonials from the backend, publishing, deleting and updating testimonials
 - Booked Appointments: The admin can view and edit all the appointments made by the clients, assisting them in managing personal as well as helping clients if assistance is needed
@@ -275,8 +283,6 @@ The following User Stories have all met the acceptance criteria. User Story numb
 - #13 Purchase a Treatment Package: As a Shopper, I can buy a voucher for a treatment package on the website so that I can redeem it or gift it.
 - #14 Book Overnight Stay Package: As a Shopper, I can book a luxury overnight stay at the EarthHammam VIP Suit so that I can benefit from everything the spa has to offer
 
-
-
 # Information Architecture
 ## Database:
 
@@ -311,10 +317,9 @@ ElephantSQL, hosted by PostgreSQL, has been used as a database. The database is 
 - [Cloudinary](https://cloudinary.com/) was used to store, transform, optimize, and deliver media assets with APIs.
 - [Heroku](https://www.heroku.com) was used for hosting the deployed back-end site.
 - [Stripe](https://www.stripe.com) was used to power online payment processing.
-- [Canvas](https://balsamiq.com/) was used to create the project wireframes.
+- [Canvas](https://balsamiq.com/) was used to create the project wireframes and design.
 - [Hoststar](https://www.hoststar.ch/de) was used to generate the favicon used on all pages.
-
-
+- [coolors](https://coolors.co/) was used to generate the color palette.
 
 ## Testing
 
