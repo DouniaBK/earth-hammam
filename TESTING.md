@@ -41,6 +41,8 @@ Manual testing was conducted for scenarios, that can not easily be tested via au
 
 ### Testing Report:
 
+Defensive programming was manually tested with the below user acceptance testing:
+
 | Page | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
 | **Apppointment Booking**| | | | |
@@ -192,6 +194,15 @@ Error E501 *line too long* flagged by *pycodestle* concerning API addresses, key
 ![Site Performance Score](static/images/lighthouse-performance-test.png)
   * The overall performance of the site has been tested on desktop and mobile using Lighthouse and the site has passed the accessibility test
 
+## Best Practices
+
+![Site Performance Score](static/images/lighthouse-performance-test.png)
+  * The overall site follows best practices on desktop and mobile using Lighthouse.
+
+## SEO
+
+![Site Performance Score](static/images/lighthouse-performance-test.png)
+  * The overall SEO  of the site is following basic search engine optimization advice using lighthouse.
 ## Bugs:
 1) Issue: The user was able to book a session in the past.
 Resolution: The user is now prevented from booking past sessions, by disabling the possible user interaction for the present day and all previous days.

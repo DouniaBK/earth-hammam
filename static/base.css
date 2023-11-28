@@ -9,7 +9,7 @@ body {
 }
 
 .index-wrapper {
-    background: url('/static/images/homepage_massage.png') no-repeat center center fixed; 
+    background: url('/static/images/homepage-massage-big.png') no-repeat center center fixed; 
     background-size: cover;
     height: 100vh;
 }
