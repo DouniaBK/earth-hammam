@@ -17,7 +17,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from .views import handler404
+from django.conf.urls import handler403, handler404, handler400, handler500
 
 
 urlpatterns = [

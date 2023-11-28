@@ -117,9 +117,9 @@ The font family and style used are:
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Example Color | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
-| Example Color | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
-| Example Color | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
+| Example Color | ![#fff4eb](https://via.placeholder.com/10/0a192f?text=+) #fff4eb |
+| Example Color | ![#4d2d2d](https://via.placeholder.com/10/f8f8f8?text=+) #4d2d2d |
+| Example Color | ![#d39e00](https://via.placeholder.com/10/00b48a?text=+) #d39e00 |
 | Example Color | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
 
 # Features
@@ -149,7 +149,7 @@ Once the shopper adds the items to their shopping bag, they can proceed with the
 
 The admin, when logged in as a superuser, will have an extra section to manage Merchandising appearing under the add-to-bag button.
 
-![Edit Merchandize](static/images/merchandizing.png)
+![Edit Merchandise](static/images/merchandizing.png)
 
 This section allows the admin to delete the item or edit it. If the admin chooses to edit the item, they will be redirected to the Merchandising page, with the item they want to edit information already prefilled, once they undergo the necessary changes, a submit button will then update the information of the item in the proper category. Furthermore, the admin can also simply add another item including an image from the merchandising drop-down menu.
 
