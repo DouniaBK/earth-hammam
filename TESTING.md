@@ -7,8 +7,10 @@ Automated testing was used to efficiently test the core functionality, such as d
 
 ### The features tested with automated unit testing are:
 **Database object creation:**
-- Booking:
-Middleware: Calendar date and session processing functions, which are vital for the correct visualization of the calendar
+- Booking: Testing of the booking functionality was done, as it contains the creation of all relevant models and functionalities for shop operation. In addition to the actual booking of appointments, this includes the creation of user profiles, shop items as well as orders in the database.
+Middleware: Calendar date and session processing functions, which are vital for the correct visualization of the booking calendar.
+
+The results are as follow:
 
 ![Automated Testing Result ](static/images/automated-testing.jpg)
 
@@ -106,7 +108,7 @@ Defensive programming was manually tested with the below user acceptance testing
 ### HTML
 
 The recommended [HTML W3C Validator](https://validator.w3.org) was used to validate all the HTML files.
-The major errors flags that were deemed unresolvable such as ** Bad value {% url 'delete_item' item.id %} for attribute href on element a: Illegal character in path segment: { is not allowed.** are related to django Built-in template tags and other Django template system and thus ignored. Erros steming from HTML were all corrected until pass.
+The major errors flags that were deemed unresolvable such as *Bad value {% url 'delete_item' item.id %} for attribute href on element a: Illegal character in path segment: { is not allowed* are related to django Built-in template tags and other Django template system and thus ignored. Erros steming from HTML were all corrected until pass.
 
 
 |html file | Errors|Notes|
@@ -275,3 +277,5 @@ Resolution: A custom routine was added to the user registration routines to extr
 
 3) Issue: Although for the current week, no "Previous week" button is shown, the user was able to manipulate the URL parameters manually to change the calendar to any previous week.
 Resolution: Negative URL parameters for the week offset are now blocked.
+
+4) Issue: Cloudinary has created doubles of all images included in the media file.

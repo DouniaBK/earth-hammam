@@ -7,6 +7,8 @@ from .forms import NewsletterForm
 from .models import SubscribedUser
 from .decorators import user_is_superuser
 
+# The subscribe function was done following lessons from Pylessons
+
 
 def subscribe(request):
     if request.method == 'POST':

@@ -40,11 +40,11 @@ The site brings the serene Earth Hammam experience to the world, inviting visito
 
 ## Target Customer :
 
-The site is designed for Earth Hammam tourists, influencers and business travelers who would like to visit the facility during their trip to Marrakech, it is designed to attract tourists, influencers and business travelers from around the world who are tempted by this luxury yet authentic experience to indulge, be pampered and promote the facility.
+The Earth Hammam project is designed with B2C business strategies in mind targeting tourists, influencers and business travelers who would like to visit the facility during their trip to Marrakech, it is designed to attract tourists, influencers and business travelers from around the world who are tempted by this luxury yet authentic experience to indulge, be pampered and promote the facility.
 The treatments can be bought in the form of a gift card which makes an ideal corporate incentive targeting corporate individuals as well as influencers. The gift card option incites individuals to go to the facility and spend more benefitting the business.
 
 ## Business Model:
-A detailed business model can be found [here](https://drive.google.com/file/d/15dDofCW6yGCvrLbS9JmnXTW-W9fffoZN/view?usp=drive_link).
+A detailed B2C business model can be found [here](https://drive.google.com/file/d/15dDofCW6yGCvrLbS9JmnXTW-W9fffoZN/view?usp=drive_link).
 Items sold on the site include:
 
 **Treatment Gift Card**
@@ -59,13 +59,15 @@ The tickets sold on the site are for returning customers who want to experience 
 ## Marketing Strategies:
 
 1. Social Media Platforms:
-The site aims at targeting customers via social media with a Facebook Business Page as well as other social media platforms such as Instagram via the influencers who are invited or visiting the site as well through corporate incentives. The Earth Hammam establishment is an exclusive wellness experience that influencers follow to increase their own brand visibility.
+The site aims at targeting customers via social media with a Facebook Business Page as well as other social media platforms such as Instagram via the influencers who are invited or visiting the site as well through corporate incentives. The Earth Hammam establishment is an exclusive wellness experience that influencers follow to increase their brand visibility.
 
 2. SEO Techniques used:
 - Well-crafted technical SEO to ensure sites are crawled properly.
 - Keyword research and use.
 - Optimized content.
 - SEO-friendly meta tags and titles are placed on each page.
+- robots.txt file
+- sitemap.xml file
 
 3.  Prioritize Website Speed And Mobile-First Design:
 As most customers reach the site via their mobile phones, whether by Google It or via Instagram tags and other platforms, the design of the site prioritizes small screens with responsive design to enhance user experience and behavior increasing the likelihood to purchase the items on the site. Furthermore,  the role that the speed of the page plays in search engine rankings and thus the speed has been rigorously observed and enhanced for better ranking.
@@ -195,7 +197,7 @@ This page is accessible from the navbar for registered or logged-in users. If th
 
 **Booked Appointment**
 
-- Booked appointment list: this handy section confirm what the user has booked the appointment by displaying the time and date.
+- Booked appointment list: this handy section confirms that the user has booked the appointment by displaying the time and date.
 Cancel appointment: the user can also cancel their appointment. Once they click cancel, the data is deleted from the database, making that time slot available again on the calendar.
 
 ![Booking](static/images/booked-appointments.png)
@@ -252,7 +254,7 @@ Various messages notify the user of successful actions, errors and warnings as w
 3. Newsletter Emails: The admin sends an email to all active subscribers.
 4. Email Confirmation: with Django-Allauth package, the user receives an email to confirm account registrations.
 
-### Error Pages:
+### Custom Error Pages:
 * 400 Error page appears when the server can not or will not process the request due to something that is perceived to be a client error 
 * 403 Error page appears when the user does not have the necessary permissions to access the wanted page
 * 404 Error page appears when the server can not find the page requested
