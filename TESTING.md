@@ -51,24 +51,62 @@ Manual testing was conducted for scenarios, that can not easily be tested via au
 | **User Registration**| | | | |
 | | register a new account  | confirmation email sent | Pass | email confirmed and new user account is visible in the admin|
 | | can log in if already registered from the navbar| login successful message | Pass | user logged in|
+| | User closes success message| success message closed| Pass | |
 | | user can log out if already logged in| redirect to logout page | Pass | click logout and logged out|
 | | Enter valid but artificial information into all fields, while using a single-letter password. Click the “register” button| password not strong enough message| Pass | |
 | **Edit Profile and Delete Account**| | | | |
 | | user can access Profile from navbar  | redirect to profile| Pass | user can see their default information filled in form and order history|
-| | user can not edit their profile until they click on the button update profile| Edit profile fields are then allowed | Pass | can edit the fields, update and see edited fields|
+| | user can not edit their profile until they click on the button *Update Information*| Edit profile fields are then allowed | Pass | can edit the fields, update and see edited fields|
 | | user can cancel editing| editing cancelled | Pass | |
-| | user can delete profile| click on delete  | Pass | user can delete the account after confirming the action|
+| | user can delete profile| click on delete  | Pass | user can delete the account after confirming the action- Superuser cannot delete account|
 | **Bag**| | | | |
-| | user can add any aticket to  bag by clicking add to bag button | default one item added to bag| Pass | success message appears with bag details|
-| | user can add any treatment to  bag by clicking add gift card to bag button | default one item added to bag| Pass | success message appears with bag details|
-| | user can add any product to  bag by clicking add to bag button | default one item added to bag| Pass | success message appears with bag details|
+| | user can add any aticket to  bag by clicking add to bag button | default one item added to bag| Pass | success message appears with bag details and go to bag button||
+| | User closes success message| success message closed| Pass | |
+| | user can add any treatment to  bag by clicking add gift card to bag button | default one item added to bag| Pass | success message appears with bag details and go to bag button||
+| | User closes success message| success message closed| Pass | |
+| | user can add any product to  bag by clicking add to bag button | default one item added to bag| Pass | success message appears with bag details and go to bag button||
+| | User closes success message| success message closed| Pass | |
+| | user can click on go to bag from success message | user goes to bag and can see product info, price, quantity, subtotal, grandtotal, delivery charge and secure checkout button| Pass | default one quantity of item present||
+| | User closes success message| success message closed| Pass | |
+| | user can click on update quantity | quantity updated | Pass | quantity can be updated to more than one - less than one is disabled||
+| | user can remove item from list by clicking remove in quantity section | item removed, page reloads to You-bag-is-empty page| Pass | shopper can click on keep shopping and is redirected to Hammam page||
 | **Merchandizing**| | | | |
 | | accessible from navbar drop-down menu - admin add new ticket to store | fill the form and image| Pass | ticket added to ticket page|
 | | accessible from navbar drop-down menu - admin add new treatment to store | fill the form and image| Pass | ticket added to treatment page|
 | | accessible from navbar drop-down menu - admin add new product to store | fill the form and image| Pass | product added to ticket page|
 | | admin edit an already existing item in store | fill the form and image and submit| Pass | item edited in proper page|
 | | admin deletes an already existing item in store | click delete| Pass | delete message appear and item is deleted|
-
+| **Checkout**| | | | |
+| | accessible from bag, shopper clicks on *secure checkout*| redirected to checkout| Pass | user can see their order summary and billing information form|
+| | Shopper fills Billing information, fields with asterix are compulsory| form is filled in and payment field changes from visa to mastercard depending on method| Pass | user can click on complete order or go back to bag to adjust bag|
+| | Shopper clicks on *adjust bag* | Shopper redirected to bag where they can adjust bag| Pass | user can adjust bag|
+| | user clicks on complete order| a spinner appears, page reloads to checkout_success page| Pass | user can see thier order details, a thank-you-for-your-order message|
+| | User closes success message| success message closed| Pass | |
+| | user redirected to checkout_success| a success message with the order summary and total appears| Pass | the success message remains on the top right corner until user closes it|
+| | User closes success message| success message closed| Pass | |
+| | user clicks on complete order| a confirmation email is sent to the user| Pass | order confirmation emails entails the order summary and delivery information |
+| | user orders a treatment and clicks on complete order| a Treatment Gift Card is sent to the shopper | Pass | user can see thier EGift card with the treatement purchased|
+| | shopper clicks on *keep shopping* from checkout_success| user is redirected to the Hammam page| Pass | user can see the Hammam page|
+| **Newsletter Subscribtion**| | | | |
+| | accessible from the footer, the user enters their name and email to subscribe| A successfully-subscribed message with the email address of the subscriber confirms subscription | Pass | user can see the email they entered for subscription in message|
+| | User closes success message| success message closed| Pass | |
+| **Unsubscribe**| | | | |
+| | accessible from the footer, the user clicks on unsubscribe| user is redirected to unsubscribe page | Pass | user can see a field to enter their email and a button to unsbscribe|
+| | user enters their email and clicks on unsubscribe| success message appear informing the user that they have been unsubscribed | Pass | success message contains the email entered to unsubscribe|
+| | User closes success message| success message closed| Pass | |
+| **Newsletter Admin**| | | | |
+| | accessible from the account drop down menu, Superuser can edit newsletter content with editor| Superuser can write and edit the newsletter content with editor| Pass | superuser can see list of subscribers|
+| | superuser submits newsletter by clicking send| a success message appears if no error accurs| Pass | superuser can see previous newsletters sent on the admin panel|
+| | superuser sent newsletter but error occurs| error mesage appears if newsletter is not sent properly| Pass | |
+| **Testimonials**| | | | |
+| | Bottom of the Earth hammam page, the user can read the testimonials| Testimonials published by the superuser are visible in three responsive rows| Pass | |
+| | Superuser can publish testimonials from default django admin panel| Testimonials are published on the site| Pass | Testimonials, Name of reviewer visible|
+| **Privacy Policy**| | | | |
+| | Bottom of the footer, the user clicks on the Privacy Policy link| User is redirected to the privacy policy page | Pass | User can return to site using the navigation |
+| **Awards**| | | | |
+| | Bottom of the footer, the user clicks on the Awards link| User is redirected to the certification page where they can see the certificates of Excellence | Pass | User can see links to the treatments and tickets page|
+| | user clicks on the link to tickets| User is redirected to the tickets page | Pass | User can see tickets page|
+| | user clicks on the link to treatments| User is redirected to the treatments page | Pass | User can see treatments page|
 
 
 

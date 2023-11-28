@@ -16,5 +16,8 @@ def hammam(request):
 
 
 def privacypolicy(request):
-    return render(request, 'home/privacy_policy.html')  # noqa
+    return render(request, 'home/privacy_policy.html')
 
+
+def certification(request):
+    return render(request, 'home/certification.html')

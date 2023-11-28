@@ -53,7 +53,7 @@ The Earth Hammam profits when individuals buy their gift cards online whether fo
 The products sold on the site are inspired by the scent, mood and atmosphere of Earth Hammam, they are sold for returning customers who want to take Earth Hammam home. The client can add the default amount to their bag, adjust the quantity and proceed to check out to purchase the product which includes delivery information and an order confirmation email
 
 **Tickets**
-The tickets sold on the site are for returning customers who want to experience Earth Hammam. The client can add the default amount to their bag, adjust the quantity and proceed to check out to purchase the ticket then receive an order confirmation email. The client can then show their confirmation email at the entrance where they will be given an armband to access the facility
+The tickets sold on the site are for returning customers who want to experience Earth Hammam. The client can add the default amount to their bag, adjust the quantity and proceed to check out to purchase the ticket and then receive an order confirmation email. The client can then show their confirmation email at the entrance where they will be given an armband to access the facility
 
 ## Marketing Strategies:
 
@@ -73,10 +73,16 @@ As most customers reach the site via their mobile phones, whether by Google It o
  Email marketing is used to get to those who abandoned their cart, potential customers who signed up for our newsletters from Facebook or the shop, and reach out to existing clients who have not purchased in a while to get them coming back. The newsletter is optimized for front-end formatting to allow better crafting of the newsletter, reaching out to luxury-seeking clients.
 
 5. Blog Postings via Facebook:
-The Facebook business page for Earth Hammam is meant to include exclusive offers and a peek into what awaits the new customers as well as reaching out to facebook users who might know about the facility.
+The Facebook business page for Earth Hammam is meant to include exclusive offers and a peek into what awaits the new customers as well as reaching out to Facebook users who might know about the facility.
 
 6. Referral Marketing via Testimonials and Tags:
 The Earth Hammam site includes testimonials from visitors referring the facility to other customers.
+
+7. Privacy Policy for professionalism:
+To win the visitors' trust and better SEO ranking, a privacy policy has been added to the footer via a link. 
+
+8. Rewards and Certificate of Excellency:
+To instill trust and a sense of exclusivity, a link to the certificates has been added to the footer via a link.
 
 ## Visual Design:
 A folder with further design elements can be accessed [here](ADD LINK) as well as the [flowchart](ADD LINK).

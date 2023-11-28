@@ -6,6 +6,10 @@ from django.core.mail import EmailMessage
 from .forms import NewsletterForm
 from .models import SubscribedUser
 from .decorators import user_is_superuser
+from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.conf import settings
 
 
 def subscribe(request):
@@ -52,22 +56,27 @@ def newsletter(request):
         if form.is_valid():
             subject = form.cleaned_data.get('subject')
             subscribers = form.cleaned_data.get('subscribers').split(',')
-            email_message = form.cleaned_data.get('message')
+            text_content = form.cleaned_data.get('message')
 
-            mail = EmailMessage(
-                subject, email_message, f"Earth Hammam <{request.user.email}>")
-            mail.content_subtype = 'html'
+            html_content = render_to_string(
+            'checkout/email_template.html',
+            {'content': text_content})
+            for subscriber in subscribers:
+                from_email = settings.DEFAULT_FROM_EMAIL
+                msg = EmailMultiAlternatives(subject, text_content, from_email, subscriber)
+                msg.attach_alternative(html_content, "text/html")
+                msg.send()
 
-            if mail.send():
+            try:
                 messages.success(request, "Newsletter succesfully sent.")
-            else:
+            except:
                 messages.error(request, "There was an error sending email")
 
         else:
             for error in list(form.errors.values()):
                 messages.error(request, error)
 
-        return redirect('home')
+        return redirect('/')
 
     form = NewsletterForm()
     form.fields['subscribers'].initial = ','.join(
