@@ -17,12 +17,14 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
 
+    # Get items and bag
     item = get_object_or_404(Item, pk=item_id)
     # quantity = int(request.POST.get('quantity'))
     quantity = 1
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
+    # Update quantity or add item
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
         messages.success(
@@ -40,6 +42,7 @@ def add_to_bag(request, item_id):
 def adjust_bag(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
 
+    # Get items and bag, then update the bag
     item = get_object_or_404(Item, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
