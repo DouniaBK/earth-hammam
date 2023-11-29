@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Disallow: /profiles/
+Sitemap: https://earth-hammam-e2008fb66bd6.herokuapp.com/sitemap.xml
