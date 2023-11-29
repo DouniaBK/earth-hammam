@@ -248,7 +248,7 @@ The navbar is centered above the main content of the site where the user can nav
 
 ![NavBar](static/images/navbar-small.png)
 
-The responsive navbar collapses for small and medium screens allowing better user experience and optics.
+The responsive navbar collapses for small and medium screens allowing a better user experience and optics.
 
 ### Logo: 
 Simple clean logo featuring the name of the establishment written in uppercase and bold, placed in the top left corner of the site including the only link that redirects to the welcome page.
@@ -259,6 +259,29 @@ Simple clean logo featuring the name of the establishment written in uppercase a
 
 
 The footer includes multiple Social media links for the user to find out more about the establishment. These will open in a new tab. Furthermore, it includes a subscription section allowing the users to receive the newsletter. Underneath the Unsubscribe link, redirect the returning to an unsubscribe page, where the user is prompted to enter their email address and press unsubscribe if they no longer want to receive the newsletter.
+
+The footer includes the following links:
+
+ 1. Privacy Policy: redirecting to the establishment privacy policy
+
+ ![Privacy Policy](static/images/privacy-policy.png)
+
+ 2. Earth Hammam Awards: redirecting the user to the certificates awarded to the facility
+
+ ![Certificates](static/images/certificates.png)
+
+
+ 3. Unsubscribe: redirecting the user to the unsubscribe page
+
+ ![Footer](static/images/footer.png)
+
+
+ 4. Address and Contact: redirecting to the page with the contact information and address of the facility
+
+ ![Address and Contact](static/images/contact-info.png)
+
+
+ 5. Partner Resort: redirecting to an external site that is not sponsored with a ```ref=noopner``` for security measures and SEO ranking. The user can book a stay with the partner.
 
 ### Toast Messages:
 Various messages notify the user of successful actions, errors and warnings as well as inform the user of the proper steps to take to solve issues.

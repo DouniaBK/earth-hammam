@@ -12,15 +12,19 @@
             <!--Section Earth Hammmam Unsubscribe form goes here-->
             <section class="row">
                 <div class="general-container">
-                    <h2 class="text-uppercase">Unsubscribe from Earth Hammam Newsletter</h2>
+                    <h2 class="text-uppercase text-center">Unsubscribe from Earth Hammam Newsletter</h2>
                     <div class="container col-4">
                         <form method="post" action="{% url 'unsubscribe' %}">
                             {% csrf_token %}
-                              <input type="email" name="email" id="Unsubscribe" class="form-control text-center"  placeholder="Ente your Email Address"/>
-                            <button class="btn btn-wetsand mt-4"   type="submit">Unsubscribe</button>
+                            <div class="d-flex">
+                                <input type="email" name="email" id="Unsubscribe" class="form-control text-center"  placeholder="Ente your Email Address"/>
+                              <button class="btn btn-wetsand mt-4"   type="submit">Unsubscribe</button>
+                            </div>
                           </form>
                     </div>
                 </div>
             </section>
     </div>
+    <!------------------------------------- Footer goes here-->
+    {% include 'includes/footer.html' %}
 {% endblock %}
