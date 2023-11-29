@@ -87,7 +87,10 @@ As most customers reach the site via their mobile phones, whether by Google It o
  Email marketing is used to get to those who abandoned their cart, potential customers who signed up for our newsletters from Facebook or the shop, and reach out to existing clients who have not purchased in a while to get them coming back. The newsletter is optimized for front-end formatting to allow better crafting of the newsletter, reaching out to luxury-seeking clients.
 
 5. Blog Postings via Facebook:
-The Facebook business page for Earth Hammam is meant to include exclusive offers and a peek into what awaits the new customers as well as reaching out to Facebook users who might know about the facility.
+
+![Color Inspiration](static/images/facebook-page-cropped.PNG)
+
+The Facebook business page for Earth Hammam is meant to include exclusive offers and a peek into what awaits the new customers as well as reaching out to Facebook users who might know about the facility. The full Facebook-page screenshot is [here](https://drive.google.com/file/d/15dDofCW6yGCvrLbS9JmnXTW-W9fffoZN/view?usp=sharing)
 
 6. Referral Marketing via Testimonials and Tags:
 The Earth Hammam site includes testimonials from visitors referring the facility to other customers.

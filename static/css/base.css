@@ -780,6 +780,7 @@ footer {
     .container {
       max-width: 80%;
     }
+    
   }
 
 /* fixed top navbar only on medium and up */
@@ -794,6 +795,10 @@ footer {
 
     .header-container {
         padding-top: 164px;
+    }
+    
+    .unsubscribe-wrapper {
+        max-width:100% !important;
     }
 }
 
@@ -932,6 +937,13 @@ footer {
     }
     .margin-on-mobile {
         margin-top: 10px;
+    }
+    
+    .unsubscribe-wrapper {
+        max-width:100% !important;
+    }
+    .col-on-mobile {
+        flex-direction: column;
     }
 }
 
