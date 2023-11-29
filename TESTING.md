@@ -67,6 +67,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | | admin deletes an already existing item in store | click delete| Pass | delete message appear and item is deleted|
 | **Checkout**| | | | |
 | | accessible from bag, shopper clicks on *secure checkout*| redirected to checkout| Pass | user can see their order summary and billing information form|
+| | Shopper fills Billing information, fields with asterix are compulsory| form is validated| Pass | user can click to correct field|
 | | Shopper fills Billing information, fields with asterix are compulsory| form is filled in and payment field changes from visa to mastercard depending on method| Pass | user can click on complete order or go back to bag to adjust bag|
 | | Shopper clicks on *adjust bag* | Shopper redirected to bag where they can adjust bag| Pass | user can adjust bag|
 | | user clicks on complete order| a spinner appears, page reloads to checkout_success page| Pass | user can see thier order details, a thank-you-for-your-order message|
