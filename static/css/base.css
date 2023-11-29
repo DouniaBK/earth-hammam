@@ -938,9 +938,9 @@ footer {
     .margin-on-mobile {
         margin-top: 10px;
     }
-    
+
     .margin-on-mobile-zero {
-        margin-left: 0px;
+        margin-left: 0px !important;
     }
     
     .unsubscribe-wrapper {

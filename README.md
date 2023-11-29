@@ -522,6 +522,12 @@ os.environ["STRIPE_WH_SECRET"] = "user's own value"
 | [Canvas](https://www.canva.com/) | home page | Projects | WEbsite design |
 
 
+# Further Documentation:
+
+This drive file link leads to all documentation and planning leading to this project.
+Project Earth Hammam Drive Folder. [Project Earth Hammam Drive Folder](https://drive.google.com/drive/folders/158YK2I8Abfhij_TjaLuM87yRqbG5rgd9?usp=sharing) 
+
+
 # Acknowledgment
 
 - I would like to thank my Code Institute mentor, [Rory Patrick Sheridan](https://github.com/Ri-Dearg) for his amazing support throughout the development of this project and studies at CI.
