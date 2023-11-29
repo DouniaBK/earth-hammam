@@ -41,7 +41,7 @@ The rise of cleansing, detox, wellness and unique rituals has generated billion 
 The treatments can be bought in the form of a gift card which makes an ideal corporate incentive targeting corporate individuals as well as influencers. The gift card option incites individuals to go to the facility and spend more benefitting the business.
 
 ## Business Model:
-A detailed B2C business model can be found [here](https://drive.google.com/file/d/15dDofCW6yGCvrLbS9JmnXTW-W9fffoZN/view?usp=drive_link).
+A detailed B2C business model can be found [here](https://drive.google.com/file/d/1WhwpEK7BBq7x8GtwCkzAiYOA1SPAY-kx/view?usp=sharing).
 Items sold on the site are exclusively curated to attract visitors from abroad, which need prior preparation to enter the facility such as ticketing or booking.
 The flexible booking, the five-year redeemable gift card and the tickets are strategies to ensure that the client confident in visiting during this period, is encouraged to buy the tickets and treatments. The signature products are curated to encourage visitors to buy products they used or enjoyed during their visit, prompting the client to spend more on their way out and if they want even from abroad as the site offers wideworld delivery.
 
@@ -90,7 +90,7 @@ As most customers reach the site via their mobile phones, whether by Google It o
 
 ![Color Inspiration](static/images/facebook-page-cropped.PNG)
 
-The Facebook business page for Earth Hammam is meant to include exclusive offers and a peek into what awaits the new customers as well as reaching out to Facebook users who might know about the facility. The full Facebook-page screenshot is [here](https://drive.google.com/file/d/15dDofCW6yGCvrLbS9JmnXTW-W9fffoZN/view?usp=sharing)
+The Facebook business page for Earth Hammam is meant to include exclusive offers and a peek into what awaits the new customers as well as reaching out to Facebook users who might know about the facility. The full Facebook page screenshot is [here](https://drive.google.com/file/d/15dDofCW6yGCvrLbS9JmnXTW-W9fffoZN/view?usp=sharing)
 
 6. Referral Marketing via Testimonials and Tags:
 The Earth Hammam site includes testimonials from visitors referring the facility to other customers.
@@ -303,6 +303,9 @@ Various messages notify the user of successful actions, errors and warnings as w
 4. Email Confirmation: with the Django-Allauth package, the user receives an email to confirm account registrations.
 
 ### Custom Error Pages:
+
+![404](static/images/404-page.jpg)
+
 * 400 Error page appears when the server can not or will not process the request due to something that is perceived to be a client error 
 * 403 Error page appears when the user does not have the necessary permissions to access the wanted page
 * 404 Error page appears when the server can not find the page requested

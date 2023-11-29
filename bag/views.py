@@ -19,7 +19,7 @@ def add_to_bag(request, item_id):
 
     # Get items and bag
     item = get_object_or_404(Item, pk=item_id)
-    # quantity = int(request.POST.get('quantity'))
+    # Add default quantity 1
     quantity = 1
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
@@ -35,7 +35,7 @@ def add_to_bag(request, item_id):
         messages.success(request, f'You have added {item.name} to your bag')
 
     request.session['bag'] = bag
-    print(request.session['bag'])  # delete once working
+    print(request.session['bag'])
     return redirect(redirect_url)
 
 
