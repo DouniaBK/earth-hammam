@@ -20,7 +20,9 @@ class StripeWH_Handler:
         self.request = request
 
     def _send_confirmation_email(self, order):
-        """Send the user a confirmation email"""
+        """ Send the user a confirmation email """
+
+        # Assemble content
         cust_email = order.email
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
@@ -33,7 +35,7 @@ class StripeWH_Handler:
             'checkout/email_template.html',
             {'content': content})
 
-        # Test HTML email
+        # Send email
         from_email = settings.DEFAULT_FROM_EMAIL
         to = cust_email
         text_content = content
@@ -43,9 +45,8 @@ class StripeWH_Handler:
         msg.send()
 
     def _send_treatment_card_email(self, order, treatment_name):
-        print('_send_treatment_card_email')
-        print(treatment_name)
-        """Send the user a treatment gift card email"""
+        """ Send the user a treatment gift card email """
+        # Assemble content
         cust_email = order.email
         subject = render_to_string(
             'checkout/confirmation_emails/treatment_email_subject.txt',
@@ -62,7 +63,7 @@ class StripeWH_Handler:
             'checkout/email_template.html',
             {'content': content})
 
-        # Test HTML email
+        # Send email
         from_email = settings.DEFAULT_FROM_EMAIL
         to = cust_email
         text_content = content
@@ -70,25 +71,20 @@ class StripeWH_Handler:
         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
         msg.attach_alternative(html_content, "text/html")
         msg.send()
-        print('done send')
 
     def _process_treatment_emails(self, order):
-        # Send gift card emails if applicable
+        """ Send gift card emails if applicable """
         l_items = OrderLineItem.objects.filter(order=order)
-        print("Sending treatment emails")
         for l_item in l_items:
             if l_item.item.category.name == 'Treatments':
                 if l_item.item.name == 'Signature':
                     self._send_treatment_card_email(order, 'Signature')
-                    print("Signature")
 
                 if l_item.item.name == 'Essential':
                     self._send_treatment_card_email(order, 'Essential')
-                    print("Essential")
 
                 if l_item.item.name == 'Vital':
                     self._send_treatment_card_email(order, 'Vital')
-                    print("Vital")
 
     def handle_event(self, event):
         """
@@ -136,6 +132,7 @@ class StripeWH_Handler:
                 profile.default_county = shipping_details.address.state
                 profile.save()
 
+        # Retrieve order
         order_exists = False
         attempt = 1
         while attempt <= 5:

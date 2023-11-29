@@ -217,7 +217,7 @@ Cancel appointment: the user can also cancel their appointment. Once they click 
 ![Logged in](static/images/login-dropdown.png)
 
 
- 1. **User Account**: the user can log in, log out and access their profile through the right end section of the navbar, login and drop-down menu list profile and logout. The authentification system has been done with the django-allauth package.
+ 1. **User Account**: the user can log in, log out and access their profile through the right end section of the navbar, login and drop-down menu list profile and logout. The authentification system has been done with the Django-Allauth package.
 
 - Register: New users are prompted to register in order to continue their purchase or book an appointment by filling out a registration form, confirming their account with a confirmation email and then logging in.
 - Log in: The flow is standard, provide a username or email and a password, check the *Remember Me* box if the user wants to stay logged in and a *forgot Password* link to reset their password redirecting to the *Password Reset* page, login button to access their account
@@ -254,6 +254,10 @@ The responsive navbar collapses for small and medium screens allowing better use
 Simple clean logo featuring the name of the establishment written in uppercase and bold, placed in the top left corner of the site including the only link that redirects to the welcome page.
 
 ### Footer:
+
+![Footer](static/images/footer.png)
+
+
 The footer includes multiple Social media links for the user to find out more about the establishment. These will open in a new tab. Furthermore, it includes a subscription section allowing the users to receive the newsletter. Underneath the Unsubscribe link, redirect the returning to an unsubscribe page, where the user is prompted to enter their email address and press unsubscribe if they no longer want to receive the newsletter.
 
 ### Toast Messages:
@@ -270,7 +274,7 @@ Various messages notify the user of successful actions, errors and warnings as w
 1. Treatment Gift Card Emails: If the shopper has ordered a Treatment Gift Card, an email with the treatment order is generated and sent.
 2. Order Confirmation Emails: once an order has been submitted, the user receives an email with the order history.
 3. Newsletter Emails: The admin sends an email to all active subscribers.
-4. Email Confirmation: with Django-Allauth package, the user receives an email to confirm account registrations.
+4. Email Confirmation: with the Django-Allauth package, the user receives an email to confirm account registrations.
 
 ### Custom Error Pages:
 * 400 Error page appears when the server can not or will not process the request due to something that is perceived to be a client error 
@@ -339,7 +343,7 @@ ElephantSQL, hosted by PostgreSQL, has been used as a database. The database is 
 - [Stripe](https://www.stripe.com) was used to power online payment processing.
 - [Canvas](https://balsamiq.com/) was used to create the project wireframes and design.
 - [Hoststar](https://www.hoststar.ch/de) was used to generate the favicon used on all pages.
-- [coolors](https://coolors.co/) was used to generate the color palette.
+- [coolors](https://coolors.co/) color palette generator was used.
 
 ## Testing
 
