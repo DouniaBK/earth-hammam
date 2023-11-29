@@ -276,7 +276,7 @@ The footer includes the following links:
 
  3. Unsubscribe: redirecting the user to the unsubscribe page
 
- ![Footer](static/images/footer.png)
+ ![Unsubscribe](static/images/unsubscribe-page.png)
 
 
  4. Address and Contact: redirecting to the page with the contact information and address of the facility

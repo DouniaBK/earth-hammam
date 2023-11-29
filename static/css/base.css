@@ -939,11 +939,16 @@ footer {
         margin-top: 10px;
     }
     
+    .margin-on-mobile-zero {
+        margin-left: 0px;
+    }
+    
     .unsubscribe-wrapper {
         max-width:100% !important;
     }
     .col-on-mobile {
-        flex-direction: column;
+        flex-direction: column;    align-content: center;
+        align-items: center;
     }
 }
 
