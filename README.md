@@ -1,9 +1,6 @@
 ![Earth Hammam](static/images/site-screenshot.png)
 
-Earth Hammam where you rekindle your soul, treat your body and leave your stress behind in an invigorating wellness experience. The luxury Earth Hammam facility is inspired by the North African
-landscape and thus the site mirrors the esthetic and architecture of the facility. The site design is inspired by the rose-hued buildings of Marrakech
-and the surrounding olive groves. Dedicated to personal wellness the site design is serene, minimalistic and timeless ensuring a calming and relaxing user experience. 
-The site brings the serene Earth Hammam experience to the world, inviting visitors from around the world, to book appointments for treatments at the facility, buy their entrance tickets prior to their visit, and buy the signature Earth Hammam products inspired by the scent and atmosphere of the hammam. Furthermore, the exclusive Earth Hammam treatment packages are available to purchase as gift cards making it a perfect gift not only for tourists but also as a corporate incentive. The gift cards can be purchased online and redeemed at the facility.
+Earth Hammam where you rekindle your soul, treat your body and leave your stress behind in an invigorating wellness and spa experience. The luxury Earth Hammam is a wellness project inspired by the deeply rooted Hammam customs, the North African landscape, the rose-hued buildings of Marrakech and the surrounding Palm plantations and thus the site mirrors that serene warm aesthetic and architecture. Dedicated to personal wellness the site design is serene, minimalistic and timeless ensuring a calming and relaxing user experience. The serene Earth Hammam e-commerce site brings the local Hammam traditions and beauty rituals to the world, inviting visitors from around the world, to book appointments for treatments at the facility, buy their entrance tickets prior to their visit, and buy the signature Earth Hammam products inspired by the scent and atmosphere of this luxury hammam. Furthermore, the exclusive Earth Hammam treatment packages are available to purchase as gift cards making it a perfect gift not only for tourists but also as a corporate incentive. The e-gift cards can be purchased online and redeemed at the facility.
 
 # Table of Contents
 ## Goals
@@ -24,11 +21,11 @@ The site brings the serene Earth Hammam experience to the world, inviting visito
 * Packages
 * Platforms
 * Other Tools
-## Testing
-* Automated Testing
+## Testing 
+* [TESTING.md](/TESTING.md)
+* Automated Testing 
 * Manual Testing
 * Bugs
-* Accessibility
 ## Deployment
 * Local Deployment
 * Heroku Deployment
@@ -40,7 +37,7 @@ The site brings the serene Earth Hammam experience to the world, inviting visito
 
 ## Target Customer :
 
-The Earth Hammam project is designed with B2C business strategies in mind targeting tourists, influencers and business travelers who would like to visit the facility during their trip to Marrakech, it is designed to attract tourists, influencers and business travelers from around the world who are tempted by this luxury yet authentic experience to indulge, be pampered and promote the facility.
+The rise of cleansing, detox, wellness and unique rituals has generated billion dollars companies often run by unique individuals seeking adventures, better branding or simply a different lifestyle and thus the Earth Hammam project is designed with B2C business strategies in mind targeting those individuals, tourists, influencers and business travelers who would like to experience or promote unique rituals during their trip to the exotic and mysterious Marrakech. The project is designed to attract individuals and corporations willing to splurge, indulge, be pampered and promote the facility via social media. 
 The treatments can be bought in the form of a gift card which makes an ideal corporate incentive targeting corporate individuals as well as influencers. The gift card option incites individuals to go to the facility and spend more benefitting the business.
 
 ## Business Model:

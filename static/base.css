@@ -905,10 +905,12 @@ footer {
     .lead {
         font-size: 1.1rem !important;
     }
+
     .profile-table-row {
         padding: 10px;
-        margin: 10px;
         flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .profile-table-element {
