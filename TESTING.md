@@ -71,6 +71,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Shopper fills Billing information, fields with asterix are compulsory| form is filled in and payment field changes from visa to mastercard depending on method| Pass | user can click on complete order or go back to bag to adjust bag|
 | | Shopper clicks on *adjust bag* | Shopper redirected to bag where they can adjust bag| Pass | user can adjust bag|
 | | user clicks on complete order| a spinner appears, page reloads to checkout_success page| Pass | user can see thier order details, a thank-you-for-your-order message|
+| | user clicks on complete order| stripe webhooks are updated | Pass | payment intent success|
 | | User closes success message| success message closed| Pass | |
 | | user redirected to checkout_success| a success message with the order summary and total appears| Pass | the success message remains on the top right corner until user closes it|
 | | User closes success message| success message closed| Pass | |

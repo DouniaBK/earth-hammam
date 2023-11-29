@@ -507,10 +507,11 @@ os.environ["STRIPE_WH_SECRET"] = "user's own value"
 
 | Source | Location | Notes |
 | --- | --- | --- |
-| [StackOverflow](https://stackoverflow.com/) | feature-details and search-results pages | how to solve various |
+| [StackOverflow](https://stackoverflow.com/) | feature-details and search-results pages | how to solve various django and stripe issues |
 | [Codepen](https://codepen.io/recodenow/pen/YZqgZW) | feature-details page | Five star rating checkbox |
 | [StackOverflow](https://stackoverflow.com/questions/37259740/passing-variables-from-flask-to-javascript) | feature-details page | How to pass variable data to JS from the backend |
 | [pylessons](https://pylessons.com/django-subscribe) | lessons | Subscribe to Newsletter in Django |
+| [Code Institue](https://learn.codeinstitute.net/) | bag- checkout - profile| followed the CI lessons of Boutique Ado to create the bag, checkout and profile lessons |
 | [django Documentation](https://docs.djangoproject.com/en/4.2/) | Entire site | code has been created following the Django documentation |
 | [Aman](https://www.aman.com/) | Home page | was used for the main site text content and inspiration |
 | [Privacy Policy Generator](https://www.privacypolicygenerator.info/) | Privacy Policy | was used to generate a free privacy policy for the site |
