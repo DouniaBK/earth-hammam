@@ -262,11 +262,11 @@ The footer includes multiple Social media links for the user to find out more ab
 
 The footer includes the following links:
 
- 1. Privacy Policy: redirecting to the establishment privacy policy
+ 1. Privacy Policy: redirecting to the establishment privacy policy page
 
  ![Privacy Policy](static/images/privacy-policy.png)
 
- 2. Earth Hammam Awards: redirecting the user to the certificates awarded to the facility
+ 2. Earth Hammam Awards: redirecting the user to the certificates awarded to the facility page
 
  ![Certificates](static/images/certificates.png)
 
