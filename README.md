@@ -37,20 +37,34 @@ Earth Hammam where you rekindle your soul, treat your body and leave your stress
 
 ## Target Customer :
 
-The rise of cleansing, detox, wellness and unique rituals has generated billion dollars companies often run by unique individuals seeking adventures, better branding or simply a different lifestyle and thus the Earth Hammam project is designed with B2C business strategies in mind targeting those individuals, tourists, influencers and business travelers who would like to experience or promote unique rituals during their trip to the exotic and mysterious Marrakech. The project is designed to attract individuals and corporations willing to splurge, indulge, be pampered and promote the facility via social media. 
+The rise of cleansing, detox, wellness and unique rituals has generated billion dollars companies often run by unique individuals seeking adventures, better branding or simply a different lifestyle, thus the Earth Hammam project is designed with B2C business strategies in mind targeting those individuals, tourists, influencers and business travelers who would like to experience or promote unique rituals during their trip to the exotic and mysterious Marrakech. The project is designed to attract individuals and corporations willing to splurge, indulge, be pampered and promote the facility via social media or gift card incentives.
 The treatments can be bought in the form of a gift card which makes an ideal corporate incentive targeting corporate individuals as well as influencers. The gift card option incites individuals to go to the facility and spend more benefitting the business.
 
 ## Business Model:
 A detailed B2C business model can be found [here](https://drive.google.com/file/d/15dDofCW6yGCvrLbS9JmnXTW-W9fffoZN/view?usp=drive_link).
-Items sold on the site include:
+Items sold on the site are exclusively curated to attract visitors from abroad, which need prior preparation to enter the facility such as ticketing or booking.
+The flexible booking, the five-year redeemable gift card and the tickets are strategies to ensure that the client confident in visiting during this period, is encouraged to buy the tickets and treatments. The signature products are curated to encourage visitors to buy products they used or enjoyed during their visit, prompting the client to spend more on their way out and if they want even from abroad as the site offers wideworld delivery.
 
 **Treatment Gift Card**
-The Earth Hammam profits when individuals buy their gift cards online whether for personal use or as a gift. Earth Hammam profits as well when the gift card has not been redeemed. The booking system gives the sense that the gift card can be redeemed whenever the client wants and thus encourages clients to buy gift cards online as long as they have the freedom of booking within the next five years.
+
+
+![Treatments](static/images/treatments.png)
+
+
+The Earth Hammam profits when individuals buy their gift cards online whether for personal use or as a gift. Earth Hammam profits as well when the gift card has not been redeemed. The booking system gives the sense that the gift card can be redeemed whenever the client wants and thus encourages clients to buy gift cards online as long as they have the freedom of booking within the next five years. The five-year gift card flexible plan is for the target customers traveling from afar to come to the facility, this ensures that the client feels confident that they will be able to redeem the gift card on their next travel, even if cancellations happen, the client will buy the gift card. After confirming their order, the client receives their order confirmation email as well as the gift card Email specifying the selected treatment
 
 **Products**
+
+![Color Inspiration](static/images/products.png)
+
+
 The products sold on the site are inspired by the scent, mood and atmosphere of Earth Hammam, they are sold for returning customers who want to take Earth Hammam home. The client can add the default amount to their bag, adjust the quantity and proceed to check out to purchase the product which includes delivery information and an order confirmation email
 
 **Tickets**
+
+![Color Inspiration](static/images/tickets.png)
+
+
 The tickets sold on the site are for returning customers who want to experience Earth Hammam. The client can add the default amount to their bag, adjust the quantity and proceed to check out to purchase the ticket and then receive an order confirmation email. The client can then show their confirmation email at the entrance where they will be given an armband to access the facility
 
 ## Marketing Strategies:
@@ -227,7 +241,14 @@ Cancel appointment: the user can also cancel their appointment. Once they click 
 ## More features:
 
 ### Navigation:
-The navbar is centered above the main content of the site where the user can navigate to the Hammam, tickets, treatments,  products or the booking page. The navbar collapses for small and medium screens allowing better user experience and optics.
+
+![NavBar](static/images/navbar-big.png)
+
+The navbar is centered above the main content of the site where the user can navigate to the Hammam, tickets, treatments,  products or the booking page. The navigation bar also includes a minimalistic yet elegant logo of Earth Hammam written in capitals all black using bootstrap elements 
+
+![NavBar](static/images/navbar-small.png)
+
+The responsive navbar collapses for small and medium screens allowing better user experience and optics.
 
 ### Logo: 
 Simple clean logo featuring the name of the establishment written in uppercase and bold, placed in the top left corner of the site including the only link that redirects to the welcome page.

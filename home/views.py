@@ -21,3 +21,7 @@ def privacypolicy(request):
 
 def certification(request):
     return render(request, 'home/certification.html')
+
+
+def contact(request):
+    return render(request, 'home/contact.html')

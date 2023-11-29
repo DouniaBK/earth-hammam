@@ -22,11 +22,14 @@ class BookingTests(TestCase):
         user = User.objects.create(email="normal@user.de", username="test", password="dodo")   # noqa
         user.save()
 
+        # Get userprofile
         userprofile = UserProfile.objects.get(user=user)
 
+        # Create new product category
         category = Category.objects.create(name="testcategory", friendly_name="testcategory")   # noqa
         category.save()
 
+        # Create new item
         item = Item.objects.create(
             category=category,
             name="name",
@@ -39,6 +42,7 @@ class BookingTests(TestCase):
 
         t = datetime.now()
 
+        # Create order
         order = Order.objects.create(
                     order_number='order_number',
                     user_profile=userprofile,
@@ -60,6 +64,7 @@ class BookingTests(TestCase):
                     )   # noqa
         order.save()
 
+        # Create appointment
         appointment = Appointment.objects.create(user=userprofile,
                                              item=item,
                                              order=order,
@@ -69,6 +74,7 @@ class BookingTests(TestCase):
         appointment.save()
         all_user_appointments = Appointment.objects.filter(user=userprofile)
 
+        # Test appointment is setup correctly
         self.assertEqual(len(all_user_appointments), 1)
         for s in all_user_appointments:
             print(s)
@@ -80,14 +86,18 @@ class BookingTests(TestCase):
 
     def test_subfunctions(self):
 
+        # Create new user
         user = User.objects.create(email="normal@user.de", username="test", password="dodo")   # noqa
         user.save()
 
+        # Create user profile
         userprofile = UserProfile.objects.get(user=user)
 
+        # Create category
         category = Category.objects.create(name="testcategory", friendly_name="testcategory")   # noqa
         category.save()
 
+        # Create item
         item = Item.objects.create(
             category=category,
             name="name",
@@ -100,6 +110,7 @@ class BookingTests(TestCase):
 
         t = datetime(2023, 8, 15, 8, 0, 0)   # noqa
 
+        # Create order
         order = Order.objects.create(
                     order_number='order_number',
                     user_profile=userprofile,
@@ -121,6 +132,7 @@ class BookingTests(TestCase):
                     )   # noqa
         order.save()
 
+        # Create appointments at various times
         appointment1 = Appointment.objects.create(user=userprofile,
                                              item=item,
                                              order=order,
