@@ -865,6 +865,9 @@ footer {
     .main-content {
         width: 90%;
     }
+    .unsubscribe-wrapper {
+        max-width:100% !important;
+    }
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
