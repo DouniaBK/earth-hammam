@@ -113,8 +113,12 @@ class StripeWH_Handler:
         grand_total = round(stripe_charge.amount / 100, 2)  # updated
         print('handle_payment_intent_succeeded billing_details')
         print(billing_details)
+        print('handle_payment_intent_succeeded shipping_details')
+        print(shipping_details)
         print('handle_payment_intent_succeeded grand_total')
         print(grand_total)
+        print('handle_payment_intent_succeeded pid')
+        print(pid)
 
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
@@ -163,7 +167,9 @@ class StripeWH_Handler:
 
         print('handle_payment_intent_succeeded order')
         print(order)
-        
+        print('order_exists')
+        print(order_exists)
+
         if order_exists:
             self._send_confirmation_email(order)
             self._process_treatment_emails(order)
