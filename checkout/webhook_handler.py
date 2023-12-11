@@ -165,10 +165,13 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
 
-        print('handle_payment_intent_succeeded order')
-        print(order)
         print('order_exists')
         print(order_exists)
+        print('handle_payment_intent_succeeded order')
+        try:
+            print(order)
+        except:
+            print('NO')
 
         if order_exists:
             self._send_confirmation_email(order)
