@@ -111,6 +111,10 @@ class StripeWH_Handler:
         billing_details = stripe_charge.billing_details  # updated
         shipping_details = intent.shipping
         grand_total = round(stripe_charge.amount / 100, 2)  # updated
+        print('handle_payment_intent_succeeded billing_details')
+        print(billing_details)
+        print('handle_payment_intent_succeeded grand_total')
+        print(grand_total)
 
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
@@ -131,7 +135,7 @@ class StripeWH_Handler:
                 profile.default_street_address2 = shipping_details.address.line2     # noqa
                 profile.default_county = shipping_details.address.state
                 profile.save()
-
+        
         # Retrieve order
         order_exists = False
         attempt = 1
@@ -157,6 +161,9 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
 
+        print('handle_payment_intent_succeeded order')
+        print(order)
+        
         if order_exists:
             self._send_confirmation_email(order)
             self._process_treatment_emails(order)
