@@ -59,7 +59,7 @@ def checkout(request):
         order_form = OrderForm(form_data)
         
         print('checkout order_form')
-        print(border_formag)
+        print(order_form)
         if order_form.is_valid():
             print('checkout order_form is valid')
             order = order_form.save(commit=False)
