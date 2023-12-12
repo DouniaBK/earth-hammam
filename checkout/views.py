@@ -170,6 +170,8 @@ def checkout_success(request, order_number):
     print(total)
     print('checkout_success grand_total')
     print(grand_total)
+    print('checkout_success order')
+    print(order)
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)

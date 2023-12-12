@@ -19,7 +19,7 @@
 {% block corecss %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
-<link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" >
 {% endblock %}
 
 {% block extra_css %}
@@ -130,16 +130,13 @@
 {% endblock %}
 <div id="main-body-wrapper">
     {% block content %}
+    {% endblock %}
 </div>
-
-{% endblock %}
-
 {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
-    {% endblock %}
-
+{% endblock %}
 
 </body>
 </html>

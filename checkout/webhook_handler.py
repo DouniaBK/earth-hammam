@@ -139,7 +139,7 @@ class StripeWH_Handler:
                 profile.default_street_address2 = shipping_details.address.line2     # noqa
                 profile.default_county = shipping_details.address.state
                 profile.save()
-        
+
         # Retrieve order
         order_exists = False
         attempt = 1
@@ -192,6 +192,7 @@ class StripeWH_Handler:
                     street_address1=shipping_details.address.line1,
                     street_address2=shipping_details.address.line2,
                     county=shipping_details.address.state,
+                    grand_total=grand_total,
                     original_bag=bag,
                     stripe_pid=pid,
                 )
