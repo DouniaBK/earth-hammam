@@ -163,7 +163,7 @@ class StripeWH_Handler:
                 break
             except Order.DoesNotExist:
                 attempt += 1
-                time.sleep(1)
+                time.sleep(2)
 
         print('order_exists')
         print(order_exists)
@@ -220,6 +220,7 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
+        order.update_total()
         self._send_confirmation_email(order)
         self._process_treatment_emails(order)
 
