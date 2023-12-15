@@ -75,6 +75,13 @@ def checkout(request):
             order.order_total = total
             order.grand_total = grand_total
 
+            print('checkout total')
+            print(total)
+            print(order.order_total)
+            print('checkout grand_total')
+            print(grand_total)
+            print(order.grand_total)
+
             order.save()
             print('checkout order saved')
             print(order)
