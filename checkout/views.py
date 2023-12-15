@@ -40,8 +40,13 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+    bag = request.session.get('bag', {})
+    current_bag = bag_contents(request)
+    total = current_bag['total']
+    grand_total = current_bag['grand_total']
+    delivery = current_bag['delivery']
+
     if request.method == 'POST':
-        bag = request.session.get('bag', {})
         print('checkout bag')
         print(bag)
 
@@ -66,6 +71,10 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
+            order.delivery_cost = delivery
+            order.order_total = total
+            order.grand_total = grand_total
+
             order.save()
             print('checkout order saved')
             print(order)
@@ -110,9 +119,7 @@ def checkout(request):
                 request, "There's nothing in your bag at the moment")
             return redirect(reverse('items'))
 
-        current_bag = bag_contents(request)
-        total = current_bag['grand_total']
-        stripe_total = round(total * 100)
+        stripe_total = round(grand_total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
