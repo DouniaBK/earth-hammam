@@ -392,6 +392,9 @@ Responsiveness has been tested using:
   * [BrowserStack](https://www.browserstack.com/)
   * Screenshots of responsiveness have been added to this drive [file](https://www.browserstack.com/).
 
+### Bugs
+1) Order prices were properly registered during development, but prices were not saved in production.
+   * The solution was to register and save the order prices at the beginning of the checkout workflow.
 
 ## Deployment
 
@@ -499,6 +502,33 @@ os.environ["STRIPE_SECRET_KEY"] = "user's own value"
 os.environ["STRIPE_PUBLIC_KEY"] = "user's own value"
 os.environ["STRIPE_WH_SECRET"] = "user's own value"
 ```
+
+## Defensive Design
+
+### Site Access
+The purchasing and booking workflows were intentionally designed to be usable and/or visible also by a non-logged in, anonymous user.
+
+Thereby, an anonymous user can 
+* purchase items and complete the entire purchasing workflow.
+* view, but not use, the treatment booking page as an incentive to register and book an appointment.
+
+To prevent non-logged in users from accessing treatment booking controls, while being able to preview them, buttons are disabled in addition to an overlay, which blurs and disables the booking buttons further. Furthermore, booking POST requests are only responded to for authenticated users.
+
+### Defense to Session Hijacking
+The shopping bag content is handled via the user session. Session hijacking would therefore allow a hacker to modify a users shopping bag.
+Although session hijacking can not be fully guarded against, measures were implemented to defend against it via the following settings:
+
+1) Make the session expire when the browser is closed:
+
+SESSION_COOKIE_SECURE = True
+
+2) Only send the session cookie over HTTPS connection:
+
+SESSION_COOKIE_HTTPONLY = True
+
+3) Prevent the session cookie to be accessed by JavaScript code:
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 
 ## Credit

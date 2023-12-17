@@ -66,7 +66,6 @@ def checkout(request):
         print('checkout order_form')
         print(order_form)
         if order_form.is_valid():
-            print('checkout order_form is valid')
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
@@ -75,16 +74,7 @@ def checkout(request):
             order.order_total = total
             order.grand_total = grand_total
 
-            print('checkout total')
-            print(total)
-            print(order.order_total)
-            print('checkout grand_total')
-            print(grand_total)
-            print(order.grand_total)
-
             order.save()
-            print('checkout order saved')
-            print(order)
             for item_id, item_data in bag.items():
                 try:
                     item = Item.objects.get(id=item_id)
@@ -178,14 +168,6 @@ def checkout_success(request, order_number):
     total = float(current_bag['total'])
     grand_total = float(current_bag['grand_total'])
     delivery = float(current_bag['delivery'])
-    print('checkout_success current_bag')
-    print(current_bag)
-    print('checkout_success total')
-    print(total)
-    print('checkout_success grand_total')
-    print(grand_total)
-    print('checkout_success order')
-    print(order)
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)

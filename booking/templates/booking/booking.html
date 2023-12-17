@@ -28,7 +28,7 @@
         <div id="selectTreatmentWrapper">    
             <div class="appointment_types">
                 {% for treatment in treatments %}
-                    <div class="appointment_type_button" onclick="onTypeClickCallback('{{treatment.id}}', {{treatment_ids_json}})">
+                    <div class="appointment_type_button" onclick="{% if is_authenticated %}onTypeClickCallback('{{treatment.id}}', {{treatment_ids_json}}){% endif %}">
                         <h4 style="margin: 10px;">{{treatment.name}}</h4>
                         <img class="card-img-top img-fluid" src="{{ treatment.image }}" alt="{{ treatment.name }}">
                         
@@ -128,17 +128,17 @@
                     <div id="booking_feedback" class="booking_feedback">
                         Please select a treatment and time
                     </div>
-
+                    {% if is_authenticated %}
                     <input type="submit" class="btn btn-scheduler text-white btn-form-large" value="Book Treatment">
+                    {% endif %}
+
                 </form>
             </div>
 
             <div id="selectTimeWrapperBlur"></div>
         </div>
 
-        
         {% if is_authenticated %}
-
             <h3 class="logo-font mt-5">Your Booked Treatments</h3>
             <div class="divider"></div>
 

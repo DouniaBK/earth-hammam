@@ -152,7 +152,6 @@
                         <small class="lead text-uppercase text-white">Billing Information</small>
                     </div>
                 </div>
-                {% for product in order.lineitems.all %}
                 <div class="row pt-3">
                     <div class="col-12 col-md-4">
                         <p class="mb-0 text-black font-weight-bold">Order Total</p>
@@ -179,7 +178,6 @@
                         <p class="mb-0">${{ grand_total | floatformat:2 }}</p>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
 

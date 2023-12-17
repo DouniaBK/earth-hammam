@@ -147,7 +147,7 @@ def booking(request):
             all_treatments.append(trtm)
 
         # if this is a POST request, handle saving the session
-        if request.method == "POST":
+        if (request.method == "POST") and (is_authenticated == True):
             # create a form instance and populate it with
             #  data from the request:
             form = AppointmentInputFormFrontEnd(request.POST)
