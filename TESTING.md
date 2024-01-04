@@ -50,10 +50,12 @@ Defensive programming was manually tested with the below user acceptance testing
 | | user can not edit their profile until they click on the button *Update Information*| Edit profile fields are then allowed | Pass | can edit the fields, update and see edited fields|
 | | user can cancel editing| editing cancelled | Pass | |
 | | user can delete profile| click on delete  | Pass | user can delete the account after confirming the action- Superuser cannot delete account|
-| | user can view previous orders| click on view order | Pass | user can see the details of what they have previously ordered|
+| | user can view previous orders| click on view order | Pass | user can see the details of what they have previously ordered and admin can see the order history|
 ![Profile - Order History](static/images/order-saved-profile.png)
+![Profile - Order Detail From Profile button view](static/images/order-profile-preview.png)
+![Admin Panel - Order saved](static/images/order-history-saved.png)
 | **Bag**| | | | |
-| | user can add any aticket to  bag by clicking add to bag button | default one item added to bag| Pass | success message appears with bag details and go to bag button||
+| | user can add any ticket to  bag by clicking add to bag button | default one item added to bag| Pass | success message appears with bag details and go to bag button||
 | | User closes success message| success message closed| Pass | |
 | | user can add any treatment to  bag by clicking add gift card to bag button | default one item added to bag| Pass | success message appears with bag details and go to bag button||
 | | User closes success message| success message closed| Pass | |
@@ -63,6 +65,11 @@ Defensive programming was manually tested with the below user acceptance testing
 | | User closes success message| success message closed| Pass | |
 | | user can click on update quantity | quantity updated | Pass | quantity can be updated to more than one - less than one is disabled||
 | | user can remove item from list by clicking remove in quantity section | item removed, page reloads to You-bag-is-empty page| Pass | shopper can click on keep shopping and is redirected to Hammam page||
+![Bag](static/images/bag-testing.png)
+![Checkout](static/images/checkout-testing.png)
+![Order Detail](static/images/order-detail-testing.png)
+![Order Saved](static/images/order-registred-testing.png)
+![Order Confirmation Email](static/images/order-confirmation-testing.png)
 | **Merchandizing**| | | | |
 | | accessible from navbar drop-down menu - admin add new ticket to store | fill the form and image| Pass | ticket added to ticket page|
 | | accessible from navbar drop-down menu - admin add new treatment to store | fill the form and image| Pass | ticket added to treatment page|
@@ -70,8 +77,8 @@ Defensive programming was manually tested with the below user acceptance testing
 | | admin edit an already existing item in store | fill the form and image and submit| Pass | item edited in proper page|
 | | admin deletes an already existing item in store | click delete| Pass | delete message appear and item is deleted|
 ![Merchandizing](static/images/merchandizing.png)
-![Merchandizing](static/images/merchandising-edit-item.png)
-![Merchandizing](static/images/merchandizing-editing-saved.png)
+![Merchandizing Edit Item](static/images/merchandising-edit-item.png)
+![Merchandizing Change updated](static/images/merchandizing-editing-saved.png)
 | **Checkout**| | | | |
 | | accessible from bag, shopper clicks on *secure checkout*| redirected to checkout| Pass | user can see their order summary and billing information form|
 | | Shopper fills Billing information, fields with asterix are compulsory| form is validated| Pass | user can click to correct field|
@@ -85,8 +92,10 @@ Defensive programming was manually tested with the below user acceptance testing
 | | user clicks on complete order| a confirmation email is sent to the user| Pass | order confirmation emails entails the order summary and delivery information |
 | | user orders a treatment and clicks on complete order| a Treatment Gift Card is sent to the shopper | Pass | user can see thier EGift card with the treatement purchased|
 | | shopper clicks on *keep shopping* from checkout_success| user is redirected to the Hammam page| Pass | user can see the Hammam page|
-![Checkout](static/images/order-successful.png)
-![Checkout](static/images/order-successful-saved.png)
+![Checkout](static/images/order-details-tester.png)
+![Registered order](static/images/order-registered-tester.png)
+![Order confirmation Email](static/images/order-confirmation-tester.png)
+![Treatment Gift Cart](static/images/giftcard-tester.png)
 | **Newsletter Subscribtion**| | | | |
 | | accessible from the footer, the user enters their name and email to subscribe| A successfully-subscribed message with the email address of the subscriber confirms subscription | Pass | user can see the email they entered for subscription in message|
 | | User closes success message| success message closed| Pass | |
