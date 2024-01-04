@@ -340,6 +340,11 @@ The following User Stories have all met the acceptance criteria. User Story numb
 ## Database:
 
 ElephantSQL, hosted by PostgreSQL, has been used as a database. The database is called *earth-hammam*.
+The Earth Hammam database diagram is also made available in this [ Drive Folder](https://drive.google.com/drive/folders/1u5UDTR4tyZpV1fQBBKFCroS2t0kUZ7sQ?usp=sharing) 
+
+## Database Diagram:
+
+![Earth Hammam Database Diagram](static/images/database-diagram.png)
 
 ## Data Models:
 
@@ -352,7 +357,7 @@ ElephantSQL, hosted by PostgreSQL, has been used as a database. The database is 
 | Products |Category| has been created to categories the items sold on the site into three categories|
 | Products |Item| to register the items sold on the site|
 | Checkout |Order()| has been created to register the users orders, update orders and set the order number|
-| Checkout|OrderLineItem()| has been created tOverride the original save method to set the lineitem total and update the order total|
+| Checkout|OrderLineItem()| has been created to override the original save method to set the lineitem total and update the order total|
 
 # Technologies Used
 
@@ -392,9 +397,6 @@ Responsiveness has been tested using:
   * [BrowserStack](https://www.browserstack.com/)
   * Screenshots of responsiveness have been added to this drive [file](https://www.browserstack.com/).
 
-### Bugs
-1) Order prices were properly registered during development, but prices were not saved in production.
-   * The solution was to register and save the order prices at the beginning of the checkout workflow.
 
 ## Deployment
 
@@ -511,8 +513,7 @@ The purchasing and booking workflows were intentionally designed to be usable an
 Thereby, an anonymous user can 
 * purchase items and complete the entire purchasing workflow.
 * view, but not use, the treatment booking page as an incentive to register and book an appointment.
-
-To prevent non-logged in users from accessing treatment booking controls, while being able to preview them, buttons are disabled in addition to an overlay, which blurs and disables the booking buttons further. Furthermore, booking POST requests are only responded to for authenticated users.
+To prevent non-logged-in users from accessing treatment booking controls, while being able to preview them, buttons are disabled in addition to an overlay, which blurs and disables the booking buttons further. Additionaly, booking POST requests are only responded to for authenticated users.
 
 ### Defense to Session Hijacking
 The shopping bag content is handled via the user session. Session hijacking would therefore allow a hacker to modify a users shopping bag.
@@ -522,11 +523,11 @@ Although session hijacking can not be fully guarded against, measures were imple
 
 SESSION_COOKIE_SECURE = True
 
-2) Only send the session cookie over HTTPS connection:
+2) Only send the session cookie over an HTTPS connection:
 
 SESSION_COOKIE_HTTPONLY = True
 
-3) Prevent the session cookie to be accessed by JavaScript code:
+3) Prevent the session cookie from being accessed by JavaScript code:
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 

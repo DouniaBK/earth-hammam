@@ -4,4 +4,4 @@ This is your gift card for the "{{treatment_type}}" treatment <br/>
 <br/>
 <br/>
 Sincerely,<br/>
-Earth Hammam
+Earth Hammam <br/>

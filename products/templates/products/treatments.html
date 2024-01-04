@@ -2,9 +2,7 @@
 {% load static %}
 
 {% block extra_meta %}
-<meta name="description" content="Buy Earth Hammam Treatment Gift Cards. Treatements available are: Signature a fullday
-treatment package including massage, Essential a half-day treatment package including an aromatic bath soak and Vital
-a two-hours treatment package including access to the Hammam">
+<meta name="description" content="Earth Hammam Treatment Gift Cards. Three Treatements are available are: Signature, Essential and Vital">
 <title> Treatements Gift Cards</title>
 {% endblock %}
 
@@ -52,8 +50,7 @@ a two-hours treatment package including access to the Hammam">
                                             </div>
 
                                             <div class="col-12 form-col-center">
-                                                <a href="{% url 'items' %}" class="btn btn-outline-black rounded-0 mt-2">
-                                                <input type="submit" class="btn btn-wetsand rounded-0 text-uppercase" value="Add Gif Card to Bag"></a>
+                                                <input type="submit" class="btn btn-wetsand rounded-0 text-uppercase" value="Add Gif Card to Bag">
                                             </div>
                                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                         </div>

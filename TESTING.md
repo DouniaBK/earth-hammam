@@ -37,6 +37,8 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Select a treatment from the services provided| treatment selected | Pass | |
 | | select an available time slot and submit it| appointment selected | Pass |see the booked sessions|
 | | cancel a booked appointment| appointment cancelled | Pass | time slot available for booking again|
+![Apppointment Booking](static/images/booking-steps.png)
+![Apppointment Booking](static/images/booking-steps-saved.png)
 | **User Registration**| | | | |
 | | register a new account  | confirmation email sent | Pass | email confirmed and new user account is visible in the admin|
 | | can log in if already registered from the navbar| login successful message | Pass | user logged in|
@@ -65,6 +67,9 @@ Defensive programming was manually tested with the below user acceptance testing
 | | accessible from navbar drop-down menu - admin add new product to store | fill the form and image| Pass | product added to ticket page|
 | | admin edit an already existing item in store | fill the form and image and submit| Pass | item edited in proper page|
 | | admin deletes an already existing item in store | click delete| Pass | delete message appear and item is deleted|
+![Merchandizing](static/images/merchandizing.png)
+![Merchandizing](static/images/merchandising-edit-item.png)
+![Merchandizing](static/images/merchandizing-editing-saved.png)
 | **Checkout**| | | | |
 | | accessible from bag, shopper clicks on *secure checkout*| redirected to checkout| Pass | user can see their order summary and billing information form|
 | | Shopper fills Billing information, fields with asterix are compulsory| form is validated| Pass | user can click to correct field|
@@ -78,6 +83,8 @@ Defensive programming was manually tested with the below user acceptance testing
 | | user clicks on complete order| a confirmation email is sent to the user| Pass | order confirmation emails entails the order summary and delivery information |
 | | user orders a treatment and clicks on complete order| a Treatment Gift Card is sent to the shopper | Pass | user can see thier EGift card with the treatement purchased|
 | | shopper clicks on *keep shopping* from checkout_success| user is redirected to the Hammam page| Pass | user can see the Hammam page|
+![Checkout](static/images/order-successful.png)
+![Checkout](static/images/order-successful-saved.png)
 | **Newsletter Subscribtion**| | | | |
 | | accessible from the footer, the user enters their name and email to subscribe| A successfully-subscribed message with the email address of the subscriber confirms subscription | Pass | user can see the email they entered for subscription in message|
 | | User closes success message| success message closed| Pass | |
@@ -281,3 +288,9 @@ Resolution: A custom routine was added to the user registration routines to extr
 Resolution: Negative URL parameters for the week offset are now blocked.
 
 4) Issue: Cloudinary has created doubles of all images included in the media file.
+
+5) Order prices were properly registered during development, but prices were not saved in production.
+   * The solution was to register and save the order prices at the beginning of the checkout workflow.
+
+   ![Order saved in Production](static/images/order-saved.png)
+

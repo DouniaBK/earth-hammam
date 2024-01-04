@@ -56,8 +56,7 @@
                     class="booking_form"
                     method="post"
                     name="booking"
-                    action="{% url 'booking' %}?offset={{currentWeekOffset}}{% if register_to_book %}&rtb=true{% endif %}"
-                    required>
+                    action="{% url 'booking' %}?offset={{currentWeekOffset}}{% if register_to_book %}&rtb=true{% endif %}">
                     {% csrf_token %}
 
                     <div class="scheduler-next bg-olive">
@@ -105,8 +104,7 @@
                                 {% for hour in scheduleHours %}
                                 <tr>
                                     {% for weekday, value in weekdays.items %}
-                                    <td scope="row"
-                                        class="{% for session_day, session_values in weeksSessions.items %}{% if session_day == weekday %}   {% if hour in session_values %}disableME{% endif %} {% if hour|add:"me" in session_values %}disableME isMine{% endif %} {% endif %}{% endfor %}"
+                                    <td class="{% for session_day, session_values in weeksSessions.items %}{% if session_day == weekday %}   {% if hour in session_values %}disableME{% endif %} {% if hour|add:"me" in session_values %}disableME isMine{% endif %} {% endif %}{% endfor %}"
                                         id="{{weekday}}_{{hour}}" style="cursor: pointer;"
                                         onclick="{% for session_day, session_values in weeksSessions.items %}{% if session_day == weekday %}{% if not hour in session_values %}onClickCallback('{{value}}', '{{hour}}', '{{weekday}}_{{hour}}', '{{scheduleHours_json}}') {% endif %}{% endif %}{% endfor %}">
                                         {{hour}}:00
