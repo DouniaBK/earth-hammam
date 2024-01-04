@@ -59,9 +59,16 @@ def order_history(request, order_number):
         'A confirmation email was sent on the order date.'
     ))
 
+    total = float(order.order_total)
+    grand_total = float(order.grand_total)
+    delivery = float(order.delivery_cost)
+
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
+        'total': total,
+        'grand_total': grand_total,
+        'delivery': delivery,
         'from_profile': True,
     }
 

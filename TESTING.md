@@ -50,6 +50,8 @@ Defensive programming was manually tested with the below user acceptance testing
 | | user can not edit their profile until they click on the button *Update Information*| Edit profile fields are then allowed | Pass | can edit the fields, update and see edited fields|
 | | user can cancel editing| editing cancelled | Pass | |
 | | user can delete profile| click on delete  | Pass | user can delete the account after confirming the action- Superuser cannot delete account|
+| | user can view previous orders| click on view order | Pass | user can see the details of what they have previously ordered|
+![Profile - Order History](static/images/order-saved-profile.png)
 | **Bag**| | | | |
 | | user can add any aticket to  bag by clicking add to bag button | default one item added to bag| Pass | success message appears with bag details and go to bag button||
 | | User closes success message| success message closed| Pass | |
