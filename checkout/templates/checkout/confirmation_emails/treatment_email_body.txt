@@ -1,7 +1,7 @@
-Hello {{ order.full_name }}!<br/>
+Dear {{ order.full_name }}!<br/>
 <br/>
 This is your gift card for the "{{treatment_type}}" treatment <br/>
 <br/>
-<br/>
 Sincerely,<br/>
 Earth Hammam <br/>
+<small> This Earth Hammam Treatment Gift Card is valid for five years starting {% now "Y" %}</small>
