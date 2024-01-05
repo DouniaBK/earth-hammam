@@ -9,8 +9,6 @@ body {
 }
 
 .index-wrapper {
-    /*background: url('/static/images/homepage-massage-big.png') no-repeat center center fixed;
-    background-size: cover;*/
     height: 100vh;
 }
 
@@ -129,13 +127,7 @@ body {
 }
 
 .overlay {
-    /* height: 100%;*/
-    /* width: 100%;*/
-    /* top: 0;*/
-    /* left: 0;*/
-    /* position: fixed;*/
     background: #fff4eb;
-    /* z-index: -1;*/
     overflow: scroll!important;
 }
 
@@ -161,7 +153,6 @@ body {
     align-items: center;
     text-align: center;
 }
-
 
 
 /* Product - Ticket - Treatment pages  */
@@ -234,9 +225,6 @@ body {
     flex-wrap: nowrap;
     justify-content: center;
 }
-
-
-
 
 
 .divider-img-wrapper {
@@ -344,8 +332,6 @@ body {
 }
 
 
-
-
 /* the scroll to the top button*/
 .btt-button {
     height: 42px;
@@ -367,7 +353,7 @@ a.category-badge > span.badge:hover {
     color: #fff !important;
 }
 
-/* ------------------------------- bootstrap toasts */
+/* bootstrap toasts */
 
 .message-container {
     position: fixed;
@@ -384,20 +370,15 @@ a.category-badge > span.badge:hover {
     height: 2px;
 }
 
-.bg-offwhite{
-    /* background-color: #fffcfa!important;*/
-}
-
 .text-muted{
-    /* background-color: #fffcfa!important;*/
-    color: #111111 !important; /* text-secondary */
+    color: #111111 !important;
 }
 
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #111111; /* text-secondary */
+    margin-top: 1.5rem;
+    color: #111111;
     flex:1;
 }
 
@@ -445,7 +426,7 @@ a.category-badge > span.badge:hover {
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: #17a2b8;
 }
 
 /* Convenience classes - colors copied from Bootstrap */
@@ -578,8 +559,6 @@ footer {
     backdrop-filter: blur(20px);
 }
 
-
-
 .table {
     font-size: large;
     text-align: center;
@@ -624,7 +603,6 @@ footer {
 .table-session-overview tr {
     border-bottom: 1px solid #00000057;
 }
-
 
 
 .disableME {
@@ -744,7 +722,7 @@ footer {
 .scheduler-next{
     display: flex;
     justify-content: space-between;
-    }
+}
 
 .register_complete_main{
     margin: 2rem;
@@ -774,14 +752,13 @@ footer {
     cursor: pointer;
 }
 
-/* -------------------------------- Media Queries */
+/* Media Queries */
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
       max-width: 80%;
     }
-    
-  }
+}
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {

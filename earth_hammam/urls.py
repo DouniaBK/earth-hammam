@@ -41,4 +41,3 @@ handler400 = 'earth_hammam.views.error_400'
 handler403 = 'earth_hammam.views.error_403'
 handler404 = 'earth_hammam.views.error_404'
 handler500 = 'earth_hammam.views.error_500'
-

@@ -41,6 +41,7 @@ The rise of cleansing, detox, wellness and unique rituals has generated billion 
 The treatments can be bought in the form of a gift card which makes an ideal corporate incentive targeting corporate individuals as well as influencers. The gift card option incites individuals to go to the facility and spend more benefitting the business.
 
 ## Business Model:
+
 A detailed B2C business model can be found [here](https://drive.google.com/file/d/1WhwpEK7BBq7x8GtwCkzAiYOA1SPAY-kx/view?usp=sharing).
 Items sold on the site are exclusively curated to attract visitors from abroad, which need prior preparation to enter the facility such as ticketing or booking.
 The flexible booking, the five-year redeemable gift card and the tickets are strategies to ensure that the client confident in visiting during this period, is encouraged to buy the tickets and treatments. The signature products are curated to encourage visitors to buy products they used or enjoyed during their visit, prompting the client to spend more on their way out and if they want even from abroad as the site offers wideworld delivery.
@@ -154,11 +155,11 @@ A simple and clean welcome page with the Earth Hammam Logo, welcomes the user in
 
 ### Hammam:
 
-    1. The first section features the Earth Hammam facility including a brief description of what Earth Hammam stands for, a carousel with images of everything the facility offers such as a hammam, pool, soak tub, aromatherapy treatments and massage rooms. 
+1. The first section features the Earth Hammam facility including a brief description of what Earth Hammam stands for, a carousel with images of everything the facility offers such as a hammam, pool, soak tub, aromatherapy treatments and massage rooms. 
 
-    2. The next section features exclusive offers at Earth Hammam, such as the treatments, the restaurants and the Earth Hammam signature products with links to draw the user to shop as well as to facilitate navigation.
+2. The next section features exclusive offers at Earth Hammam, such as the treatments, the restaurants and the Earth Hammam signature products with links to draw the user to shop as well as to facilitate navigation.
 
-    3. The Testimonials section is displayed as a powerful marketing tool to build trust and inspire professionalism. The testimonials section features only three testimonials to foster esthetic balance and harmony. The admin can update, delete, publish or choose to keep some testimonials saved as drafts for later. This site section is minimal, responsive and centered containing the author of the testimonial and the body of the testimonial. The establishment is then in control of the image they want to portray to clients.
+3. The Testimonials section is displayed as a powerful marketing tool to build trust and inspire professionalism. The testimonials section features only three testimonials to foster esthetic balance and harmony. The admin can update, delete, publish or choose to keep some testimonials saved as drafts for later. This site section is minimal, responsive and centered containing the author of the testimonial and the body of the testimonial. The establishment is then in control of the image they want to portray to clients.
 
 
 ### Earth Hammam Store Categories:
@@ -184,9 +185,9 @@ The Categories of Items are:
     3. Products: The shopper often buys spa products at the facility after having experienced the spa and thus the products sold by Earth Hammam target clients that want to take the unique Earth Hammam products to recreate that experience at home.
 
 ### Booking:
-This section allows the user to first select a treatment and then book one of the Treatments offered with a handy calendar that shows which days and times are still available and the slots that are not available are grayed out. 
+This section allows the logged-in user to first select a treatment and then book one of the Treatments offered with a handy calendar that shows which days and times are still available and the slots that are not available are grayed out. 
 
-The design of the booking system is coherent with the serene, minimal and earthy tones of the site for seamless user experience.
+The design of the booking system is coherent with the serene, minimal and earthy tones of the site for seamless user experience. The booking calendar as well as the treatment options are blurred out and non-accessible for non-logged-in users. The message above prompts the users to log in first in order to book a treatment. The blurred overlay is purposely locked for non-logged-in users.
 
 This page is accessible from the navbar for registered or logged-in users. If the user is not logged in or registered the booking features are blurred out and inaccessible.
 
@@ -344,6 +345,8 @@ The Earth Hammam database diagram is also made available in this [ Drive Folder]
 
 ## Database Diagram:
 
+The below diagram shows the relationship between the different tables in the diagram. PK refers to private keys and FK refers to foreign keys. The tables with a one-to-one relationship are connected with the proper connector. This Entity Relationship (ER) Diagram was done using [moqups.com](moqups.com).
+
 ![Earth Hammam Database Diagram](static/images/database-diagram.png)
 
 ## Data Models:
@@ -378,6 +381,7 @@ The Earth Hammam database diagram is also made available in this [ Drive Folder]
 - [Canvas](https://balsamiq.com/) was used to create the project wireframes and design.
 - [Hoststar](https://www.hoststar.ch/de) was used to generate the favicon used on all pages.
 - [coolors](https://coolors.co/) color palette generator was used.
+- [moqups.com](moqups.com) was used to design the Entity Relationship (ER) Diagram.
 
 ## Testing
 
