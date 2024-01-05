@@ -560,7 +560,7 @@ footer {
     position: absolute;
     height: 100%;
     width: 100%;
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(20px);
 }
 
 #selectTimeWrapper{
@@ -575,7 +575,7 @@ footer {
     position: absolute;
     height: 100%;
     width: 100%;
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(20px);
 }
 
 

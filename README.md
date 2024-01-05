@@ -508,15 +508,15 @@ os.environ["STRIPE_WH_SECRET"] = "user's own value"
 ## Defensive Design
 
 ### Site Access
-The purchasing and booking workflows were intentionally designed to be usable and/or visible also by a non-logged in, anonymous user.
+The purchasing and booking workflows were intentionally designed to be usable and/or visible also by a non-logged-in, anonymous user.
 
 Thereby, an anonymous user can 
 * purchase items and complete the entire purchasing workflow.
 * view, but not use, the treatment booking page as an incentive to register and book an appointment.
-To prevent non-logged-in users from accessing treatment booking controls, while being able to preview them, buttons are disabled in addition to an overlay, which blurs and disables the booking buttons further. Additionaly, booking POST requests are only responded to for authenticated users.
+To prevent non-logged-in users from accessing treatment booking controls, while being able to preview them, buttons are disabled in addition to an overlay, which blurs and disables the booking buttons further. Additionally, booking POST requests are only responded to for authenticated users.
 
 ### Defense to Session Hijacking
-The shopping bag content is handled via the user session. Session hijacking would therefore allow a hacker to modify a users shopping bag.
+The shopping bag content is handled via the user session. Session hijacking would therefore allow a hacker to modify a user's shopping bag.
 Although session hijacking can not be fully guarded against, measures were implemented to defend against it via the following settings:
 
 1) Make the session expire when the browser is closed:
