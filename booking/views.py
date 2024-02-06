@@ -176,6 +176,7 @@ def booking(request):
 
         # if a GET (or any other method) we'll create a blank form
         form = AppointmentInputFormFrontEnd()
+
         return render(request,  'booking/booking.html', {'form': form,   # noqa
                                 'weekdays': days_of_the_week,   # noqa
                                 'currentWeekOffset': offset_param,   # noqa
@@ -195,12 +196,25 @@ def booking(request):
 
 
 def cancel_session(request):
-    # this cancels
-    offset_param = getOffsetFromRequest(request)
+    try:
+        # This cancels the sesson
+        offset_param = getOffsetFromRequest(request)
+        
+        # Get session ID
+        id = int(request.GET.get('id', "-1"))
 
-    id = int(request.GET.get('id', "-1"))
-    booked_session = get_object_or_404(Appointment, id=id)
-    if request.method == "GET":
-        booked_session.delete()
-        return HttpResponseRedirect("/booking?offset=" + str(offset_param))
-    return render(request, "booking/booking.html", context)
+        # Get session
+        booked_session = get_object_or_404(Appointment, id=id)
+        
+        # Get user
+        user = UserProfile.objects.get(user=request.user)
+
+        # Only the owner can delete the session
+        is_same_user = user == booked_session.user
+
+        if (request.method == "GET") and (is_same_user == True):
+            booked_session.delete()
+            return HttpResponseRedirect("/booking?offset=" + str(offset_param))
+        return render(request, "booking/booking.html", context)
+    except Exception as e:
+        return HttpResponseRedirect("")
