@@ -535,6 +535,46 @@ SESSION_COOKIE_HTTPONLY = True
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
+### Booking Defensive Design
+
+1) Protection against manual URL manipulation:
+
+        def getOffsetFromRequest(request):
+            offset_param = int(request.GET.get('offset', "0"))
+            # In case a negative value is given, set back to zero
+            # (protection against manual URL manipulation)
+            if offset_param < 0:
+                offset_param = 0
+            return offset_param
+
+2) Logged-In Owner Only of an Appointment can delete their appointments:
+
+        def cancel_session(request):
+            try:
+                # This cancels the session
+                offset_param = getOffsetFromRequest(request)
+                
+                # Get the session ID
+                id = int(request.GET.get('id', "-1"))
+
+                # Get session
+                booked_session = get_object_or_404(Appointment, id=id)
+                
+                # Get user
+                user = UserProfile.objects.get(user=request.user)
+
+                # Only the owner can delete the session - updated
+                is_same_user = user == booked_session.user
+
+                if (request.method == "GET") and (is_same_user == True):
+                    booked_session.delete()
+                    return HttpResponseRedirect("/booking?offset=" + str(offset_param))
+                return render(request, "booking/booking.html", context)
+            except Exception as e:
+                return HttpResponseRedirect("")
+
+
+
 
 ## Credit
 

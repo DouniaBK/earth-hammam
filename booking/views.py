@@ -13,16 +13,13 @@ import json
 
 # Returns the days of the week for a specific day
 def getDaysOfWeekForDay(t_current):
-    # Get day of week as an integer
     weekday = t_current.weekday()
 
-    # Iterate over the days of the week and write them to the output
     days_of_the_week = {}
     for i in range(0-weekday, 7-weekday):
         t_day = t_current + timedelta(days=i)
         days_of_the_week[t_day.weekday()] = t_day.strftime("%m/%d/%Y")
 
-    # Returns days of the week and weekday as an int
     return days_of_the_week, weekday
 
 
@@ -37,7 +34,6 @@ def sortSessionsByDay(all_sessions, days_of_the_week, user):
         date_time_object_upper = date_time_object_lower + timedelta(days=1)
         days_sessions = all_sessions.filter(time__gte=date_time_object_lower, time__lte=date_time_object_upper)  # noqa
 
-        # Format the time for the template and add 'me' if the session belongs to the current user # noqa
         sessions_of_the_week[d] = []
         for s in days_sessions:
             sessions_time_hours = s.time.strftime("%H")
@@ -58,7 +54,6 @@ def getOffsetFromRequest(request):
     return offset_param
 
 
-# Booking view
 # This view acts as middleware for the calendar, thus assembling all
 # necessary information for viewing the calendar and handling session booking and cancelation. # noqa
 def booking(request):
@@ -70,16 +65,12 @@ def booking(request):
         if register_to_book:
             success = request.GET.get('success', "false") == 'true'
 
-        # Min. hour to show in the calendar
         h_min = 8
-        # Max. hour to show in the calendar
         h_max = 21
 
-        # Week offset from current week
         offset_param = getOffsetFromRequest(request)
         offset_weeks = timedelta(weeks=offset_param)
 
-        # Get todays date and weekday
         t_current = datetime.now() + offset_weeks
 
         # The all days of the current week and current weekday as int
@@ -132,7 +123,6 @@ def booking(request):
         for i in range(h_min, h_max):
             hours_vec.append(str(i))
 
-        # Get treatment possibilites
         treatments = Item.objects.filter(category=1)
         all_treatments = []
         treatment_ids_vec = []
@@ -148,11 +138,8 @@ def booking(request):
 
         # if this is a POST request, handle saving the session
         if (request.method == "POST") and (is_authenticated == True):
-            # create a form instance and populate it with
-            #  data from the request:
             form = AppointmentInputFormFrontEnd(request.POST)
 
-            # Chosen service
             service = form['service']
             id = int(service.data)
             item = Item.objects.get(id=id)
@@ -174,7 +161,6 @@ def booking(request):
             else:
                 print("Error", form.errors)
 
-        # if a GET (or any other method) we'll create a blank form
         form = AppointmentInputFormFrontEnd()
 
         return render(request,  'booking/booking.html', {'form': form,   # noqa
@@ -209,7 +195,7 @@ def cancel_session(request):
         # Get user
         user = UserProfile.objects.get(user=request.user)
 
-        # Only the owner can delete the session
+        # Only the owner can delete the session - updated
         is_same_user = user == booked_session.user
 
         if (request.method == "GET") and (is_same_user == True):
