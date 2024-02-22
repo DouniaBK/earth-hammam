@@ -12,12 +12,12 @@
 
     <section class="row">
         <div class="container text-center mt-3">
-            <h2 class="text-uppercase">{% trans "Confirm E-mail Address" %}</h2>
+            <h2 class="text-uppercase">{% trans "Confirm Your E-mail Address" %}</h2>
         </div>
     </section>
 
     <section class="row ">
-        <div class="container pb-5 mb-5 pt-4 bg-offwhite">
+        <div class="container text-center pb-5 mb-5 pt-4 bg-offwhite">
             {% if confirmation %}
 
             {% user_display confirmation.email_address.user as user_display %}
@@ -26,7 +26,7 @@
 
             <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
                 {% csrf_token %}
-                    <button type="submit" class="float-right btn btn-wetsand">{% trans 'Confirm' %}</button>
+                    <button type="submit" class="btn btn-wetsand">{% trans 'Confirm' %}</button>
             </form>
 
             {% else %}
