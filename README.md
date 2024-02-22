@@ -547,7 +547,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
                 offset_param = 0
             return offset_param
 
-2) Logged-In Owner Only of an Appointment can delete their appointments:
+2) Only logged-in users who have an Appointment can delete their own appointments:
 
         def cancel_session(request):
             try:

@@ -119,8 +119,12 @@
                     <!-- Appointment -->
                     <div class="appointment_type mt-3">
                         <div class="appointment_type_form form form-control p-0 pt-3" id="datetimepicker">
-                            {{ form.service}}
-                            {{ form.time}}
+                            <table>
+                                <tr>  
+                                    <td>{{ form.service }}</td>
+                                    <td>{{ form.time }}</td>
+                                </tr> 
+                            </table>
                         </div>
                     </div>
 
