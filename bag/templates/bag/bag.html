@@ -79,13 +79,30 @@
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
+
+                        {% if not user_is_logged_in %}
+                        <a class="btn btn-wetsand rounded-0 btn-lg">
+                            <span class="text-uppercase">Secure Checkout</span>
+                            <span class="icon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </a>
+                        {% else %}
                         <a href="{% url 'checkout' %}" class="btn btn-wetsand rounded-0 btn-lg">
                             <span class="text-uppercase">Secure Checkout</span>
                             <span class="icon">
                                 <i class="fas fa-lock"></i>
                             </span>
                         </a>
+                        {% endif %}
                     </div>
+                    
+                    {% if not user_is_logged_in %}
+                    <div class="booking_feedback">
+                        Please <a href="/accounts/login/?next=/checkout/">login</a> or <a href="/accounts/signup">register</a> to proceed to checkout.
+                    </div>
+                    {% endif %}
+
                 </div>
                 </div>
             {% else %}

@@ -7,6 +7,7 @@ from django.shortcuts import (render,
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
@@ -36,6 +37,7 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
+@login_required
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -157,6 +159,7 @@ def checkout(request):
     return render(request, template, context)
 
 
+@login_required
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
@@ -169,6 +172,8 @@ def checkout_success(request, order_number):
     grand_total = float(current_bag['grand_total'])
     delivery = float(current_bag['delivery'])
 
+    user_is_logged_in = request.user.is_authenticated
+    
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order
@@ -190,9 +195,9 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
+        messages.success(request, f'Order successfully processed! \
+            Your order number is {order_number}. A confirmation \
+            email will be sent to {order.email}.')
 
     if 'bag' in request.session:
         del request.session['bag']
@@ -203,6 +208,7 @@ def checkout_success(request, order_number):
         'total_main': total,
         'grand_total_main': grand_total,
         'delivery_main': delivery,
+        'user_is_logged_in': user_is_logged_in,
     }
 
     return render(request, template, context)

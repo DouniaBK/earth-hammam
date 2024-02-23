@@ -11,7 +11,9 @@ from products.models import Item
 def view_bag(request):
     """ A view that renders the bag contents page """
 
-    return render(request, 'bag/bag.html')
+    user_is_logged_in = request.user.is_authenticated
+
+    return render(request, 'bag/bag.html', {'user_is_logged_in': user_is_logged_in})
 
 
 def add_to_bag(request, item_id):

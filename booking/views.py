@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect   # noqa
 from datetime import datetime, timezone, timedelta
@@ -181,6 +182,7 @@ def booking(request):
         return HttpResponseRedirect("")
 
 
+@login_required
 def cancel_session(request):
     # This cancels a booking/session
     try:

@@ -18,12 +18,18 @@
         <div class="row">
             <div class="container col-8 text-center mt-2 pb-2">
                 <h2 class="text-uppercase ">Thank You for shopping at Earth Hammam.</h2>
-                <p class="text-black">A confirmation Email will be sent to <strong>{{ order.email }}</strong>.</p>
+                {% if not user_is_logged_in %}
+                    <p class="text-black">A confirmation Email will be sent to your email</strong>.</p>
+                {% else %}
+                    <p class="text-black">A confirmation Email will be sent to <strong>{{ order.email }}</strong>.</p>
+                {% endif %}
             </div>
         </div>
 
+        {% if user_is_logged_in %}
         <hr class="hr">
-
+        <!-- if user logged in, show order to avoid showing order summary of a person to an anonymous shopper -->
+ 
         <div class="general-container">
             <div class="order-confirmation-wrapper p-2">
                 <div class="row pt-3">
@@ -203,5 +209,8 @@
                 {% endif %} 
             </div>
         </div>
+        {% endif %}
+
+
     </div>
 {% endblock %}
