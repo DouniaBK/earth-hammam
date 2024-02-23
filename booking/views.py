@@ -203,5 +203,6 @@ def cancel_session(request):
             booked_session.delete()
             return HttpResponseRedirect("/booking?offset=" + str(offset_param))
         return render(request, "booking/booking.html", context)
+
     except Exception as e:
         return HttpResponseRedirect("")
