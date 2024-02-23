@@ -539,6 +539,8 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 1) Protection against manual URL manipulation:
 
+In the booking workflow, a negative offset value (in weeks from current week) can normally not be chosen via the interface. However, it can be entered manually via URL manipulation. The following code protects against manually entering a negative week offset.
+
         def getOffsetFromRequest(request):
             offset_param = int(request.GET.get('offset', "0"))
             # In case a negative value is given, set back to zero
@@ -549,9 +551,14 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 2) Only logged-in users who have an Appointment can delete their own appointments:
 
+The following function is used to delete a booking/session. Thereby it is important to ensure,
+that only the session owner, meaning the person who booked the session, is able to delete the booking.
+Thus, the following code includes parts that ensure only the session owner can delete his own booking.
+
         def cancel_session(request):
+            # This cancels a booking/session
             try:
-                # This cancels the session
+                # Get the offset parameter from the request
                 offset_param = getOffsetFromRequest(request)
                 
                 # Get the session ID

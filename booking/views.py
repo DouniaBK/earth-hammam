@@ -182,8 +182,9 @@ def booking(request):
 
 
 def cancel_session(request):
+    # This cancels a booking/session
     try:
-        # This cancels the sesson
+        # Get the offset parameter from the request
         offset_param = getOffsetFromRequest(request)
         
         # Get session ID
