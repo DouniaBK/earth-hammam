@@ -52,8 +52,7 @@ def newsletter(request):
             email_message = form.cleaned_data.get('message')
 
             mail = EmailMessage(
-                subject, email_message, f"Earth Hammam <{request.user.email}>",
-                bcc=subscribers)
+                subject, email_message, f"Earth Hammam <{request.user.email}>")
             mail.content_subtype = 'html'
 
             if mail.send():
