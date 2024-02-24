@@ -553,15 +553,18 @@ In the booking workflow, a negative offset value (in weeks from current week) ca
 
 The following function is used to delete a booking/session. Thereby it is important to ensure,
 that only the session owner, meaning the person who booked the session, is able to delete the booking.
-Thus, the following code includes parts that ensure only the session owner can delete his own booking.
+Thus, the following code includes parts that ensure only the session owner can delete his own booking. Furthermore, if another user, other than the appointment user, tries to delete an appointment they will be redirected to a code 403 error page.
 
+![403 forbidden access](static/images/403-forbidden.png)
+
+        @login_required
         def cancel_session(request):
             # This cancels a booking/session
             try:
                 # Get the offset parameter from the request
                 offset_param = getOffsetFromRequest(request)
                 
-                # Get the session ID
+                # Get session ID
                 id = int(request.GET.get('id', "-1"))
 
                 # Get session
@@ -576,9 +579,10 @@ Thus, the following code includes parts that ensure only the session owner can d
                 if (request.method == "GET") and (is_same_user == True):
                     booked_session.delete()
                     return HttpResponseRedirect("/booking?offset=" + str(offset_param))
-                return render(request, "booking/booking.html", context)
+                raise PermissionDenied
+
             except Exception as e:
-                return HttpResponseRedirect("")
+                raise PermissionDenied
 
 
 

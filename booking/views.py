@@ -208,4 +208,3 @@ def cancel_session(request):
 
     except Exception as e:
         raise PermissionDenied
-        #return HttpResponseRedirect("")

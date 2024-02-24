@@ -119,8 +119,10 @@ Defensive programming was manually tested with the below user acceptance testing
 | **logo**| | | | |
 | | click on logo entitled EARTH HAMMAM| User is redirected to home page | Pass | User can see main image and button|
 | **Home**| | | | |
-| | click on explore Earth Hammam button| User is redirected to Hammam page | Pass | User can see hammam details
-|
+| | click on explore Earth Hammam button| User is redirected to Hammam page | Pass | User can see hammam details|
+| **403**| | | | |
+| | user A, tries to delete another user's booked appointment with URL manipulation| User A is redirected to 403 forbidden access page | Pass | User A can see a link to return to the Earth Hammam|
+|![403 forbidden access](static/images/403-forbidden.png)
 
 
 ## Code Validation
@@ -153,6 +155,7 @@ The recommended [HTML W3C Validator](https://validator.w3.org) was used to valid
 |edit_item|no errors|Pass|
 |unsubscribe|no errors|Pass|
 |newsletter|no errors|Pass|
+|contact|no errors|Pass|
 
 
 ### CSS

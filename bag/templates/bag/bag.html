@@ -98,8 +98,8 @@
                     </div>
                     
                     {% if not user_is_logged_in %}
-                    <div class="booking_feedback">
-                        Please <a href="/accounts/login/?next=/checkout/">login</a> or <a href="/accounts/signup">register</a> to proceed to checkout.
+                    <div class="booking_feedback text-danger font-weight-bold">
+                        You must <a href="/accounts/signup"> Register an Account</a> if you don't have one and then <a href="/accounts/login/?next=/checkout/">Login</a> before you can proceed with the checkout.
                     </div>
                     {% endif %}
 
