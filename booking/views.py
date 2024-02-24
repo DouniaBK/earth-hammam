@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect   # noqa
 from datetime import datetime, timezone, timedelta
 from bootstrap_datepicker_plus.widgets import DateTimePickerInput
@@ -204,7 +204,8 @@ def cancel_session(request):
         if (request.method == "GET") and (is_same_user == True):
             booked_session.delete()
             return HttpResponseRedirect("/booking?offset=" + str(offset_param))
-        return render(request, "booking/booking.html", context)
+        raise PermissionDenied
 
     except Exception as e:
-        return HttpResponseRedirect("")
+        raise PermissionDenied
+        #return HttpResponseRedirect("")

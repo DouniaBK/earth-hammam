@@ -25,11 +25,10 @@
                 {% endif %}
             </div>
         </div>
-
+        <!--Only logged in users can see the order summary-->
         {% if user_is_logged_in %}
         <hr class="hr">
-        <!-- if user logged in, show order to avoid showing order summary of a person to an anonymous shopper -->
- 
+
         <div class="general-container">
             <div class="order-confirmation-wrapper p-2">
                 <div class="row pt-3">

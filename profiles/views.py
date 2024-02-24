@@ -34,7 +34,7 @@ def profile(request):
 
     return render(request, template, context)
 
-
+@login_required
 def delete(request):
 
     try:
