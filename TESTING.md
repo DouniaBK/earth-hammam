@@ -121,9 +121,11 @@ Defensive programming was manually tested with the below user acceptance testing
 | **Home**| | | | |
 | | click on explore Earth Hammam button| User is redirected to Hammam page | Pass | User can see hammam details|
 | **403**| | | | |
-| | user A, tries to delete another user's booked appointment with URL manipulation| User A is redirected to 403 forbidden access page | Pass | User A can see a link to return to the Earth Hammam|
+| | user A, tries to delete another user's booked appointment through URL manipulation| User A is redirected to 403 forbidden access page | Pass | User A can see a link to return to the Earth Hammam|
 |![403 forbidden access](static/images/403-forbidden.png)
-
+| **404**| | | | |
+| | user enters a faulse URL| User A is redirected to 404 page no fount | Pass | User can see a link to return to the Earth Hammam|
+|![404 page not found](static/images/404-page.jpg)
 
 ## Code Validation
 
@@ -314,4 +316,8 @@ Resolution: Negative URL parameters for the week offset are now blocked.
 ![Stripe Payment History](static/images/stripe-payment-solution.png)
 
  Resolution: As the shopping experience of the user/client and the financial operations of the bussiness are not effected by this issue and it does not happen everytime the operation is done, the problem has been deemed as *not-time-critical* due to the time restriction of this project. However, the issue is planned to be further investigated and resolved.
+
+ 7) Issue : Confirmation Emails after account registration were not sent because I changed the password of my Gmail account and immediatly the Earth Hammam App Password, added to EMAIL_HOST_PASS, was no longer valid and thus distrubing the entire registration process.
+ Resolution: Re-issue a new App Password in Gmail and adding it to EMAIL_HOST_PASS. The registration process immediately started working again.
+
 
