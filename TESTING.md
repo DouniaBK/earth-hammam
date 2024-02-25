@@ -131,33 +131,46 @@ Defensive programming was manually tested with the below user acceptance testing
 
 ### HTML
 
-The recommended [HTML W3C Validator](https://validator.w3.org) was used to validate all the HTML files.
- 
+The recommended [HTML W3C Validator](https://validator.w3.org) was used to validate each HTML files as well as [Datayze Site Validator](https://datayze.com/site-validator) to analyse the site.
+
+ ![Validation results](static/images/validation-results.png)
 
 |html file | Errors|Notes|
 |---	|---	|---	|
 |Footer| no errors| Pass|
 |Home Page| no errors | Pass|
 |Hammam| no errors | Pass
+![Validation results](static/images/validation-hammam.png)
 |Tickets| no errors | Pass|
+![Validation results](static/images/validation-tickets.png)
 |Treatments| no errors | Pass|
+![Validation results](static/images/validation-treatments.png)
 |Products| no errors | Pass|
+![Validation results](static/images/validation-products.png)
 |Booking| no errors | Pass|
+![Validation results](static/images/validation-booking.png)
 |Checkout| no errors | Pass|
+![Validation results](static/images/validation-checkout.png)
 |Bag| no errors | Pass|
+![Validation results](static/images/validation-bag.png)
 |Checkout success| no errors | Pass|
 |log in| no errors | Pass|
+![Validation results](static/images/validation-login.png)
 |Register| no errors | Pass|
+![Validation results](static/images/validation-registration.png)
 |Logout| no errors | Pass|
 |Privacy Policy| no errors | Pass|
 |Certification| no errors | Pass|
+![Validation results](static/images/validation-certification.png)
 |Page 404|no errors|Pass|
 |Profile|no errors|Pass|
+![Validation results](static/images/validation-profile.png)
 |add_item|no errors|Pass|
 |edit_item|no errors|Pass|
 |unsubscribe|no errors|Pass|
 |newsletter|no errors|Pass|
 |contact|no errors|Pass|
+![Validation results](static/images/validation-contact.png)
 
 
 ### CSS
