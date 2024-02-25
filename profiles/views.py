@@ -62,6 +62,7 @@ def order_history(request, order_number):
     total = float(order.order_total)
     grand_total = float(order.grand_total)
     delivery = float(order.delivery_cost)
+    user_is_logged_in = request.user.is_authenticated
 
     template = 'checkout/checkout_success.html'
     context = {
@@ -70,6 +71,7 @@ def order_history(request, order_number):
         'grand_total_main': grand_total,
         'delivery_main': delivery,
         'from_profile': True,
+        "user_is_logged_in": user_is_logged_in,
     }
 
     return render(request, template, context)

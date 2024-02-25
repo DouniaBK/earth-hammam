@@ -135,6 +135,8 @@ The recommended [HTML W3C Validator](https://validator.w3.org) was used to valid
 
  ![Validation results](static/images/validation-results.png)
 
+ The pages which were not crawled by the [Datayze Site Validator](https://datayze.com/site-validator), were validates via URL and the others via field input using [HTML W3C Validator](https://validator.w3.org).
+
 |html file | Errors|Notes|
 |---	|---	|---	|
 |Footer| no errors| Pass|

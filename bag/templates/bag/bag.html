@@ -41,9 +41,9 @@
                         <div class="profile-table-row">
                             <div class="profile-table-element flex-column">
                                 {% if product.item.image %}
-                                <img class="img-fluid rounded" src="{{ product.item.image.url }}">
+                                <img class="img-fluid rounded" src="{{ product.item.image.url }}" alt="Image of product {{ product.item.name }}">
                                 {% else %}
-                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.item.name }}">
+                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="Image of product {{ product.item.name }}">
                                 {% endif %}
                             </div>
                             <div class="profile-table-element flex-column">

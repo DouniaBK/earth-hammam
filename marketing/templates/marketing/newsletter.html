@@ -16,9 +16,9 @@
             <hr>
         </section>
 
-        <section class="row ">
+        <div class="row ">
             <div class="general-container">
-                <form method="POST" action="" class="form mb-2 text-uppercase" enctype="multipart/form-data">
+                <form method="POST" class="form mb-2 text-uppercase" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form|crispy  }}
                     {{ form.media  }}
@@ -34,7 +34,7 @@
                     <span>You are sending this newsletter to all Earth Hammam Active Subscribers.</span>
                 </p>
             </div>            
-        </section>
+        </div>
     </div>
 
 <!-- Footer goes here-->
