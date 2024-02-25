@@ -96,7 +96,7 @@ Defensive programming was manually tested with the below user acceptance testing
 ![Registered order](static/images/order-registered-tester.png)
 ![Order confirmation Email](static/images/order-confirmation-tester.png)
 ![Treatment Gift Cart](static/images/giftcard-tester.png)
-| **Newsletter Subscribtion**| | | | |
+| **Newsletter Subscription**| | | | |
 | | accessible from the footer, the user enters their name and email to subscribe| A successfully-subscribed message with the email address of the subscriber confirms subscription | Pass | user can see the email they entered for subscription in message|
 | | User closes success message| success message closed| Pass | |
 | **Unsubscribe**| | | | |
