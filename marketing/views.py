@@ -3,11 +3,9 @@ from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.contrib import messages
 from django.core.mail import EmailMessage
-from django.core.mail import send_mass_mail
 from .forms import NewsletterForm
 from .models import SubscribedUser
 from .decorators import user_is_superuser
-import os
 
 # The subscribe function was done following lessons from Pylessons
 
@@ -53,27 +51,20 @@ def newsletter(request):
             subscribers = form.cleaned_data.get('subscribers').split(',')
             email_message = form.cleaned_data.get('message')
 
-            '''
-            mail = EmailMessage(
-                subject, email_message, f"Earth Hammam <{request.user.email}>",
-                bcc=subscribers)
-            mail.content_subtype = 'html'
-            '''
-
-            from_email = os.getenv("EMAIL_HOST_USER", "")
-            recipient_list = form.cleaned_data.get('subscribers')
-
-            numSuccessful = 0
-            if from_email != "":
-                messages = [(subject, email_message, from_email, [recipient]) for recipient in recipient_list]
-                numSuccessful = send_mass_mail(messages)
-
-            if numSuccessful == len(recipient_list):
+            num_successful = 0
+            for subscriber in subscribers:
+                mail = EmailMessage(
+                    subject, email_message, f"Earth Hammam <{request.user.email}>",
+                    bcc=[subscriber])
+                mail.content_subtype = 'html'
+                if mail.send():
+                    num_successful = num_successful + 1
+            
+            if num_successful == len(subscribers):
                 messages.success(request, "Newsletter succesfully sent.")
             else:
-                feedback_to_user = "Message sent to " + str(numSuccessful) + " users."
-                messages.error(request, feedback_to_user)
-            
+                messages.error(request, "Email sent to " + str(num_successful) + " subscribers.")
+
         else:
             for error in list(form.errors.values()):
                 messages.error(request, error)
