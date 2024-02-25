@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
-from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect   # noqa
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect  
 from datetime import datetime, timezone, timedelta
 from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 from .forms import AppointmentInputFormFrontEnd
@@ -17,7 +17,7 @@ def getDaysOfWeekForDay(t_current):
     weekday = t_current.weekday()
 
     days_of_the_week = {}
-    for i in range(0-weekday, 7-weekday):
+    for i in range(0 - weekday, 7 - weekday):
         t_day = t_current + timedelta(days=i)
         days_of_the_week[t_day.weekday()] = t_day.strftime("%m/%d/%Y")
 
@@ -31,23 +31,25 @@ def sortSessionsByDay(all_sessions, days_of_the_week, user):
     for d in days_of_the_week:
         # Filter the sessions that occur on the specific day
         date_of_that_day = days_of_the_week[d]
-        date_time_object_lower = datetime.strptime(date_of_that_day, "%m/%d/%Y")  # noqa
+        date_time_object_lower = datetime.strptime(date_of_that_day, "%m/%d/%Y")
         date_time_object_upper = date_time_object_lower + timedelta(days=1)
-        days_sessions = all_sessions.filter(time__gte=date_time_object_lower, time__lte=date_time_object_upper)  # noqa
+        days_sessions = all_sessions.filter(
+            time__gte=date_time_object_lower, time__lte=date_time_object_upper
+        )  
 
         sessions_of_the_week[d] = []
         for s in days_sessions:
             sessions_time_hours = s.time.strftime("%H")
             isme = s.user == user
             if isme:
-                sessions_time_hours = sessions_time_hours + 'me'
+                sessions_time_hours = sessions_time_hours + "me"
             sessions_of_the_week[d].append(sessions_time_hours)
     return sessions_of_the_week
 
 
 # Extract the week offset from the request, return 0 if not defined
 def getOffsetFromRequest(request):
-    offset_param = int(request.GET.get('offset', "0"))
+    offset_param = int(request.GET.get("offset", "0"))
     # In case a negative value is given, set back to zero
     # (protection against manual URL manipulation)
     if offset_param < 0:
@@ -56,15 +58,15 @@ def getOffsetFromRequest(request):
 
 
 # This view acts as middleware for the calendar, thus assembling all
-# necessary information for viewing the calendar and handling session booking and cancelation. # noqa
+# necessary information for viewing the calendar and handling session booking and cancelation. 
 def booking(request):
     try:
-        # Special variable to indicate whether the booking is done in the context of the new registration # noqa
-        register_to_book = request.GET.get('rtb', "false") == 'true'
-        # Special variable to indicate whether the register and booking workflow was successful # noqa
+        # Special variable to indicate whether the booking is done in the context of the new registration 
+        register_to_book = request.GET.get("rtb", "false") == "true"
+        # Special variable to indicate whether the register and booking workflow was successful 
         success = False
         if register_to_book:
-            success = request.GET.get('success', "false") == 'true'
+            success = request.GET.get("success", "false") == "true"
 
         h_min = 8
         h_max = 21
@@ -78,11 +80,15 @@ def booking(request):
         days_of_the_week, weekday = getDaysOfWeekForDay(t_current)
 
         # Check in database for existing sessions during that week
-        start_dt = t_current.replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=(0-weekday))   # noqa
+        start_dt = t_current.replace(
+            hour=0, minute=0, second=0, microsecond=0
+        ) + timedelta(days=(0 - weekday))  
         end_dt = start_dt + timedelta(days=7)
-        all_sessions = Appointment.objects.filter(time__gte=start_dt, time__lt=end_dt)  # noqa
+        all_sessions = Appointment.objects.filter(time__gte=start_dt, time__lt=end_dt)  
 
-        sessions_of_the_week = sortSessionsByDay(all_sessions, days_of_the_week, request.user)   # noqa
+        sessions_of_the_week = sortSessionsByDay(
+            all_sessions, days_of_the_week, request.user
+        )  
 
         # Fill in all sessions in the past
         #  (grey out past days sessions in scheduler)
@@ -92,7 +98,10 @@ def booking(request):
             for d in days_of_the_week:
                 if d <= weekday:
                     for i in range(h_min, h_max):
-                        if not str(i) in sessions_of_the_week[d] and not (str(i) + "me") in sessions_of_the_week[d]:   # noqa
+                        if (
+                            not str(i) in sessions_of_the_week[d]
+                            and not (str(i) + "me") in sessions_of_the_week[d]
+                        ):  
                             sessions_of_the_week[d].append(str(i))
 
         user = None
@@ -141,7 +150,7 @@ def booking(request):
         if (request.method == "POST") and (is_authenticated == True):
             form = AppointmentInputFormFrontEnd(request.POST)
 
-            service = form['service']
+            service = form["service"]
             id = int(service.data)
             item = Item.objects.get(id=id)
 
@@ -152,31 +161,37 @@ def booking(request):
                 session_object.item = item
                 session_object.save()
                 # process the data in form.cleaned_data as required
-                service = form.cleaned_data['service']
-                time = form.cleaned_data['time']
+                service = form.cleaned_data["service"]
+                time = form.cleaned_data["time"]
                 # redirect to a new URL:
                 if register_to_book:
-                    return HttpResponseRedirect("/booking?rtb=true&success=true")  # noqa
+                    return HttpResponseRedirect("/booking?rtb=true&success=true")  
                 else:
-                    return HttpResponseRedirect("/booking?offset=" + str(offset_param))   # noqa
+                    return HttpResponseRedirect("/booking?offset=" + str(offset_param))  
             else:
                 print("Error", form.errors)
 
         form = AppointmentInputFormFrontEnd()
 
-        return render(request,  'booking/booking.html', {'form': form,   # noqa
-                                'weekdays': days_of_the_week,   # noqa
-                                'currentWeekOffset': offset_param,   # noqa
-                                'weeksSessions': sessions_of_the_week,   # noqa
-                                'allUserSessions': all_user_sessions_templ,   # noqa
-                                'scheduleHours': hours_vec,  # noqa
-                                'isThisWeek': week_current == week_now,  # noqa
-                                'register_to_book': register_to_book,  # noqa
-                                'register_book_success': success,  # noqa
-                                'scheduleHours_json': json.dumps(hours_vec),  # noqa
-                                'treatment_ids_json': json.dumps(treatment_ids_vec),  # noqa
-                                'treatments': all_treatments,
-                                'is_authenticated': is_authenticated})  # noqa
+        return render(
+            request,
+            "booking/booking.html",
+            {
+                "form": form,  
+                "weekdays": days_of_the_week,  
+                "currentWeekOffset": offset_param,  
+                "weeksSessions": sessions_of_the_week,  
+                "allUserSessions": all_user_sessions_templ,  
+                "scheduleHours": hours_vec,  
+                "isThisWeek": week_current == week_now,  
+                "register_to_book": register_to_book,  
+                "register_book_success": success,  
+                "scheduleHours_json": json.dumps(hours_vec),  
+                "treatment_ids_json": json.dumps(treatment_ids_vec),  
+                "treatments": all_treatments,
+                "is_authenticated": is_authenticated,
+            },
+        )  
     except Exception as e:
         print(str(e), e.args)
         return HttpResponseRedirect("")
@@ -188,13 +203,13 @@ def cancel_session(request):
     try:
         # Get the offset parameter from the request
         offset_param = getOffsetFromRequest(request)
-        
+
         # Get session ID
-        id = int(request.GET.get('id', "-1"))
+        id = int(request.GET.get("id", "-1"))
 
         # Get session
         booked_session = get_object_or_404(Appointment, id=id)
-        
+
         # Get user
         user = UserProfile.objects.get(user=request.user)
 

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% block head_title %}{% endblock %}</title>
+<head>
+    <title>{% block head_title %} log in/out {% endblock %}</title>
     {% block extra_head %}
     {% endblock %}
-  </head>
-  <body>
+</head>
+<body>
     {% block body %}
 
     {% if messages %}
@@ -36,5 +36,5 @@
     {% endblock %}
     {% block extra_body %}
     {% endblock %}
-  </body>
+</body>
 </html>

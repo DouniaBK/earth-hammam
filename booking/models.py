@@ -10,11 +10,19 @@ from datetime import timedelta, date, time
 
 
 class Appointment(models.Model):
-    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, null=True, blank=True)   # noqa
-    item = models.ForeignKey(Item, on_delete=models.CASCADE, null=True, blank=True, limit_choices_to={"category": 1})   # noqa
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, blank=True)   # noqa
+    user = models.ForeignKey(
+        UserProfile, on_delete=models.CASCADE, null=True, blank=True
+    )
+    item = models.ForeignKey(
+        Item,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        limit_choices_to={"category": 1},
+    )
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, blank=True)
     time = models.DateTimeField(default=datetime.now, blank=True)
     duration = models.DurationField(default=timedelta(minutes=60))
 
     def __str__(self):
-        return f'time: {self.time}'
+        return f"time: {self.time}"
