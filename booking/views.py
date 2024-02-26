@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
-from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect  
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 from datetime import datetime, timezone, timedelta
 from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 from .forms import AppointmentInputFormFrontEnd
@@ -12,8 +12,8 @@ from .models import Appointment
 import json
 
 
-# Returns the days of the week for a specific day
 def getDaysOfWeekForDay(t_current):
+    """Returns the days of the week for a specific day"""
     weekday = t_current.weekday()
 
     days_of_the_week = {}
@@ -24,8 +24,8 @@ def getDaysOfWeekForDay(t_current):
     return days_of_the_week, weekday
 
 
-# Sort all_sessions by the day they occur
 def sortSessionsByDay(all_sessions, days_of_the_week, user):
+    """Sort all_sessions by the day they occur"""
     sessions_of_the_week = {}
     # Iterate over all weekdays
     for d in days_of_the_week:
@@ -35,7 +35,7 @@ def sortSessionsByDay(all_sessions, days_of_the_week, user):
         date_time_object_upper = date_time_object_lower + timedelta(days=1)
         days_sessions = all_sessions.filter(
             time__gte=date_time_object_lower, time__lte=date_time_object_upper
-        )  
+        )
 
         sessions_of_the_week[d] = []
         for s in days_sessions:
@@ -47,8 +47,8 @@ def sortSessionsByDay(all_sessions, days_of_the_week, user):
     return sessions_of_the_week
 
 
-# Extract the week offset from the request, return 0 if not defined
 def getOffsetFromRequest(request):
+    """Extract the week offset from the request, return 0 if not defined"""
     offset_param = int(request.GET.get("offset", "0"))
     # In case a negative value is given, set back to zero
     # (protection against manual URL manipulation)
@@ -57,13 +57,16 @@ def getOffsetFromRequest(request):
     return offset_param
 
 
-# This view acts as middleware for the calendar, thus assembling all
-# necessary information for viewing the calendar and handling session booking and cancelation. 
 def booking(request):
+    """This view acts as middleware for the calendar, thus assembling all
+    necessary information for viewing the calendar
+    and handling session booking and cancelation"""
     try:
-        # Special variable to indicate whether the booking is done in the context of the new registration 
+        # Special variable to indicate whether
+        # the booking is done in the context of the new registration
         register_to_book = request.GET.get("rtb", "false") == "true"
-        # Special variable to indicate whether the register and booking workflow was successful 
+        # Special variable to indicate whether
+        # the register and booking workflow was successful
         success = False
         if register_to_book:
             success = request.GET.get("success", "false") == "true"
@@ -82,13 +85,13 @@ def booking(request):
         # Check in database for existing sessions during that week
         start_dt = t_current.replace(
             hour=0, minute=0, second=0, microsecond=0
-        ) + timedelta(days=(0 - weekday))  
+        ) + timedelta(days=(0 - weekday))
         end_dt = start_dt + timedelta(days=7)
-        all_sessions = Appointment.objects.filter(time__gte=start_dt, time__lt=end_dt)  
+        all_sessions = Appointment.objects.filter(time__gte=start_dt, time__lt=end_dt)
 
         sessions_of_the_week = sortSessionsByDay(
             all_sessions, days_of_the_week, request.user
-        )  
+        )
 
         # Fill in all sessions in the past
         #  (grey out past days sessions in scheduler)
@@ -101,7 +104,7 @@ def booking(request):
                         if (
                             not str(i) in sessions_of_the_week[d]
                             and not (str(i) + "me") in sessions_of_the_week[d]
-                        ):  
+                        ):
                             sessions_of_the_week[d].append(str(i))
 
         user = None
@@ -165,9 +168,11 @@ def booking(request):
                 time = form.cleaned_data["time"]
                 # redirect to a new URL:
                 if register_to_book:
-                    return HttpResponseRedirect("/booking?rtb=true&success=true")  
+                    return HttpResponseRedirect(
+                        "/booking?rtb=true&success=true")
                 else:
-                    return HttpResponseRedirect("/booking?offset=" + str(offset_param))  
+                    return HttpResponseRedirect(
+                        "/booking?offset=" + str(offset_param))
             else:
                 print("Error", form.errors)
 
@@ -177,21 +182,21 @@ def booking(request):
             request,
             "booking/booking.html",
             {
-                "form": form,  
-                "weekdays": days_of_the_week,  
-                "currentWeekOffset": offset_param,  
-                "weeksSessions": sessions_of_the_week,  
-                "allUserSessions": all_user_sessions_templ,  
-                "scheduleHours": hours_vec,  
-                "isThisWeek": week_current == week_now,  
-                "register_to_book": register_to_book,  
-                "register_book_success": success,  
-                "scheduleHours_json": json.dumps(hours_vec),  
-                "treatment_ids_json": json.dumps(treatment_ids_vec),  
+                "form": form,
+                "weekdays": days_of_the_week,
+                "currentWeekOffset": offset_param,
+                "weeksSessions": sessions_of_the_week,
+                "allUserSessions": all_user_sessions_templ,
+                "scheduleHours": hours_vec,
+                "isThisWeek": week_current == week_now,
+                "register_to_book": register_to_book,
+                "register_book_success": success,
+                "scheduleHours_json": json.dumps(hours_vec),
+                "treatment_ids_json": json.dumps(treatment_ids_vec),
                 "treatments": all_treatments,
                 "is_authenticated": is_authenticated,
             },
-        )  
+        )
     except Exception as e:
         print(str(e), e.args)
         return HttpResponseRedirect("")
@@ -199,7 +204,7 @@ def booking(request):
 
 @login_required
 def cancel_session(request):
-    # This cancels a booking/session
+    """This cancels a booking/session"""
     try:
         # Get the offset parameter from the request
         offset_param = getOffsetFromRequest(request)

@@ -29,6 +29,10 @@ Earth Hammam where you rekindle your soul, treat your body and leave your stress
 ## Deployment
 * Local Deployment
 * Heroku Deployment
+## Defensive Design
+* Session Hijacking
+* Delete booking
+* User's Order
 ## Credit
 * Media
 * Content
@@ -584,7 +588,73 @@ Thus, the following code includes parts that ensure only the session owner can d
             except Exception as e:
                 raise PermissionDenied
 
+* Users Order
 
+Only the owner of the order can view their orders. If the order and the User Profile, don't match the user manipulating the URL will not be granted permission and will be redirected to a 403 Error page. If the user is anonymous, they will be redirected to the login page.
+
+        @login_required
+        def checkout_success(request, order_number):
+            """
+            Handle successful checkouts
+            """
+            save_info = request.session.get("save_info")
+            order = get_object_or_404(Order, order_number=order_number)
+            current_bag = bag_contents(request)
+
+            total = float(current_bag["total"])
+            grand_total = float(current_bag["grand_total"])
+            delivery = float(current_bag["delivery"])
+
+            user_is_logged_in = request.user.is_authenticated
+
+            # Check if user is the same
+            user = UserProfile.objects.get(user=request.user)
+
+            is_same_user = user == order.user_profile
+            if not is_same_user:
+                raise PermissionDenied
+
+            if request.user.is_authenticated:
+                profile = UserProfile.objects.get(user=request.user)
+                # Attach the user's profile to the order
+                order.user_profile = profile
+                order.save()
+
+                # Save the user's info
+                if save_info:
+                    profile_data = {
+                        "default_phone_number": order.phone_number,
+                        "default_country": order.country,
+                        "default_postcode": order.postcode,
+                        "default_town_or_city": order.town_or_city,
+                        "default_street_address1": order.street_address1,
+                        "default_street_address2": order.street_address2,
+                        "default_county": order.county,
+                    }
+                    user_profile_form = UserProfileForm(profile_data, instance=profile)
+                    if user_profile_form.is_valid():
+                        user_profile_form.save()
+
+                messages.success(
+                    request,
+                    f"Order successfully processed! \
+                    Your order number is {order_number}. A confirmation \
+                    email will be sent to {order.email}.",
+                )
+
+            if "bag" in request.session:
+                del request.session["bag"]
+
+            template = "checkout/checkout_success.html"
+            context = {
+                "order": order,
+                "total_main": total,
+                "grand_total_main": grand_total,
+                "delivery_main": delivery,
+                "user_is_logged_in": user_is_logged_in,
+            }
+
+            return render(request, template, context)
 
 
 ## Credit

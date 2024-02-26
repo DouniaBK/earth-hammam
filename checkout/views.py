@@ -110,7 +110,8 @@ def checkout(request):
                     return redirect(reverse("view_bag"))
 
             request.session["save_info"] = "save-info" in request.POST
-            return redirect(reverse("checkout_success", args=[order.order_number]))
+            return redirect(reverse(
+                "checkout_success", args=[order.order_number]))
         else:
             messages.error(
                 request,
@@ -121,7 +122,8 @@ def checkout(request):
     else:
         bag = request.session.get("bag", {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request,
+            "There's nothing in your bag at the moment")
             return redirect(reverse("items"))
 
         stripe_total = round(grand_total * 100)
@@ -185,12 +187,13 @@ def checkout_success(request, order_number):
 
     user_is_logged_in = request.user.is_authenticated
 
-    # Check if user is the same 
+    # Check if user is the same
     user = UserProfile.objects.get(user=request.user)
 
-    is_same_user = user == order.user_profile
-    if not is_same_user: 
-        raise PermissionDenied
+    if order.user_profile is not None:
+        is_same_user = user == order.user_profile
+        if not is_same_user:
+            raise PermissionDenied
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)

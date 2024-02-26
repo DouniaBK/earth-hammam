@@ -80,7 +80,9 @@ Defensive programming was manually tested with the below user acceptance testing
 ![Merchandizing Edit Item](static/images/merchandising-edit-item.png)
 ![Merchandizing Change updated](static/images/merchandizing-editing-saved.png)
 | **Checkout**| | | | |
-| | accessible from bag, shopper clicks on *secure checkout*| redirected to checkout| Pass | user can see their order summary and billing information form|
+| | accessible from bag, logged in shopper clicks on *secure checkout*| redirected to checkout| Pass | user can see their order summary and billing information form|
+| | accessible from bag, Anonymous shopper cannot clicks on *secure checkout* as it is disabled and red instruction inform user or proceess. They must register and login to continue with the checkout| anonymous user logs in and is then allowed to be redirected to proceed with checkout| Pass | user can see their order summary and billing information form|
+![anonymous user checkout](static/images/testing-anonymous-user-checkout.png)
 | | Shopper fills Billing information, fields with asterix are compulsory| form is validated| Pass | user can click to correct field|
 | | Shopper fills Billing information, fields with asterix are compulsory| form is filled in and payment field changes from visa to mastercard depending on method| Pass | user can click on complete order or go back to bag to adjust bag|
 | | Shopper clicks on *adjust bag* | Shopper redirected to bag where they can adjust bag| Pass | user can adjust bag|
@@ -133,11 +135,11 @@ Defensive programming was manually tested with the below user acceptance testing
 | **Delete Booking**| | | | |
 | | anonymous user delete another user's booked appointment with URL Manipulation | the user is not identified as owner of the appointment and thus is redirected to the log in page | Pass | |
 | | Logged in user delete another user's booked appointment with URL Manipulation | the user is not identified as owner of the appointment and thus is redirected to the 403 Error Page | Pass | |
-![Apppointment Booking](static/images/ddtesting-delete-appointment.png)
-| | Anonymous user accessing another user's order history | Pass | |
-| | select an available time slot and submit it| appointment selected | Pass |see the booked sessions|
-| | cancel a booked appointment| appointment cancelled | Pass | time slot available for booking again|
-![Apppointment Booking](static/images/booking-steps.png)
+![Delete Apppointment- Booking](static/images/ddtesting-delete-appointment.png)
+| **Access Users' Order**| | | | |
+| | Anonymous user accessing another user's order history with URL manipulation | the user is not identified as owner of the order and thus is redirected to the log in page |Pass |
+| | Logged in user accessing another user's order history with URL manipulation | the user is not identified as owner of the order and thus is redirected to the 403 Error Page  |Pass |
+![Access other users' order](static/images/ddtesting-order.png)
 
 
 
