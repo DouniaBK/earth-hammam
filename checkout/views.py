@@ -3,6 +3,7 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import PermissionDenied
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
@@ -183,6 +184,13 @@ def checkout_success(request, order_number):
     delivery = float(current_bag["delivery"])
 
     user_is_logged_in = request.user.is_authenticated
+
+    # Check if user is the same 
+    user = UserProfile.objects.get(user=request.user)
+
+    is_same_user = user == order.user_profile
+    if not is_same_user: 
+        raise PermissionDenied
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)

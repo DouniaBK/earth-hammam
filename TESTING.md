@@ -127,19 +127,33 @@ Defensive programming was manually tested with the below user acceptance testing
 | | user enters a faulse URL| User A is redirected to 404 page no fount | Pass | User can see a link to return to the Earth Hammam|
 |![404 page not found](static/images/404-page.jpg)
 
+## Defensive Design Testing 
+| Page | User Action | Expected Result | Pass/Fail | Comments |
+| --- | --- | --- | --- | --- |
+| **Delete Booking**| | | | |
+| | anonymous user delete another user's booked appointment with URL Manipulation | the user is not identified as owner of the appointment and thus is redirected to the log in page | Pass | |
+| | Logged in user delete another user's booked appointment with URL Manipulation | the user is not identified as owner of the appointment and thus is redirected to the 403 Error Page | Pass | |
+![Apppointment Booking](static/images/ddtesting-delete-appointment.png)
+| | Anonymous user accessing another user's order history | Pass | |
+| | select an available time slot and submit it| appointment selected | Pass |see the booked sessions|
+| | cancel a booked appointment| appointment cancelled | Pass | time slot available for booking again|
+![Apppointment Booking](static/images/booking-steps.png)
+
+
+
+
 ## Code Validation
 
 ### HTML
 
 The recommended [HTML W3C Validator](https://validator.w3.org) was used to validate each HTML files as well as [Datayze Site Validator](https://datayze.com/site-validator) to analyse the site.
 
- ![Validation results](static/images/validation-results.png)
+![Validation results](static/images/validation-results.png)
 
- The pages which were not crawled by the [Datayze Site Validator](https://datayze.com/site-validator), were validates via URL and the others via field input using [HTML W3C Validator](https://validator.w3.org).
+ The pages which were not crawled by the [Datayze Site Validator](https://datayze.com/site-validator), were validates via URL with the W3C plugin/site and the others via field input using [HTML W3C Validator](https://validator.w3.org).
 
 |html file | Errors|Notes|
 |---	|---	|---	|
-|Footer| no errors| Pass|
 |Home Page| no errors | Pass|
 |Hammam| no errors | Pass
 ![Validation results](static/images/validation-hammam.png)
@@ -156,11 +170,17 @@ The recommended [HTML W3C Validator](https://validator.w3.org) was used to valid
 |Bag| no errors | Pass|
 ![Validation results](static/images/validation-bag.png)
 |Checkout success| no errors | Pass|
+![Validation results](static/images/validation-checkout-success.png)
+|Order History| no errors | Pass|
+![Validation results](static/images/validation-order-history.png)
+|Merchandizing| no errors | Pass|
+![Validation results](static/images/validation-merchandize.png)
 |log in| no errors | Pass|
 ![Validation results](static/images/validation-login.png)
 |Register| no errors | Pass|
 ![Validation results](static/images/validation-registration.png)
 |Logout| no errors | Pass|
+![Validation results](static/images/validation-logout.png)
 |Privacy Policy| no errors | Pass|
 |Certification| no errors | Pass|
 ![Validation results](static/images/validation-certification.png)
@@ -171,8 +191,10 @@ The recommended [HTML W3C Validator](https://validator.w3.org) was used to valid
 |edit_item|no errors|Pass|
 |unsubscribe|no errors|Pass|
 |newsletter|no errors|Pass|
+![Validation results](static/images/validation-newsletter.png)
 |contact|no errors|Pass|
 ![Validation results](static/images/validation-contact.png)
+|Footer| no errors| Pass|
 
 
 ### CSS
@@ -201,7 +223,7 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 The recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all the Python files.
 
-Error E501 *line too long* flagged by *pycodestle* concerning API addresses, keys and other fragile code lines, have been silenced using *#noqa*, as issues resulting from modifying these lines would result in errors and bugs far more complex than PEP8 regulations would. Thus, I chose to not modify these lines.
+Error E501 *line too long* flagged by *pycodestle* in the webhooh_handler.py and webhooks.py files, have been silenced using *#noqa*, as issues resulting from modifying these lines would result in errors and bugs far more complex than PEP8 regulations would. Thus, I chose to not modify these lines.
 
 |Py Files in App | Errors|Notes|
 |---	|---	|---	|
