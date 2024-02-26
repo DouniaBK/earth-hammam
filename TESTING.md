@@ -140,6 +140,8 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Anonymous user accessing another user's order history with URL manipulation | the user is not identified as owner of the order and thus is redirected to the log in page |Pass |
 | | Logged in user accessing another user's order history with URL manipulation | the user is not identified as owner of the order and thus is redirected to the 403 Error Page  |Pass |
 ![Access other users' order](static/images/ddtesting-order.png)
+| | Logged in user accessing another user's order history history with URL manipulation | the user is not identified as owner of the order and thus is redirected to the 403 Error Page  |Pass |
+| | Anonymous user accessing another user's order history with URL manipulation | the user is not identified as owner of the order and thus is redirected to the log in page |Pass |
 
 
 

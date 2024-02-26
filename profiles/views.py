@@ -53,6 +53,7 @@ def delete(request):
     return render(request, 'home/index.html')
 
 
+@login_required
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 

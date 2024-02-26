@@ -545,6 +545,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 In the booking workflow, a negative offset value (in weeks from the current week) can normally not be chosen via the interface. However, it can be entered manually via URL manipulation. The following code protects against manually entering a negative week offset.
 
+**getOffsetFromRequest**
         def getOffsetFromRequest(request):
             offset_param = int(request.GET.get('offset', "0"))
             # In case a negative value is given, set back to zero
@@ -561,6 +562,7 @@ Thus, the following code includes parts that ensure only the session owner can d
 
 ![403 forbidden access](static/images/403-forbidden.png)
 
+**cancel_session**
         @login_required
         def cancel_session(request):
             # This cancels a booking/session
@@ -588,9 +590,11 @@ Thus, the following code includes parts that ensure only the session owner can d
             except Exception as e:
                 raise PermissionDenied
 
-* Users Order
+### Users Order
 
 Only the owner of the order can view their orders. If the order and the User Profile, don't match the user manipulating the URL will not be granted permission and will be redirected to a 403 Error page. If the user is anonymous, they will be redirected to the login page.
+
+1) **checkout_success**
 
         @login_required
         def checkout_success(request, order_number):
@@ -652,6 +656,44 @@ Only the owner of the order can view their orders. If the order and the User Pro
                 "total_main": total,
                 "grand_total_main": grand_total,
                 "delivery_main": delivery,
+                "user_is_logged_in": user_is_logged_in,
+            }
+
+            return render(request, template, context)
+2) **order_history**
+
+ A Similar procedure has been implemented in checkout_success to order_history to ensure that the user's sensitive information is protected.
+
+
+        @login_required
+        def order_history(request, order_number):
+            order = get_object_or_404(Order, order_number=order_number)
+
+            messages.info(request, (
+                f'This is a past confirmation for order number {order_number}. '
+                'A confirmation email with your order details was sent on the order date.'
+            ))
+
+            total = float(order.order_total)
+            grand_total = float(order.grand_total)
+            delivery = float(order.delivery_cost)
+            user_is_logged_in = request.user.is_authenticated
+
+            # Check if user is the same
+            user = UserProfile.objects.get(user=request.user)
+
+            if order.user_profile is not None:
+                is_same_user = user == order.user_profile
+                if not is_same_user:
+                    raise PermissionDenied
+
+            template = 'checkout/checkout_success.html'
+            context = {
+                'order': order,
+                'total_main': total,
+                'grand_total_main': grand_total,
+                'delivery_main': delivery,
+                'from_profile': True,
                 "user_is_logged_in": user_is_logged_in,
             }
 
