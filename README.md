@@ -140,12 +140,12 @@ The font family and style used are:
 
  ## Color Reference
 
-| Color             | Hex |
-| ----------------- | ----|
-| Example Color |#fff4eb |
-| Example Color |#4d2d2d |
-| Example Color |#d39e00 |
-| Example Color | #EBCCAC|
+| Color         | Hex     |
+|---------------|---------|
+| Example Color | #fff4eb |
+| Example Color | #4d2d2d |
+| Example Color | #d39e00 |
+| Example Color | #EBCCAC |
 
 # Features
 
@@ -355,16 +355,16 @@ The below diagram shows the relationship between the different tables in the dia
 
 ## Data Models:
 
-| **App**     | **Model**   |**Description** |
-| -----         | ----------     | -----------------    |
-| Home| Testimonial()|has been created and migrated to publish testimonials from the admin panel as a marketing tool|
-| Booking| Appointment()| has been created and migrated to book a treatment at the facility as well as manage booked sessions such as canceling a session.|
-| Marketing| SubscribedUser()|has been created to allow subscribers to receive the newsletter as well as manage subscription cancelation.|
-| Profile|create_or_update_user_profile()| has been created to creqate and update users' profile|
-| Products |Category| has been created to categories the items sold on the site into three categories|
-| Products |Item| to register the items sold on the site|
-| Checkout |Order()| has been created to register the users orders, update orders and set the order number|
-| Checkout|OrderLineItem()| has been created to override the original save method to set the lineitem total and update the order total|
+| **App**   | **Model**                       | **Description**                                                                                                                  |
+|-----------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| Home      | Testimonial()                   | has been created and migrated to publish testimonials from the admin panel as a marketing tool                                   |
+| Booking   | Appointment()                   | has been created and migrated to book a treatment at the facility as well as manage booked sessions such as canceling a session. |
+| Marketing | SubscribedUser()                | has been created to allow subscribers to receive the newsletter as well as manage subscription cancelation.                      |
+| Profile   | create_or_update_user_profile() | has been created to creqate and update users' profile                                                                            |
+| Products  | Category                        | has been created to categories the items sold on the site into three categories                                                  |
+| Products  | Item                            | to register the items sold on the site                                                                                           |
+| Checkout  | Order()                         | has been created to register the users orders, update orders and set the order number                                            |
+| Checkout  | OrderLineItem()                 | has been created to override the original save method to set the lineitem total and update the order total                       |
 
 # Technologies Used
 
@@ -393,12 +393,12 @@ For all testing, please refer to the [TESTING.md](/TESTING.md) file.
 
 Code validation was done using the following tools:
 
-| **Tools**     | **Language**   |**Validation Result** |
-| -----         | ----------     | -----------------    |
-| W3C           | HTML           | Valid                |
-| CSS Portal    | CSS            | Valid                |
-| https://jshint.com   | Javascript     | Valid                |
-| PEP8          | Python         | Valid                |
+| **Tools**          | **Language** | **Validation Result** |
+|--------------------|--------------|-----------------------|
+| W3C                | HTML         | Valid                 |
+| CSS Portal         | CSS          | Valid                 |
+| https://jshint.com | Javascript   | Valid                 |
+| PEP8               | Python       | Valid                 |
 
 Responsiveness has been tested using:
 
@@ -446,17 +446,17 @@ Deployment steps are as follows, after account setup:
 - Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select **Create App**.
 - From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables.
 
-| Key | Value |
-| --- | --- |
-| `DATABASE_URL` | user's own value |
-| `SECRET_KEY` | user's own value|
-| `CLOUDINARY_URL` | user's own value |
+| Key                     | Value            |
+|-------------------------|------------------|
+| `DATABASE_URL`          | user's own value |
+| `SECRET_KEY`            | user's own value |
+| `CLOUDINARY_URL`        | user's own value |
 | `CLOUDINARY_CLOUD_NAME` | user's own value |
-| `CLOUDINARY_API_KEY` |user's own value |
+| `CLOUDINARY_API_KEY`    | user's own value |
 | `CLOUDINARY_API_SECRET` | user's own value |
-| `STRIPE_SECRET_KEY` | user's own value |
-| `STRIPE_PUBLIC_KEY` |user's own value |
-| `STRIPE_WH_SECRET` | user's own value |
+| `STRIPE_SECRET_KEY`     | user's own value |
+| `STRIPE_PUBLIC_KEY`     | user's own value |
+| `STRIPE_WH_SECRET`      | user's own value |
 
 Heroku needs two additional files in order to deploy properly.
 - requirements.txt
@@ -704,25 +704,25 @@ Only the owner of the order can view their orders. If the order and the User Pro
 
 ### Content
 
-| Source | Location | Notes |
-| --- | --- | --- |
-| [StackOverflow](https://stackoverflow.com/) | feature-details and search-results pages | how to solve various django and stripe issues |
-| [Codepen](https://codepen.io/recodenow/pen/YZqgZW) | feature-details page | Five star rating checkbox |
-| [StackOverflow](https://stackoverflow.com/questions/37259740/passing-variables-from-flask-to-javascript) | feature-details page | How to pass variable data to JS from the backend |
-| [pylessons](https://pylessons.com/django-subscribe) | lessons | Subscribe to Newsletter in Django |
-| [Code Institue](https://learn.codeinstitute.net/) | bag- checkout - profile| followed the CI lessons of Boutique Ado to create the bag, checkout and profile lessons |
-| [django Documentation](https://docs.djangoproject.com/en/4.2/) | Entire site | code has been created following the Django documentation |
-| [Aman](https://www.aman.com/) | Home page | was used for the main site text content and inspiration |
-| [Privacy Policy Generator](https://www.privacypolicygenerator.info/) | Privacy Policy | was used to generate a free privacy policy for the site |
+| Source                                                                                                   | Location                                 | Notes                                                                                   |
+|----------------------------------------------------------------------------------------------------------|------------------------------------------|-----------------------------------------------------------------------------------------|
+| [StackOverflow](https://stackoverflow.com/)                                                              | feature-details and search-results pages | how to solve various django and stripe issues                                           |
+| [Codepen](https://codepen.io/recodenow/pen/YZqgZW)                                                       | feature-details page                     | Five star rating checkbox                                                               |
+| [StackOverflow](https://stackoverflow.com/questions/37259740/passing-variables-from-flask-to-javascript) | feature-details page                     | How to pass variable data to JS from the backend                                        |
+| [pylessons](https://pylessons.com/django-subscribe)                                                      | lessons                                  | Subscribe to Newsletter in Django                                                       |
+| [Code Institue](https://learn.codeinstitute.net/)                                                        | bag- checkout - profile                  | followed the CI lessons of Boutique Ado to create the bag, checkout and profile lessons |
+| [django Documentation](https://docs.djangoproject.com/en/4.2/)                                           | Entire site                              | code has been created following the Django documentation                                |
+| [Aman](https://www.aman.com/)                                                                            | Home page                                | was used for the main site text content and inspiration                                 |
+| [Privacy Policy Generator](https://www.privacypolicygenerator.info/)                                     | Privacy Policy                           | was used to generate a free privacy policy for the site                                 |
 
 ### Media
 
-| Source | Location | Type | Notes |
-| --- | --- | --- | --- |
-| [Wikimedia](https://commons.wikimedia.org/wiki/File:No-Image-Placeholder.svg) | entire site | image | Placeholder image if no poster is found |
-| [FlowChart](https://lucid.app/lucidchart/30fddd8a-f5ab-467e-be3b-b210c1bb60cd/edit?viewport_loc=372%2C29%2C1373%2C1547%2C0_0&invitationId=inv_c6d1929d-13d4-4370-8bda-73e9c5664d07) | home page | flowchart | flowchart maker |
-| [Miro Board](https://miro.com/app/board/uXjVNcqnHL8=/?share_link_id=999954555341) | home page | Business Model | Business Model maker |
-| [Canvas](https://www.canva.com/) | home page | Projects | WEbsite design |
+| Source                                                                                                                                                                              | Location    | Type           | Notes                                   |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|----------------|-----------------------------------------|
+| [Wikimedia](https://commons.wikimedia.org/wiki/File:No-Image-Placeholder.svg)                                                                                                       | entire site | image          | Placeholder image if no poster is found |
+| [FlowChart](https://lucid.app/lucidchart/30fddd8a-f5ab-467e-be3b-b210c1bb60cd/edit?viewport_loc=372%2C29%2C1373%2C1547%2C0_0&invitationId=inv_c6d1929d-13d4-4370-8bda-73e9c5664d07) | home page   | flowchart      | flowchart maker                         |
+| [Miro Board](https://miro.com/app/board/uXjVNcqnHL8=/?share_link_id=999954555341)                                                                                                   | home page   | Business Model | Business Model maker                    |
+| [Canvas](https://www.canva.com/)                                                                                                                                                    | home page   | Projects       | WEbsite design                          |
 
 
 # Further Documentation:

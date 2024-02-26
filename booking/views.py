@@ -31,7 +31,8 @@ def sortSessionsByDay(all_sessions, days_of_the_week, user):
     for d in days_of_the_week:
         # Filter the sessions that occur on the specific day
         date_of_that_day = days_of_the_week[d]
-        date_time_object_lower = datetime.strptime(date_of_that_day, "%m/%d/%Y")
+        date_time_object_lower = datetime.strptime(
+            date_of_that_day, "%m/%d/%Y")
         date_time_object_upper = date_time_object_lower + timedelta(days=1)
         days_sessions = all_sessions.filter(
             time__gte=date_time_object_lower, time__lte=date_time_object_upper
@@ -87,7 +88,8 @@ def booking(request):
             hour=0, minute=0, second=0, microsecond=0
         ) + timedelta(days=(0 - weekday))
         end_dt = start_dt + timedelta(days=7)
-        all_sessions = Appointment.objects.filter(time__gte=start_dt, time__lt=end_dt)
+        all_sessions = Appointment.objects.filter(
+            time__gte=start_dt, time__lt=end_dt)
 
         sessions_of_the_week = sortSessionsByDay(
             all_sessions, days_of_the_week, request.user

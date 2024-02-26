@@ -12,55 +12,54 @@ from checkout.models import Order
 
 @login_required
 def profile(request):
-    """ Display the user's profile. """
+    """Display the user's profile."""
     profile = get_object_or_404(UserProfile, user=request.user)
 
-    if request.method == 'POST':
+    if request.method == "POST":
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Profile updated successfully')
+            messages.success(request, "Profile updated successfully")
         else:
             messages.error(
-                request, 'Update failed. Check if the form is valid.')
+                request, "Update failed. Check if the form is valid.")
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
-    template = 'profiles/profile.html'
-    context = {
-        'form': form,
-        'orders': orders,
-        'on_profile_page': True
-    }
+    template = "profiles/profile.html"
+    context = {"form": form, "orders": orders, "on_profile_page": True}
 
     return render(request, template, context)
 
+
 @login_required
 def delete(request):
-
     try:
         user = request.user
         if not user.is_superuser:
             user.delete()
-            messages.success(request, 'Your account was successfully deleted.')
+            messages.success(request, "Your account was successfully deleted.")
         else:
-            messages.success(request, 'Superuser account cannot be deleted')
+            messages.success(request, "Superuser account cannot be deleted")
 
     except Exception as e:
-        return render(request, 'home/index.html')
+        return render(request, "home/index.html")
 
-    return render(request, 'home/index.html')
+    return render(request, "home/index.html")
 
 
 @login_required
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
-    messages.info(request, (
-        f'This is a past confirmation for order number {order_number}. '
-        'A confirmation email with your order details was sent on the order date.'
-    ))
+    messages.info(
+        request,
+        (
+            f"This is a past confirmation for order number {order_number}. "
+            "A confirmation email with your order details was sent on the order date."
+        ),
+    )
 
     total = float(order.order_total)
     grand_total = float(order.grand_total)
@@ -75,13 +74,13 @@ def order_history(request, order_number):
         if not is_same_user:
             raise PermissionDenied
 
-    template = 'checkout/checkout_success.html'
+    template = "checkout/checkout_success.html"
     context = {
-        'order': order,
-        'total_main': total,
-        'grand_total_main': grand_total,
-        'delivery_main': delivery,
-        'from_profile': True,
+        "order": order,
+        "total_main": total,
+        "grand_total_main": grand_total,
+        "delivery_main": delivery,
+        "from_profile": True,
         "user_is_logged_in": user_is_logged_in,
     }
 
