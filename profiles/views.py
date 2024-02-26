@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import PermissionDenied
+
 
 from .models import UserProfile
 from .forms import UserProfileForm
@@ -63,6 +65,14 @@ def order_history(request, order_number):
     grand_total = float(order.grand_total)
     delivery = float(order.delivery_cost)
     user_is_logged_in = request.user.is_authenticated
+
+    # Check if user is the same
+    user = UserProfile.objects.get(user=request.user)
+
+    if order.user_profile is not None:
+        is_same_user = user == order.user_profile
+        if not is_same_user:
+            raise PermissionDenied
 
     template = 'checkout/checkout_success.html'
     context = {

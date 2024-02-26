@@ -543,7 +543,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 1) Protection against manual URL manipulation:
 
-In the booking workflow, a negative offset value (in weeks from current week) can normally not be chosen via the interface. However, it can be entered manually via URL manipulation. The following code protects against manually entering a negative week offset.
+In the booking workflow, a negative offset value (in weeks from the current week) can normally not be chosen via the interface. However, it can be entered manually via URL manipulation. The following code protects against manually entering a negative week offset.
 
         def getOffsetFromRequest(request):
             offset_param = int(request.GET.get('offset', "0"))
@@ -610,9 +610,10 @@ Only the owner of the order can view their orders. If the order and the User Pro
             # Check if user is the same
             user = UserProfile.objects.get(user=request.user)
 
-            is_same_user = user == order.user_profile
-            if not is_same_user:
-                raise PermissionDenied
+            if order.user_profile is not None:
+                is_same_user = user == order.user_profile
+                if not is_same_user:
+                    raise PermissionDenied
 
             if request.user.is_authenticated:
                 profile = UserProfile.objects.get(user=request.user)
